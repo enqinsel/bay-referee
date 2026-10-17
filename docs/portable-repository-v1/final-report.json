@@ -1,0 +1,204 @@
+{
+  "schema": "bay-referee-portable-final-v1",
+  "status": "READY_FOR_PORTABLE_REPO_HUMAN_REVIEW",
+  "current_workspace_original_snapshot": {
+    "bytes": 15420277295,
+    "regular_files": 102480,
+    "symlinks": 22
+  },
+  "proposed_git_source": {
+    "bytes": 34002040,
+    "files": 256,
+    "source_tree": "/Users/engin/Desktop/video-fabrikası/video-engine-portable-v1",
+    "size_kind": "Logical bytes including review documentation, excluding dependencies and .git; not a packfile measurement."
+  },
+  "proposed_lfs": {
+    "recommended": false,
+    "bytes": 0,
+    "files": 0
+  },
+  "local_only_original_snapshot": {
+    "bytes": 15388941987,
+    "note": "Only original regular files excluded by the policy. New audit/source additions are not subtracted from the original baseline."
+  },
+  "largest_exclusions": [
+    {
+      "path": "voice/chatterbox/model/t3_mtl23ls_v3.safetensors",
+      "bytes": 2143989928
+    },
+    {
+      "path": ".cache/whisper/medium.pt",
+      "bytes": 1528008539
+    },
+    {
+      "path": "voice/chatterbox/model/s3gen.pt",
+      "bytes": 1057165844
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.dylib",
+      "bytes": 386016816
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/torch/lib/libtorch_cpu.dylib",
+      "bytes": 186195520
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/llvmlite/binding/libllvmlite.dylib",
+      "bytes": 129871888
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/llvmlite/binding/libllvmlite.dylib",
+      "bytes": 129871888
+    },
+    {
+      "path": ".cache/pip/http-v2/a/c/f/5/b/acf5bddc78a2e0c5577043231b851e4d937a01e9ac2fac18b954a4fb.body",
+      "bytes": 127307099
+    },
+    {
+      "path": "formats/football-production-kit-v1-1.zip",
+      "bytes": 93380476
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/diagrams-code/PM17/source.mp4",
+      "bytes": 80915826
+    },
+    {
+      "path": "voice/chatterbox/cache/pip/http-v2/b/4/b/5/f/b4b5fe9076af612804377ed5da5eaa78b37b53b2c6796b1f2c348b74.body",
+      "bytes": 66532538
+    },
+    {
+      "path": "episodes/episode-michelin/assets/maps/france-road-map-de-dion-bouton-1900.jpg",
+      "bytes": 52429046
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/characters-photos/PM25/source.mp4",
+      "bytes": 51131704
+    },
+    {
+      "path": "episodes/episode-michelin/renders/previews/michelin-v004.mp4",
+      "bytes": 50274757
+    },
+    {
+      "path": "episodes/episode-michelin/renders/previews/michelin-v004-picture.mp4",
+      "bytes": 48389452
+    }
+  ],
+  "largest_tracked_candidates": [
+    {
+      "path": "mascot/engin-avatar-v1/master/master-identity.png",
+      "bytes": 7233850,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "0a55089d8fc45f32e9463ed142c430a9471d1c4c0fea28579c57679117feb1a1"
+    },
+    {
+      "path": "brand/bay-referee/avatar/master/referee-master.png",
+      "bytes": 6716719,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "4dea0c5bfd5eba814c765264491b57d77681f4543d3abf7f9ef58e1512b0eac9"
+    },
+    {
+      "path": "brand/bay-referee/profile/profile-square.png",
+      "bytes": 1204812,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "289225542572a39fe02b6f03821110a90e79799c17288120c527b2d112744e28"
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/head.png",
+      "bytes": 1097809,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "1c8f3ee1880cebe8e19ec2c70d5b76e35fe9cc71244cf88f78d13c76a32b5c24"
+    },
+    {
+      "path": "docs/portable-repo-manifest.json",
+      "bytes": 771593,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": null
+    },
+    {
+      "path": "docs/portable-repository-v1/manifest.json",
+      "bytes": 771593,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": null
+    },
+    {
+      "path": "formats/football-comparison-v1/fonts/Archivo-variable.ttf",
+      "bytes": 658596,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053"
+    },
+    {
+      "path": "docs/portable-repository-v1/absolute-path-audit.json",
+      "bytes": 612252,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": null
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/head-monochrome.png",
+      "bytes": 587678,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "295643e786f293a476da483d6cd59489daf338098791650c3cb1168a134b9799"
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/point-up-left.png",
+      "bytes": 565567,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "6fbdb1f35c1d6996b528b67b2808f3b66188ca0492bc0bbf20a0332e2bc7a2a1"
+    }
+  ],
+  "classification": {
+    "unknown_review_required": 0,
+    "exact_manifest": "../portable-repo-manifest.json"
+  },
+  "setup": {
+    "script": "scripts/setup-bay-referee.mjs",
+    "result": "PASS_LOCAL_SETUP",
+    "evidence": "second-machine-setup.json"
+  },
+  "clean_clone": {
+    "result": "PASS",
+    "unit_tests": 121,
+    "smoke_checks": 6,
+    "evidence": "second-machine-smoke.json"
+  },
+  "skill": {
+    "result": "PASS",
+    "source": "brand/bay-referee/channel-skill/bay-referee",
+    "installed_sync": "PASS;changed managed files backed up;extras retained",
+    "source_tree_sha256": "da505ce426d1693dba2b460976736cac0d531d380e2acf9171da2decb74066c2"
+  },
+  "secrets": {
+    "status": "PASS",
+    "scope": "Heuristic candidate scan and explicit private-source/license classification; no unresolved findings."
+  },
+  "absolute_paths": {
+    "status": "PASS",
+    "active_runtime_issues": 0,
+    "historical_documentation": "Retained as historical or local audit evidence; not runtime path resolution."
+  },
+  "git_history": {
+    "status": "CLEAN",
+    "tracked_files": 0,
+    "commits": 0,
+    "refs": 0,
+    "objects": 0,
+    "remotes": 0,
+    "history_rewrite": false
+  },
+  "preservation": {
+    "status": "PASS_WITH_EXPECTED_SOURCE_EDITS",
+    "unexpected_changes": 0,
+    "missing_preexisting_files": 0,
+    "evidence": "preservation-check.json",
+    "limitation": "Immutable inventory compares type/size/mtime/link-target; no original content-hash baseline;mutable dependency/cache entries excluded."
+  },
+  "blockers_for_source_review": [],
+  "before_real_second_machine_production": [
+    "Install/select Node>=22 and Python3.12;Apple Silicon/macOS lock validated.",
+    "Connect Higgsfield and verify the Engin custom voice in the intended workspace.",
+    "Provision local Whisper medium weights with --download-whisper-model.",
+    "Acquire the licensed approved closing-whistle source locally using scripts/bay-referee-assets.mjs."
+  ],
+  "github_push": "NOT PERFORMED",
+  "prohibited_actions_performed": [],
+  "next_decision": "Human review only. Do not push, publish, migrate or delete archives as part of this phase."
+}

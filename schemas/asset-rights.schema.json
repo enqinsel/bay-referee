@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Asset Rights Record v1.0",
+  "description": "Additive rights record for new production manifests; source/provenance fields may coexist. State-dependent export conditions are enforced by engine/assets/publication-gate.mjs.",
+  "type": "object",
+  "required": ["asset_id", "asset_state", "publication"],
+  "properties": {
+    "asset_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "asset_state": {"type": "string", "enum": ["PUBLICATION_CLEARED", "INTERNAL_REFERENCE_ONLY", "GENERATED_SUPPORT", "AUTHORED", "BLOCKED"]},
+    "publication": {
+      "type": "object",
+      "required": ["rights_approved", "evidence"],
+      "properties": {
+        "rights_approved": {"type": "boolean"},
+        "factual_approved": {"type": "boolean"},
+        "evidence": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "pattern": "\\S"}}
+      },
+      "additionalProperties": true
+    },
+    "restrictions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "pattern": "\\S"}},
+    "derived_from": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "pattern": "\\S"}}
+  },
+  "additionalProperties": true
+}

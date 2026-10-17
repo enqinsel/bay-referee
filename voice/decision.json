@@ -1,0 +1,39 @@
+{
+  "status": "VOICE_SYSTEM_LOCKED",
+  "primary_candidate": "HIGGSFIELD_ELEVEN_V4",
+  "voice": {
+    "name": "Engin",
+    "voice_type": "element",
+    "voice_id": "01c99385-4fe9-41e7-867f-f9bab00617db"
+  },
+  "provider_wrapper": "Higgsfield",
+  "engine": "ElevenLabs v4",
+  "model": "elevenlabs_v4",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "batch_size": 1
+  },
+  "VOICE_SYSTEM_LOCKED": true,
+  "human_approval": "User FOOTBALL PRODUCTION KIT V1 brief explicitly approves the Voice System and requires lock.",
+  "minimax": {
+    "status": "REJECTED_AS_PRIMARY_BY_HUMAN_REVIEW",
+    "reason": "prosody / emphasis / narration performance",
+    "records_preserved": true,
+    "automatic_final_fallback": false
+  },
+  "chatterbox": {
+    "status": "REJECTED_AS_PRIMARY_BY_HUMAN_REVIEW",
+    "reason": "Turkish football terminology / foreign-name pronunciation and overall quality",
+    "records_preserved": true,
+    "automatic_final_fallback": false
+  },
+  "authority": "FOOTBALL PRODUCTION KIT V1 — CAPTIONS + SOUND SYSTEM",
+  "technical_qa": "PASS",
+  "alignment": "Local Whisper medium/tr",
+  "timing_authority": "higgsfield/eleven-v4/var-saot/final/narration-final.wav",
+  "review_url": "http://127.0.0.1:8784/voice/higgsfield/eleven-v4/var-saot/review/",
+  "report": "higgsfield/eleven-v4/var-saot/report.md",
+  "human_full_narration_approval": "APPROVED",
+  "approved_date": "2026-10-11"
+}

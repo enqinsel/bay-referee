@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Video Engine — teknik test</title>
+  <script src="./vendor/gsap.min.js"></script>
+  <style>
+    /* Neutral, machine-local test faces; not a channel typography decision. */
+    @font-face { font-family: 'SmokeLocal'; src: local('Arial'); font-weight: 400; }
+    @font-face { font-family: 'SmokeLocal'; src: local('Arial Bold'); font-weight: 700; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1080px; height: 1920px; overflow: hidden; background: #171717; }
+    #root { position: relative; width: 1080px; height: 1920px; color: #f5f5f5; font-family: 'SmokeLocal', sans-serif; }
+    #label { position: absolute; left: 100px; top: 260px; font-size: 28px; letter-spacing: 3px; }
+    #title { position: absolute; left: 100px; top: 670px; font-size: 86px; line-height: 1.12; font-weight: 700; }
+    #detail { position: absolute; left: 100px; top: 900px; font-size: 34px; line-height: 1.5; }
+    #track { position: absolute; left: 100px; top: 1120px; width: 880px; height: 12px; background: #545454; }
+    #bar { width: 880px; height: 12px; background: #f5f5f5; transform-origin: left center; }
+    #square { position: absolute; left: 100px; top: 1200px; width: 64px; height: 64px; background: #f5f5f5; }
+    #footer { position: absolute; left: 100px; top: 1540px; font-size: 28px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <main data-hf-id="hf-u665" id="root" data-composition-id="engine-smoke" data-start="0" data-duration="4" data-width="1080" data-height="1920" data-fps="30">
+    <p data-hf-id="hf-306w" id="label" class="clip" data-start="0" data-duration="4" data-track-index="0">VIDEO ENGINE / V0.1</p>
+    <h1 data-hf-id="hf-lazt" id="title" class="clip" data-start="0" data-duration="4" data-track-index="1">Yerel render<br data-hf-id="hf-x5px">teknik testi</h1>
+    <p data-hf-id="hf-ba1h" id="detail" class="clip" data-start="0" data-duration="4" data-track-index="2">1080 × 1920 · 30 FPS<br data-hf-id="hf-rsrt">HTML + GSAP + HyperFrames</p>
+    <div data-hf-id="hf-84rb" id="track" aria-hidden="true"><div data-hf-id="hf-2to0" id="bar"></div></div>
+    <div data-hf-id="hf-x6u7" id="square" class="clip" data-start="0" data-duration="4" data-track-index="3" aria-hidden="true"></div>
+    <p data-hf-id="hf-1bdh" id="footer" class="clip" data-start="0" data-duration="4" data-track-index="4">4 saniyelik altyapı doğrulaması<br data-hf-id="hf-szow">Kanal stili değildir.</p>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo('#title', { y: 18 }, { y: 0, duration: 0.6, ease: 'power1.out' }, 0);
+    tl.fromTo('#bar', { scaleX: 0 }, { scaleX: 1, duration: 4, ease: 'none' }, 0);
+    tl.fromTo('#square', { x: 0 }, { x: 120, duration: 2, ease: 'power1.inOut' }, 1);
+    window.__timelines = window.__timelines || {};
+    window.__timelines['engine-smoke'] = tl;
+    tl.seek(0);
+  </script>
+</body>
+</html>

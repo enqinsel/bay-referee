@@ -1,0 +1,53 @@
+{
+  "schema": "bay-referee-brand-v1",
+  "brand": "BAY REFEREE",
+  "identity": "Approved user-derived referee avatar; face and head are the icon.",
+  "palette": {
+    "paper": "#F4F1DA",
+    "ink": "#102820",
+    "referee_charcoal": "#252729",
+    "field": "#144C37",
+    "field_dark": "#092C22",
+    "field_light": "#285E40",
+    "muted_lime": "#CCD968",
+    "line": "#B5D3AE"
+  },
+  "wordmark": {
+    "family": "Archivo",
+    "weight": 820,
+    "width_axis": 93,
+    "case": "uppercase",
+    "content": "BAY REFEREE",
+    "tracking_font_units": 5,
+    "outline_export": true,
+    "extra_slogan": false
+  },
+  "profile": {
+    "square_size": 1024,
+    "background": {
+      "gradient_top": "#092C22",
+      "gradient_bottom": "#285E40"
+    },
+    "circular_avatar_safe": true
+  },
+  "bug": {
+    "transparent_size": 1024,
+    "corner_sizes": [
+      48,
+      64,
+      96,
+      128
+    ],
+    "minimum_recommended_video_size_px": 64,
+    "default_video_size_px": 72,
+    "preferred_small_device_size_px": 96,
+    "no_enclosing_news_box": true
+  },
+  "exports": {
+    "head": "brand/bay-referee/brand-bug/head.png",
+    "profile": "brand/bay-referee/profile/profile-square.png",
+    "wordmark": "brand/bay-referee/wordmark/wordmark.png",
+    "wordmark_dark": "brand/bay-referee/wordmark/wordmark-dark.png"
+  },
+  "source_rule": "All derivatives retain pixels from the same generated master. No additional facial generation, vector tracing or silhouette substitution."
+}

@@ -1,0 +1,486 @@
+{
+  "schema_version": 1,
+  "episode": null,
+  "slug": "{{slug}}",
+  "status": "SCAFFOLD",
+  "created_at": "{{created_at}}",
+  "generated_at": null,
+  "manifest_path": "08_delivery/manifest.json",
+  "files": {
+    "topic": {
+      "path": "00_brief/topic.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "brief": {
+      "path": "00_brief/brief.md",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "episode_metadata": {
+      "path": "00_brief/episode.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "script_tr": {
+      "path": "01_script/script-tr.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "script_en": {
+      "path": "01_script/script-en.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "script_es": {
+      "path": "01_script/script-es.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "claims_sources": {
+      "path": "01_script/claims-sources.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "audio_tr_wav": {
+      "path": "02_audio/tr/narration-tr.wav",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "audio_tr_mp3": {
+      "path": "02_audio/tr/narration-tr.mp3",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "whisper_tr": {
+      "path": "02_audio/tr/whisper-tr.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "word_map_tr": {
+      "path": "02_audio/tr/word-map-tr.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "audio_en_wav": {
+      "path": "02_audio/en/narration-en.wav",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "audio_en_mp3": {
+      "path": "02_audio/en/narration-en.mp3",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "whisper_en": {
+      "path": "02_audio/en/whisper-en.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "word_map_en": {
+      "path": "02_audio/en/word-map-en.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "audio_es_wav": {
+      "path": "02_audio/es/narration-es.wav",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "audio_es_mp3": {
+      "path": "02_audio/es/narration-es.mp3",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "whisper_es": {
+      "path": "02_audio/es/whisper-es.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "word_map_es": {
+      "path": "02_audio/es/word-map-es.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "master_tr": {
+      "path": "03_video/{{slug}}-bay-referee-tr.mp4",
+      "kind": "video",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "captions_tr": {
+      "path": "04_captions/captions-tr.srt",
+      "kind": "captions",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "captions_en": {
+      "path": "04_captions/captions-en.srt",
+      "kind": "captions",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "captions_es": {
+      "path": "04_captions/captions-es.srt",
+      "kind": "captions",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_reels": {
+      "path": "05_cover/cover-reels-1080x1920.png",
+      "kind": "image",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_youtube": {
+      "path": "05_cover/cover-youtube-1280x720.png",
+      "kind": "image",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_title": {
+      "path": "05_cover/cover-title.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_brief": {
+      "path": "05_cover/cover-brief.md",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "instagram_caption": {
+      "path": "06_social/instagram-caption.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "hashtags": {
+      "path": "06_social/hashtags.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "youtube_title": {
+      "path": "06_social/youtube-title.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "youtube_description": {
+      "path": "06_social/youtube-description.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "youtube_tags": {
+      "path": "06_social/youtube-tags.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "sources": {
+      "path": "07_assets/sources.md",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "credits": {
+      "path": "07_assets/credits.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": false,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "asset_manifest": {
+      "path": "07_assets/asset-manifest.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "delivery_summary": {
+      "path": "08_delivery/delivery-summary.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "qa_summary": {
+      "path": "08_delivery/qa-summary.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    }
+  },
+  "voice": {
+    "status": "PLANNED",
+    "provider": "Higgsfield",
+    "engine": "ElevenLabs v4",
+    "identity": "Engin custom voice",
+    "voice_id": null,
+    "authority": "voice/decision.json"
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_seconds": null
+  },
+  "branding": {
+    "watermark": {
+      "status": "PLANNED",
+      "asset_path": null
+    },
+    "signoff": {
+      "status": "PLANNED",
+      "duration_seconds": null
+    }
+  },
+  "research": {
+    "status": "NOT_RUN",
+    "claims_count": 0,
+    "source_count": 0
+  },
+  "qa": {
+    "status": "NOT_RUN",
+    "checks": {
+      "research": "NOT_RUN",
+      "voice": "NOT_RUN",
+      "timing": "NOT_RUN",
+      "captions": "NOT_RUN",
+      "motion": "NOT_RUN",
+      "sfx": "NOT_RUN",
+      "cover": "NOT_RUN",
+      "dub": "NOT_RUN",
+      "decode": "NOT_RUN"
+    },
+    "evidence_paths": [],
+    "known_limitations": [
+      "Scaffold only; no content, media, timing or production QA has been generated."
+    ]
+  },
+  "audio_packages": {
+    "tr": {
+      "kind": "master_narration",
+      "status": "PLANNED",
+      "wav_path": "02_audio/tr/narration-tr.wav",
+      "mp3_path": "02_audio/tr/narration-tr.mp3"
+    },
+    "en": {
+      "kind": "narration_only",
+      "status": "PLANNED",
+      "wav_path": "02_audio/en/narration-en.wav",
+      "mp3_path": "02_audio/en/narration-en.mp3"
+    },
+    "es": {
+      "kind": "narration_only",
+      "status": "PLANNED",
+      "wav_path": "02_audio/es/narration-es.wav",
+      "mp3_path": "02_audio/es/narration-es.mp3"
+    }
+  },
+  "caption_timing": {
+    "tr": {
+      "status": "PLANNED",
+      "srt_path": "04_captions/captions-tr.srt",
+      "authority": {
+        "kind": "native_narration",
+        "label": null,
+        "audio_path": "02_audio/tr/narration-tr.wav",
+        "whisper_path": "02_audio/tr/whisper-tr.json",
+        "word_map_path": "02_audio/tr/word-map-tr.json",
+        "audio_sha256": null
+      }
+    },
+    "en": {
+      "status": "PLANNED",
+      "srt_path": "04_captions/captions-en.srt",
+      "authority": {
+        "kind": "native_narration",
+        "label": null,
+        "audio_path": "02_audio/en/narration-en.wav",
+        "whisper_path": "02_audio/en/whisper-en.json",
+        "word_map_path": "02_audio/en/word-map-en.json",
+        "audio_sha256": null
+      }
+    },
+    "es": {
+      "status": "PLANNED",
+      "srt_path": "04_captions/captions-es.srt",
+      "authority": {
+        "kind": "native_narration",
+        "label": null,
+        "audio_path": "02_audio/es/narration-es.wav",
+        "whisper_path": "02_audio/es/whisper-es.json",
+        "word_map_path": "02_audio/es/word-map-es.json",
+        "audio_sha256": null
+      }
+    }
+  }
+}

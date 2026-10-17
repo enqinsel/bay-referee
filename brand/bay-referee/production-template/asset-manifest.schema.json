@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bay-referee:asset-manifest:1",
+  "title": "BAY REFEREE episode asset provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "assets"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETE"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "role",
+          "source",
+          "rights",
+          "sha256",
+          "local_path"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "reference"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "approved_brand_asset",
+                  "generated",
+                  "licensed",
+                  "public_domain",
+                  "original",
+                  "other"
+                ]
+              },
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "rights": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "basis",
+              "attribution_required",
+              "attribution"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "VERIFIED",
+                  "REVIEW_NEEDED"
+                ]
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "attribution_required": {
+                "type": "boolean"
+              },
+              "attribution": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "attribution_required": {
+                      "const": true
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "attribution": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "local_path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "COMPLETE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "assets": {
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "rights": {
+                  "properties": {
+                    "status": {
+                      "const": "VERIFIED"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

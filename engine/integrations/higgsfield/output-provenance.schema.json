@@ -1,0 +1,284 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:video-engine:higgsfield:output-provenance:1",
+  "title": "Generated supporting-media ingest record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "asset_id",
+    "origin",
+    "classification",
+    "historical_evidence",
+    "provider",
+    "official_tool",
+    "model",
+    "job_id",
+    "terminal_status",
+    "decision_path",
+    "request_record_path",
+    "response_record_path",
+    "prompt_record_path",
+    "reference_inputs",
+    "credit_log_path",
+    "raw",
+    "qa",
+    "rights_record_path",
+    "timeline_usage"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "const": "ai_generated"
+    },
+    "classification": {
+      "const": "generated supporting media"
+    },
+    "historical_evidence": {
+      "const": false
+    },
+    "provider": {
+      "const": "Higgsfield"
+    },
+    "official_tool": {
+      "enum": [
+        "mcp__codex_apps__higgsfield_generate_image",
+        "mcp__codex_apps__higgsfield_generate_video"
+      ]
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "terminal_status": {
+      "const": "completed"
+    },
+    "decision_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "request_record_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "response_record_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prompt_record_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "credit_log_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rights_record_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reference_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id",
+          "sha256",
+          "rights_evidence_path",
+          "media_id",
+          "role"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "rights_evidence_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "media_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "raw": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_path",
+        "sha256",
+        "size_bytes",
+        "retrieved_at",
+        "result_url_evidence_path",
+        "width",
+        "height",
+        "duration_seconds"
+      ],
+      "properties": {
+        "local_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "result_url_evidence_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "duration_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decode",
+        "visual_review",
+        "factual_fit",
+        "alpha_edges",
+        "record_path"
+      ],
+      "properties": {
+        "decode": {
+          "enum": [
+            "PASS"
+          ]
+        },
+        "visual_review": {
+          "enum": [
+            "ACCEPTED",
+            "REVIEW_REQUIRED",
+            "REJECTED"
+          ]
+        },
+        "factual_fit": {
+          "enum": [
+            "SUPPORTING_ONLY_ACCEPTED",
+            "REVIEW_REQUIRED",
+            "REJECTED"
+          ]
+        },
+        "alpha_edges": {
+          "enum": [
+            "PASS",
+            "NOT_APPLICABLE",
+            "REVIEW_REQUIRED",
+            "REJECTED"
+          ]
+        },
+        "record_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "timeline_usage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "world_id",
+          "state_id",
+          "start_seconds",
+          "end_seconds",
+          "purpose"
+        ],
+        "properties": {
+          "world_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end_seconds": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "derived": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "local_path",
+          "sha256",
+          "treatment_manifest_path"
+        ],
+        "properties": {
+          "local_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "treatment_manifest_path": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

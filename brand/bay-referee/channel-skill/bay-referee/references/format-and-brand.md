@@ -1,0 +1,45 @@
+# Format and brand decisions
+
+## Visual world
+
+The approved system is the Football Comparison format refined through V2.1 and Production Kit V1.1. Preserve its green field, meaningful pitch lines/zones, role markers, passes, ball position and controlled tactile depth. Aim for a clean but populated football explanation studio. No corporate slides, unrelated icons, wall-to-wall documentary cards or cinema without information. RAT10N is a motion-production reference, not permission to copy its palette, type or layout.
+
+Brand exports and palette: `brand/bay-referee/tokens/brand.json`. Wordmark is Archivo 820 / width axis 93, uppercase, outlined SVG/PNG; face variants are derived from the same master bust. The grayscale fallback is not a new silhouette. Default small bug is 72 px, minimum recommended 64 px, with 96 px preferred when mobile space permits.
+
+Portable runtime entrypoint: `engine/bay-referee/production.mjs`; portable source asset inventory: `config/bay-referee-portable-assets.json`. Derive every new episode clock from its own final voice. Historical `scripts/eleven-v4-voice-common.mjs` and `scripts/production-kit-v11-performance.mjs` are locked VAR/SAOT implementations and may be absent from a clean checkout. Do not import them for a new episode or copy their fixed timeline.
+
+## Host
+
+Identity authority: approved `mascot/engin-avatar-v1/master/master-identity.png`, its accepted photo-derived facial characteristics and the Bay Referee generation/provenance record. Preserve wavy dark hair, full beard/moustache, gray aviator-style glasses, face proportions and warm skin. Do not serve the raw identity photo in review pages. Referee clothing is dark charcoal/black with restrained lime accents; whistle/pocket/card detail may support the role. No real crests or sponsors.
+
+Pose selection is semantic: comparison → compare-both; explanation → explain-forward; review → VAR rectangle/thinking; decision → point-to-decision; warning → yellow card; a clearly wrong/forbidden distinction → stop or red card. A factually neutral contrast does not require a red card. Whistle belongs to a meaningful officiating action or the final brand closure, not every transition. This VAR/SAOT narrative does not need yellow/red cards merely to demonstrate the pack.
+
+Required reusable groups: neutral, explain-forward, point-left/right, point-up-left/right, compare-both, thinking, confirm, surprise, hands-open, conclusion; whistle-ready/blow, advantage, stop/wait, yellow/red card raise, VAR rectangle, point-to-decision, calm-down, final decision. Native left/right drawings must remain distinct; mirroring is not a substitute for the approved pack. Keep head scale, outfit, ground anchor and placement consistent. Inspect full sheets and individual PNGs before use. Rigidity is a disclosed limitation; do not claim articulated animation for static pose changes.
+
+Event-driven holds stay stable until the next meaningful action. Use one opaque pose per frame. When helpful, place an existing-pose cut at the apex of whole-body preparation and let the body settle; choose travel and duration for the current pose, target and narration. Prior Production Kit and Motion Lab pixel/frame settings are historical implementations, not global limits or required recipes. Follow the conditional principles in [motion-grammar.md](motion-grammar.md). Prefer a clean cut to double hands, face morphing or body crossfades. Revalidate silhouette clearance for each used pose/transform, including its hands/props.
+
+## Text layers
+
+Captions, editorial emphasis and object labels have separate jobs. Captions cover all spoken Turkish; editorial emphasis chooses a small number of key semantic words. Role colors are not semantic emphasis. Use one treatment at a time from the existing highlight system: accent word, hard marker block or underline/stroke. Text enters, settles, then emphasizes the meaning-bearing word at its narrated anchor. No karaoke or every-word color cycling. When tactics are the focal action, keep text quiet. No new information or random micro-copy.
+
+Portable implementation: `engine/bay-referee/highlight-system.mjs` and the relevant episode highlight plan. The historical source is `formats/football-comparison-v2-1-highlight/system/highlight-system.mjs`; it is a read-only reference and may be absent from a clean checkout. The preserved VAR/SAOT master's exact plan and clock are historical evidence; new episodes derive anchors from their own final voice.
+
+## Turkish captions
+
+The optional local-archive approved VAR/SAOT plan is `formats/football-production-kit-v1/var-saot/captions/caption-plan.json`: 28 chunks, 91 canonical words, 2–5 words per chunk, at most two lines, exact half-open frame membership. Its immutable PNG overlays document the completed branding pass; do not rerun caption segmentation, ASR or the master to restyle them. New episodes need their own caption plan tied to their canonical script and final-take Whisper map, using the approved reusable style below.
+
+Reusable style authority: `formats/football-production-kit-v1/system/caption-style.json`. Archivo variable, 48 px, weight 820/width 65, cream `#F4F1DA`, 3 px `#072C21` stroke, no pill/box, natural canonical case. Left x=72, baselines 1404/1463, max width 336 at 1080×1920. The style file's broad historical 3–7-word default does not supersede the approved current 2–5-word plan. For new scripts use short complete phrases, allow a meaningful two-word unit, avoid isolated filler words, never shrink text to force a fit.
+
+Current alpha envelope is x70–408/y1360–1474; V1.1 exclusion test adds padding to x70–426/y1355–1477. These are measured test-bed bounds, not universal safe-area guarantees. Move/recompose a conflicting asset before altering locked captions. Future episodes require actual alpha/geometry QA.
+
+## Brand attribution and closure
+
+Mascot head is the core icon, with transparent brand bug, square profile and small-corner derivative. Use a clean editorial sans wordmark `BAY REFEREE`. Keep the watermark quiet in the lower-left safe area, above the platform bottom zone, clear of captions, host and tactical graphics. Actual placement, scale, opacity and collision behavior are recorded in the current `brand/bay-referee/tokens/` authority; read it when composing. Current master uses a 316×64 px lockup at x72/y1550 and opacity 0.42. Supported opacity is 0.30–0.55 and scale 0.85–1.15. Keep at least 48 px from captions; if a future caption overlaps, move the whole lockup to `captionTop − 48 − lockupHeight`, then recheck host/tactical clearance. The current safety bounds are right edge before x900 and bottom before y1660. The sign-off’s central identity replaces the corner lockup for its final 27 frames, so branding stays present without duplication. Do not choose a new watermark position scene by scene without a collision reason.
+
+No traditional intro. Preserve the last spoken payoff and its captions. Append the approved 0.7–1.0 second head/wordmark closure, with approximately three crisp whistle blows when they fit. A quiet closing movement is enough; no long logo screen or painfully sharp peak. The portable `config/bay-referee-portable-assets.json` sign-off sound tokens and source hash determine the final pattern. The original local mix manifests in `brand/bay-referee/outro/` are historical provenance; standalone source/cue audio is not shipped in Git. Future content can omit an inappropriate extra referee prop; the sign-off itself is the brand device.
+
+## Sound
+
+The approved Football SFX Core Kit remains the sound authority. Its portable source/license records and expected hashes are in `config/bay-referee-portable-assets.json`; obtain matching sound files in the private local cache through the asset bootstrap workflow. The original `audio/sfx/football-core-v1-1/` directory is an optional home-machine archive, not a required Git dependency. Do not distribute raw library audio or standalone whistle cues with repository source. Narration is primary; effects need an audible role, not a low fixed peak ceiling. Starting relationships to local narration RMS: physical −12 to −18 dB; UI −16 to −24 dB; whoosh −18 to −24 dB. These are listening starting points, not absolute legal thresholds. Measure active and surrounding voice windows and report any quiet-tail exception. Do not normalize all SFX identically.
+
+The completed VAR/SAOT base mix contains kick contact, monitor alert arrival and support-module dock; its branded master already includes the closure. Preserve that mix as reference, without rebuilding it or appending another closure. For new episodes select SFX against their actual motion events; offside line defaults to NONE. No constant crowd/music/whoosh, no automatic caption ticks, no fake device/authentication sounds. Existing gaps (grass roll, independent net rustle, post/crossbar) remain gaps unless a verified suitable source is added. Preserve raw files and source/license evidence; do not publish isolated licensed library raws in a review server.

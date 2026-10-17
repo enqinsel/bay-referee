@@ -1,0 +1,2656 @@
+{
+  "schema": "bay-referee-portable-repo-audit-v1",
+  "report_generated_at": "2026-10-17T11:40:21.800903+03:00",
+  "scope": "Read-only original workspace snapshot; aggregate report without the full per-file array.",
+  "snapshot": {
+    "root": "/Users/engin/Desktop/video-fabrikası/video-engine",
+    "scan_started": "2026-10-17T11:25:37.544413+03:00",
+    "scan_completed": "2026-10-17T11:25:41.704690+03:00",
+    "scan_is_atomic": false,
+    "followed_symlinks": false,
+    "audit_outputs_excluded": [
+      "docs/portable-repository-v1/git-history.json",
+      "docs/portable-repository-v1/git-history.md",
+      "docs/portable-repository-v1/inventory-notes.md",
+      "docs/portable-repository-v1/inventory.json"
+    ],
+    "size_semantics": {
+      "logical": "lstat.st_size; totals distinguish regular files from symlink link-string lengths.",
+      "allocated": "lstat.st_blocks*512; sum is filesystem-reported allocation, not unique physical APFS clone/dedup storage. Directory allocation is reported separately. Unique inode allocation avoids hardlink double-counting.",
+      "directory_totals": "Recursive descendant file-entry logical and allocated bytes; directories overlap and cannot be summed."
+    }
+  },
+  "provenance": {
+    "inventory_path": "docs/portable-repository-v1/inventory.json",
+    "inventory_sha256": "cf8c8c9b83170d369f7ed340a432711d72766a0319a0aab7e747a22953db25fe",
+    "git_history_path": "docs/portable-repository-v1/git-history.json",
+    "git_history_sha256": "da2028ff04761d82196fabcf21f23288d15cb53b8f96bf74ecbc54e77958bf83",
+    "immutable_original_snapshot": true,
+    "new_audit_outputs_are_not_original_snapshot_content": true,
+    "no_rescan_or_delete_or_move_or_network": true
+  },
+  "summary": {
+    "regular_file_count": 102480,
+    "symlink_count": 22,
+    "other_entry_count": 0,
+    "all_file_entries": 102502,
+    "directory_count_including_root": 11618,
+    "regular_file_logical_bytes": 15420277295,
+    "symlink_logical_bytes": 806,
+    "all_file_entry_logical_bytes": 15420278101,
+    "allocated_regular_file_bytes_sum": 15660253184,
+    "allocated_all_file_entry_bytes_sum": 15660253184,
+    "allocated_directory_bytes_sum": 0,
+    "allocated_all_entry_bytes_sum": 15660253184,
+    "allocated_unique_inode_bytes": 15650316288
+  },
+  "top_50_files": [
+    {
+      "path": "voice/chatterbox/model/t3_mtl23ls_v3.safetensors",
+      "bytes": 2143989928,
+      "allocated_bytes": 2143993856,
+      "type": "file",
+      "extension": ".safetensors",
+      "category": "model",
+      "tags": [
+        "model"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791660079549669070
+    },
+    {
+      "path": ".cache/whisper/medium.pt",
+      "bytes": 1528008539,
+      "allocated_bytes": 1528008704,
+      "type": "file",
+      "extension": ".pt",
+      "category": "cache",
+      "tags": [
+        "cache",
+        "model"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791313336618170255
+    },
+    {
+      "path": "voice/chatterbox/model/s3gen.pt",
+      "bytes": 1057165844,
+      "allocated_bytes": 1057169408,
+      "type": "file",
+      "extension": ".pt",
+      "category": "model",
+      "tags": [
+        "model"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659929957993555
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.dylib",
+      "bytes": 386016816,
+      "allocated_bytes": 386019328,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791311471519572898
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/torch/lib/libtorch_cpu.dylib",
+      "bytes": 186195520,
+      "allocated_bytes": 186195968,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659836546119222
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/llvmlite/binding/libllvmlite.dylib",
+      "bytes": 129871888,
+      "allocated_bytes": 129875968,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659831226664399
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/llvmlite/binding/libllvmlite.dylib",
+      "bytes": 129871888,
+      "allocated_bytes": 129875968,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791311468803084755
+    },
+    {
+      "path": ".cache/pip/http-v2/a/c/f/5/b/acf5bddc78a2e0c5577043231b851e4d937a01e9ac2fac18b954a4fb.body",
+      "bytes": 127307099,
+      "allocated_bytes": 127307776,
+      "type": "file",
+      "extension": ".body",
+      "category": "cache",
+      "tags": [
+        "cache"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791311004755514999
+    },
+    {
+      "path": "formats/football-production-kit-v1-1.zip",
+      "bytes": 93380476,
+      "allocated_bytes": 93380608,
+      "type": "file",
+      "extension": ".zip",
+      "category": "templates_and_formats",
+      "tags": [
+        "templates_and_formats"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791742546778622405
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/diagrams-code/PM17/source.mp4",
+      "bytes": 80915826,
+      "allocated_bytes": 80916480,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998823379296684
+    },
+    {
+      "path": "voice/chatterbox/cache/pip/http-v2/b/4/b/5/f/b4b5fe9076af612804377ed5da5eaa78b37b53b2c6796b1f2c348b74.body",
+      "bytes": 66532538,
+      "allocated_bytes": 66535424,
+      "type": "file",
+      "extension": ".body",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659637527567724
+    },
+    {
+      "path": "episodes/episode-michelin/assets/maps/france-road-map-de-dion-bouton-1900.jpg",
+      "bytes": 52429046,
+      "allocated_bytes": 52432896,
+      "type": "file",
+      "extension": ".jpg",
+      "category": "raster_image",
+      "tags": [
+        "raster_image"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791316888451544808
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/characters-photos/PM25/source.mp4",
+      "bytes": 51131704,
+      "allocated_bytes": 51134464,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998843687596988
+    },
+    {
+      "path": "episodes/episode-michelin/renders/previews/michelin-v004.mp4",
+      "bytes": 50274757,
+      "allocated_bytes": 50278400,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791487788814631502
+    },
+    {
+      "path": "episodes/episode-michelin/renders/previews/michelin-v004-picture.mp4",
+      "bytes": 48389452,
+      "allocated_bytes": 48390144,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791487788202422182
+    },
+    {
+      "path": "voice/chatterbox/cache/pip/http-v2/7/e/0/1/3/7e0139bb744da111cf1c16b080919d0387ca004d8dc37698d30513ec.body",
+      "bytes": 40534277,
+      "allocated_bytes": 40538112,
+      "type": "file",
+      "extension": ".body",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659817966353844
+    },
+    {
+      "path": ".cache/pip/http-v2/7/e/0/1/3/7e0139bb744da111cf1c16b080919d0387ca004d8dc37698d30513ec.body",
+      "bytes": 40534277,
+      "allocated_bytes": 40538112,
+      "type": "file",
+      "extension": ".body",
+      "category": "cache",
+      "tags": [
+        "cache"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791311380655144945
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/characters-photos/PM26/source.mp4",
+      "bytes": 37756817,
+      "allocated_bytes": 37756928,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998842344821319
+    },
+    {
+      "path": "voice/chatterbox/cache/pkuseg/spacy_ontonotes/weights.npz",
+      "bytes": 37508754,
+      "allocated_bytes": 37511168,
+      "type": "file",
+      "extension": ".npz",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791660127149064745
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/perth/perth_net/pretrained/implicit/perth_net_250000.pth.tar",
+      "bytes": 37429684,
+      "allocated_bytes": 37433344,
+      "type": "file",
+      "extension": ".tar",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659843782028354
+    },
+    {
+      "path": "node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg",
+      "bytes": 36766920,
+      "allocated_bytes": 36769792,
+      "type": "file",
+      "extension": "<none>",
+      "category": "node_modules",
+      "tags": [
+        "node_modules"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791309956092273451
+    },
+    {
+      "path": "voice/chatterbox/cache/pkuseg/spacy_ontonotes.zip",
+      "bytes": 34567143,
+      "allocated_bytes": 34570240,
+      "type": "file",
+      "extension": ".zip",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791660127022136545
+    },
+    {
+      "path": ".tools/asset-treatment-venv/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_pybind11_state.so",
+      "bytes": 33651824,
+      "allocated_bytes": 33652736,
+      "type": "file",
+      "extension": ".so",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791623414879706462
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/type-shapes/gizakdag-cf4ae6/source.mp4",
+      "bytes": 33361936,
+      "allocated_bytes": 33366016,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998787428275604
+    },
+    {
+      "path": "voice/reference/raw/benimses.wav",
+      "bytes": 32774666,
+      "allocated_bytes": 32776192,
+      "type": "file",
+      "extension": ".wav",
+      "category": "audio",
+      "tags": [
+        "audio"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791658480154176868
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/diagrams-code/PM22/source.mp4",
+      "bytes": 31643835,
+      "allocated_bytes": 31645696,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998818398359729
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/torch/lib/libtorch_python.dylib",
+      "bytes": 31036048,
+      "allocated_bytes": 31039488,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791311471545509951
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/characters-photos/PM28/source.mp4",
+      "bytes": 28369082,
+      "allocated_bytes": 28372992,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998843518228917
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/diagrams-code/PM20/source.mp4",
+      "bytes": 28357326,
+      "allocated_bytes": 28360704,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998816369490518
+    },
+    {
+      "path": ".tools/asset-treatment-venv/lib/python3.12/site-packages/onnxruntime/capi/libonnxruntime.1.23.2.dylib",
+      "bytes": 27623992,
+      "allocated_bytes": 27627520,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791623414851657086
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/torch/lib/libtorch_python.dylib",
+      "bytes": 26150760,
+      "allocated_bytes": 26152960,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659836567063859
+    },
+    {
+      "path": "voice/chatterbox/cache/pip/http-v2/5/c/0/4/4/5c044f1ae92f31e33741de691b9fa3394d9aff732674449ec0d32616.body",
+      "bytes": 24162460,
+      "allocated_bytes": 24166400,
+      "type": "file",
+      "extension": ".body",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659577073711167
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages/numpy/.dylibs/libopenblas64_.0.dylib",
+      "bytes": 23198400,
+      "allocated_bytes": 23199744,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "python_venv",
+      "tags": [
+        "python_venv"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659829569199592
+    },
+    {
+      "path": "voice/chatterbox/cache/pkuseg/spacy_ontonotes/features.msgpack",
+      "bytes": 22685181,
+      "allocated_bytes": 22687744,
+      "type": "file",
+      "extension": ".msgpack",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791660127086562337
+    },
+    {
+      "path": "qa/editorial-motion-kit-v1-side-by-side.mp4",
+      "bytes": 20617343,
+      "allocated_bytes": 20619264,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791630484742768156
+    },
+    {
+      "path": "voice/chatterbox/cache/pip/http-v2/2/5/d/7/9/25d7962d86addab78a7008f5c415b3570b444855c4f86fd60dba6948.body",
+      "bytes": 20344366,
+      "allocated_bytes": 20344832,
+      "type": "file",
+      "extension": ".body",
+      "category": "other",
+      "tags": [],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791659773232698213
+    },
+    {
+      "path": "episodes/episode-michelin/renders/experiments/editorial-motion-kit-v1-benchmark-v2.mp4",
+      "bytes": 19372117,
+      "allocated_bytes": 19374080,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791634449809521322
+    },
+    {
+      "path": "episodes/episode-bosman/qa/full-internal-v1/first-encode/bosman-full-internal-v1.mp4",
+      "bytes": 18995937,
+      "allocated_bytes": 18997248,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791646111551198191
+    },
+    {
+      "path": "episodes/episode-bosman/renders/drafts/bosman-full-internal-v1.mp4",
+      "bytes": 18957253,
+      "allocated_bytes": 18960384,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791646386419803102
+    },
+    {
+      "path": "episodes/episode-michelin/renders/experiments/editorial-motion-kit-v1-benchmark-v2-picture.mp4",
+      "bytes": 18790718,
+      "allocated_bytes": 18792448,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791634449661019519
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-darwin-arm64/lib/libvips-cpp.8.18.7.dylib",
+      "bytes": 18231688,
+      "allocated_bytes": 18235392,
+      "type": "file",
+      "extension": ".dylib",
+      "category": "node_modules",
+      "tags": [
+        "node_modules"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791309952971855147
+    },
+    {
+      "path": "node_modules/@ffprobe-installer/darwin-arm64/ffprobe",
+      "bytes": 18187448,
+      "allocated_bytes": 18190336,
+      "type": "file",
+      "extension": "<none>",
+      "category": "node_modules",
+      "tags": [
+        "node_modules"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791309956781871895
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/type-shapes/shneural-2abdfa/source.mp4",
+      "bytes": 17435601,
+      "allocated_bytes": 17436672,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998786243403525
+    },
+    {
+      "path": "episodes/episode-bosman/renders/drafts/bosman-full-internal-v1-picture.mp4",
+      "bytes": 16995752,
+      "allocated_bytes": 16998400,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "ignored_untracked",
+      "mtime_ns": 1791646385908827331
+    },
+    {
+      "path": "episodes/episode-michelin/qa/v4c-sequence-references/OS-003.mp4",
+      "bytes": 16966652,
+      "allocated_bytes": 16969728,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791483342101833745
+    },
+    {
+      "path": "qa/editorial-motion-kit-v1-old-window.mp4",
+      "bytes": 16146210,
+      "allocated_bytes": 16146432,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "video",
+      "tags": [
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791630479845862056
+    },
+    {
+      "path": "qa/benchmark-v2-typography/archivo-900-75-travel.svg",
+      "bytes": 16039190,
+      "allocated_bytes": 16039936,
+      "type": "file",
+      "extension": ".svg",
+      "category": "vector_image",
+      "tags": [
+        "vector_image"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791631540111189683
+    },
+    {
+      "path": "qa/benchmark-v2-typography/manrope-medium-travel.svg",
+      "bytes": 16038779,
+      "allocated_bytes": 16039936,
+      "type": "file",
+      "extension": ".svg",
+      "category": "vector_image",
+      "tags": [
+        "vector_image"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791631542307115785
+    },
+    {
+      "path": "qa/benchmark-v2-typography/bebas-neue-travel.svg",
+      "bytes": 16037956,
+      "allocated_bytes": 16039936,
+      "type": "file",
+      "extension": ".svg",
+      "category": "vector_image",
+      "tags": [
+        "vector_image"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791631541201389843
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence/type-shapes/lukasersil-0ed38e/source.mp4",
+      "bytes": 15972860,
+      "allocated_bytes": 15974400,
+      "type": "file",
+      "extension": ".mp4",
+      "category": "brand",
+      "tags": [
+        "brand",
+        "video"
+      ],
+      "git_state": "untracked_visible",
+      "mtime_ns": 1791998789768951432
+    }
+  ],
+  "top_30_directories": [
+    {
+      "path": "voice",
+      "regular_files": 46548,
+      "file_entries": 46552,
+      "logical_bytes": 4974915995,
+      "allocated_file_bytes": 5086851072
+    },
+    {
+      "path": "voice/chatterbox",
+      "regular_files": 45998,
+      "file_entries": 46002,
+      "logical_bytes": 4837923965,
+      "allocated_file_bytes": 4948803584
+    },
+    {
+      "path": "brand",
+      "regular_files": 8739,
+      "file_entries": 8739,
+      "logical_bytes": 3252188112,
+      "allocated_file_bytes": 3270107136
+    },
+    {
+      "path": "brand/bay-referee",
+      "regular_files": 8738,
+      "file_entries": 8738,
+      "logical_bytes": 3252179916,
+      "allocated_file_bytes": 3270094848
+    },
+    {
+      "path": "voice/chatterbox/model",
+      "regular_files": 7,
+      "file_entries": 8,
+      "logical_bytes": 3208854761,
+      "allocated_file_bytes": 3208876032
+    },
+    {
+      "path": "episodes",
+      "regular_files": 5597,
+      "file_entries": 5597,
+      "logical_bytes": 2903676887,
+      "allocated_file_bytes": 2915053568
+    },
+    {
+      "path": "episodes/episode-michelin",
+      "regular_files": 2039,
+      "file_entries": 2039,
+      "logical_bytes": 2293113571,
+      "allocated_file_bytes": 2297294848
+    },
+    {
+      "path": ".cache",
+      "regular_files": 607,
+      "file_entries": 607,
+      "logical_bytes": 1819853255,
+      "allocated_file_bytes": 1821433856
+    },
+    {
+      "path": ".cache/whisper",
+      "regular_files": 1,
+      "file_entries": 1,
+      "logical_bytes": 1528008539,
+      "allocated_file_bytes": 1528008704
+    },
+    {
+      "path": "voice/chatterbox/env",
+      "regular_files": 45151,
+      "file_entries": 45154,
+      "logical_bytes": 1249767052,
+      "allocated_file_bytes": 1358618624
+    },
+    {
+      "path": "voice/chatterbox/env/lib",
+      "regular_files": 45109,
+      "file_entries": 45109,
+      "logical_bytes": 1249729264,
+      "allocated_file_bytes": 1358430208
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12",
+      "regular_files": 45108,
+      "file_entries": 45108,
+      "logical_bytes": 1249723116,
+      "allocated_file_bytes": 1358422016
+    },
+    {
+      "path": "voice/chatterbox/env/lib/python3.12/site-packages",
+      "regular_files": 45107,
+      "file_entries": 45107,
+      "logical_bytes": 1249716968,
+      "allocated_file_bytes": 1358413824
+    },
+    {
+      "path": "episodes/episode-michelin/qa",
+      "regular_files": 1374,
+      "file_entries": 1374,
+      "logical_bytes": 1206584771,
+      "allocated_file_bytes": 1209384960
+    },
+    {
+      "path": ".venv",
+      "regular_files": 24802,
+      "file_entries": 24805,
+      "logical_bytes": 893727116,
+      "allocated_file_bytes": 952791040
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages",
+      "regular_files": 24782,
+      "file_entries": 24782,
+      "logical_bytes": 893695860,
+      "allocated_file_bytes": 952692736
+    },
+    {
+      "path": ".venv/lib/python3.12",
+      "regular_files": 24782,
+      "file_entries": 24782,
+      "logical_bytes": 893695860,
+      "allocated_file_bytes": 952692736
+    },
+    {
+      "path": ".venv/lib",
+      "regular_files": 24782,
+      "file_entries": 24782,
+      "logical_bytes": 893695860,
+      "allocated_file_bytes": 952692736
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1",
+      "regular_files": 1028,
+      "file_entries": 1028,
+      "logical_bytes": 862697890,
+      "allocated_file_bytes": 864866304
+    },
+    {
+      "path": "brand/bay-referee/motion-research",
+      "regular_files": 5391,
+      "file_entries": 5391,
+      "logical_bytes": 689519219,
+      "allocated_file_bytes": 700559360
+    },
+    {
+      "path": "brand/bay-referee/motion-research/evidence",
+      "regular_files": 5372,
+      "file_entries": 5372,
+      "logical_bytes": 688976367,
+      "allocated_file_bytes": 699985920
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1-2",
+      "regular_files": 829,
+      "file_entries": 829,
+      "logical_bytes": 663296092,
+      "allocated_file_bytes": 664850432
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1-1",
+      "regular_files": 800,
+      "file_entries": 800,
+      "logical_bytes": 647192421,
+      "allocated_file_bytes": 648847360
+    },
+    {
+      "path": "episodes/episode-bosman",
+      "regular_files": 3537,
+      "file_entries": 3537,
+      "logical_bytes": 610551411,
+      "allocated_file_bytes": 617709568
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/torch",
+      "regular_files": 14963,
+      "file_entries": 14963,
+      "logical_bytes": 574024207,
+      "allocated_file_bytes": 610816000
+    },
+    {
+      "path": "formats",
+      "regular_files": 2208,
+      "file_entries": 2208,
+      "logical_bytes": 568457175,
+      "allocated_file_bytes": 573079552
+    },
+    {
+      "path": "episodes/episode-bosman/qa",
+      "regular_files": 3298,
+      "file_entries": 3298,
+      "logical_bytes": 472833437,
+      "allocated_file_bytes": 479481856
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/torch/lib",
+      "regular_files": 12,
+      "file_entries": 12,
+      "logical_bytes": 419171836,
+      "allocated_file_bytes": 419209216
+    },
+    {
+      "path": "episodes/episode-bosman/qa/full-internal-v1",
+      "regular_files": 2665,
+      "file_entries": 2665,
+      "logical_bytes": 406886434,
+      "allocated_file_bytes": 412286976
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1/b-process",
+      "regular_files": 454,
+      "file_entries": 454,
+      "logical_bytes": 400580980,
+      "allocated_file_bytes": 401682432
+    }
+  ],
+  "top_level_directories": [
+    {
+      "path": "voice",
+      "regular_files": 46548,
+      "file_entries": 46552,
+      "logical_bytes": 4974915995,
+      "allocated_file_bytes": 5086851072
+    },
+    {
+      "path": "brand",
+      "regular_files": 8739,
+      "file_entries": 8739,
+      "logical_bytes": 3252188112,
+      "allocated_file_bytes": 3270107136
+    },
+    {
+      "path": "episodes",
+      "regular_files": 5597,
+      "file_entries": 5597,
+      "logical_bytes": 2903676887,
+      "allocated_file_bytes": 2915053568
+    },
+    {
+      "path": ".cache",
+      "regular_files": 607,
+      "file_entries": 607,
+      "logical_bytes": 1819853255,
+      "allocated_file_bytes": 1821433856
+    },
+    {
+      "path": ".venv",
+      "regular_files": 24802,
+      "file_entries": 24805,
+      "logical_bytes": 893727116,
+      "allocated_file_bytes": 952791040
+    },
+    {
+      "path": "formats",
+      "regular_files": 2208,
+      "file_entries": 2208,
+      "logical_bytes": 568457175,
+      "allocated_file_bytes": 573079552
+    },
+    {
+      "path": "qa",
+      "regular_files": 568,
+      "file_entries": 568,
+      "logical_bytes": 347076693,
+      "allocated_file_bytes": 348246016
+    },
+    {
+      "path": ".tools",
+      "regular_files": 6325,
+      "file_entries": 6330,
+      "logical_bytes": 194592802,
+      "allocated_file_bytes": 208814080
+    },
+    {
+      "path": "node_modules",
+      "regular_files": 5098,
+      "file_entries": 5108,
+      "logical_bytes": 192326468,
+      "allocated_file_bytes": 206217216
+    },
+    {
+      "path": "references",
+      "regular_files": 1204,
+      "file_entries": 1204,
+      "logical_bytes": 144816061,
+      "allocated_file_bytes": 147329024
+    },
+    {
+      "path": "audio",
+      "regular_files": 65,
+      "file_entries": 65,
+      "logical_bytes": 53253846,
+      "allocated_file_bytes": 53403648
+    },
+    {
+      "path": "mascot",
+      "regular_files": 57,
+      "file_entries": 57,
+      "logical_bytes": 42648529,
+      "allocated_file_bytes": 42803200
+    },
+    {
+      "path": "engine",
+      "regular_files": 238,
+      "file_entries": 238,
+      "logical_bytes": 20848079,
+      "allocated_file_bytes": 21315584
+    },
+    {
+      "path": "research",
+      "regular_files": 151,
+      "file_entries": 151,
+      "logical_bytes": 9717203,
+      "allocated_file_bytes": 10055680
+    },
+    {
+      "path": "scripts",
+      "regular_files": 184,
+      "file_entries": 184,
+      "logical_bytes": 1385812,
+      "allocated_file_bytes": 1728512
+    },
+    {
+      "path": "tests",
+      "regular_files": 40,
+      "file_entries": 40,
+      "logical_bytes": 242284,
+      "allocated_file_bytes": 339968
+    },
+    {
+      "path": "sfx-review",
+      "regular_files": 6,
+      "file_entries": 6,
+      "logical_bytes": 226506,
+      "allocated_file_bytes": 241664
+    },
+    {
+      "path": "renders",
+      "regular_files": 2,
+      "file_entries": 2,
+      "logical_bytes": 85413,
+      "allocated_file_bytes": 90112
+    },
+    {
+      "path": "docs",
+      "regular_files": 7,
+      "file_entries": 7,
+      "logical_bytes": 47177,
+      "allocated_file_bytes": 61440
+    },
+    {
+      "path": ".git",
+      "regular_files": 19,
+      "file_entries": 19,
+      "logical_bytes": 33407,
+      "allocated_file_bytes": 90112
+    },
+    {
+      "path": "schemas",
+      "regular_files": 5,
+      "file_entries": 5,
+      "logical_bytes": 21091,
+      "allocated_file_bytes": 32768
+    },
+    {
+      "path": "config",
+      "regular_files": 2,
+      "file_entries": 2,
+      "logical_bytes": 14088,
+      "allocated_file_bytes": 20480
+    }
+  ],
+  "exclusive_categories": [
+    {
+      "name": "frames_or_snapshots",
+      "files": 9906,
+      "logical_bytes": 3885274510,
+      "allocated_bytes": 3905245184
+    },
+    {
+      "name": "model",
+      "files": 94,
+      "logical_bytes": 3211992539,
+      "allocated_bytes": 3212218368
+    },
+    {
+      "name": "python_venv",
+      "files": 76285,
+      "logical_bytes": 2333505847,
+      "allocated_bytes": 2515640320
+    },
+    {
+      "name": "cache",
+      "files": 649,
+      "logical_bytes": 1820333803,
+      "allocated_bytes": 1822011392
+    },
+    {
+      "name": "brand",
+      "files": 5638,
+      "logical_bytes": 1021969574,
+      "allocated_bytes": 1033592832
+    },
+    {
+      "name": "raster_image",
+      "files": 692,
+      "logical_bytes": 946452509,
+      "allocated_bytes": 947810304
+    },
+    {
+      "name": "video",
+      "files": 91,
+      "logical_bytes": 492419678,
+      "allocated_bytes": 492605440
+    },
+    {
+      "name": "other",
+      "files": 1845,
+      "logical_bytes": 452702115,
+      "allocated_bytes": 456896512
+    },
+    {
+      "name": "templates_and_formats",
+      "files": 849,
+      "logical_bytes": 358092791,
+      "allocated_bytes": 359923712
+    },
+    {
+      "name": "old_motion_labs",
+      "files": 553,
+      "logical_bytes": 292237015,
+      "allocated_bytes": 293355520
+    },
+    {
+      "name": "audio",
+      "files": 64,
+      "logical_bytes": 230689019,
+      "allocated_bytes": 230834176
+    },
+    {
+      "name": "node_modules",
+      "files": 5108,
+      "logical_bytes": 192326468,
+      "allocated_bytes": 206217216
+    },
+    {
+      "name": "vector_image",
+      "files": 18,
+      "logical_bytes": 107069101,
+      "allocated_bytes": 107114496
+    },
+    {
+      "name": "sfx",
+      "files": 119,
+      "logical_bytes": 63890394,
+      "allocated_bytes": 64163840
+    },
+    {
+      "name": "source_code",
+      "files": 342,
+      "logical_bytes": 6760873,
+      "allocated_bytes": 7536640
+    },
+    {
+      "name": "document_pdf",
+      "files": 1,
+      "logical_bytes": 1555572,
+      "allocated_bytes": 1556480
+    },
+    {
+      "name": "git_metadata",
+      "files": 48,
+      "logical_bytes": 1534234,
+      "allocated_bytes": 1679360
+    },
+    {
+      "name": "scripts",
+      "files": 187,
+      "logical_bytes": 1363738,
+      "allocated_bytes": 1716224
+    },
+    {
+      "name": "skills",
+      "files": 13,
+      "logical_bytes": 108321,
+      "allocated_bytes": 135168
+    }
+  ],
+  "overlapping_tags": [
+    {
+      "name": "raster_image",
+      "files": 16439,
+      "logical_bytes": 5482607878,
+      "allocated_bytes": 5515829248
+    },
+    {
+      "name": "model",
+      "files": 4512,
+      "logical_bytes": 4826273119,
+      "allocated_bytes": 4836884480
+    },
+    {
+      "name": "frames_or_snapshots",
+      "files": 9913,
+      "logical_bytes": 3885296351,
+      "allocated_bytes": 3905286144
+    },
+    {
+      "name": "brand",
+      "files": 8739,
+      "logical_bytes": 3252188112,
+      "allocated_bytes": 3270107136
+    },
+    {
+      "name": "cache",
+      "files": 25284,
+      "logical_bytes": 2336819732,
+      "allocated_bytes": 2394075136
+    },
+    {
+      "name": "python_venv",
+      "files": 76285,
+      "logical_bytes": 2333505847,
+      "allocated_bytes": 2515640320
+    },
+    {
+      "name": "old_motion_labs",
+      "files": 2657,
+      "logical_bytes": 2173186403,
+      "allocated_bytes": 2178564096
+    },
+    {
+      "name": "video",
+      "files": 169,
+      "logical_bytes": 1076294578,
+      "allocated_bytes": 1076649984
+    },
+    {
+      "name": "templates_and_formats",
+      "files": 4525,
+      "logical_bytes": 612300468,
+      "allocated_bytes": 623067136
+    },
+    {
+      "name": "audio",
+      "files": 350,
+      "logical_bytes": 586749664,
+      "allocated_bytes": 587509760
+    },
+    {
+      "name": "source_code",
+      "files": 30139,
+      "logical_bytes": 506300017,
+      "allocated_bytes": 574967808
+    },
+    {
+      "name": "node_modules",
+      "files": 5108,
+      "logical_bytes": 192326468,
+      "allocated_bytes": 206217216
+    },
+    {
+      "name": "vector_image",
+      "files": 97,
+      "logical_bytes": 107660739,
+      "allocated_bytes": 107880448
+    },
+    {
+      "name": "sfx",
+      "files": 140,
+      "logical_bytes": 65195785,
+      "allocated_bytes": 65511424
+    },
+    {
+      "name": "document_pdf",
+      "files": 4,
+      "logical_bytes": 17846846,
+      "allocated_bytes": 17854464
+    },
+    {
+      "name": "skills",
+      "files": 250,
+      "logical_bytes": 2909128,
+      "allocated_bytes": 3444736
+    },
+    {
+      "name": "scripts",
+      "files": 354,
+      "logical_bytes": 2523442,
+      "allocated_bytes": 3235840
+    },
+    {
+      "name": "git_metadata",
+      "files": 48,
+      "logical_bytes": 1534234,
+      "allocated_bytes": 1679360
+    },
+    {
+      "name": "videolar",
+      "files": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    }
+  ],
+  "extensions": [
+    {
+      "name": ".png",
+      "files": 5532,
+      "logical_bytes": 3794487080,
+      "allocated_bytes": 3805716480
+    },
+    {
+      "name": ".pt",
+      "files": 3,
+      "logical_bytes": 2590873009,
+      "allocated_bytes": 2590879744
+    },
+    {
+      "name": ".safetensors",
+      "files": 1,
+      "logical_bytes": 2143989928,
+      "allocated_bytes": 2143993856
+    },
+    {
+      "name": ".jpg",
+      "files": 10903,
+      "logical_bytes": 1682966990,
+      "allocated_bytes": 1704951808
+    },
+    {
+      "name": ".mp4",
+      "files": 169,
+      "logical_bytes": 1076294578,
+      "allocated_bytes": 1076649984
+    },
+    {
+      "name": ".dylib",
+      "files": 46,
+      "logical_bytes": 984454704,
+      "allocated_bytes": 984559616
+    },
+    {
+      "name": ".wav",
+      "files": 277,
+      "logical_bytes": 564224038,
+      "allocated_bytes": 564834304
+    },
+    {
+      "name": ".pyc",
+      "files": 24623,
+      "logical_bytes": 514294515,
+      "allocated_bytes": 569851904
+    },
+    {
+      "name": ".body",
+      "files": 401,
+      "logical_bytes": 464471041,
+      "allocated_bytes": 465281024
+    },
+    {
+      "name": ".py",
+      "files": 24779,
+      "logical_bytes": 403974451,
+      "allocated_bytes": 458575872
+    },
+    {
+      "name": "<none>",
+      "files": 2686,
+      "logical_bytes": 194337715,
+      "allocated_bytes": 201867264
+    },
+    {
+      "name": ".so",
+      "files": 359,
+      "logical_bytes": 179388694,
+      "allocated_bytes": 180076544
+    },
+    {
+      "name": ".zip",
+      "files": 5,
+      "logical_bytes": 131790724,
+      "allocated_bytes": 131805184
+    },
+    {
+      "name": ".svg",
+      "files": 97,
+      "logical_bytes": 107660739,
+      "allocated_bytes": 107880448
+    },
+    {
+      "name": ".json",
+      "files": 1542,
+      "logical_bytes": 96062711,
+      "allocated_bytes": 99704832
+    },
+    {
+      "name": ".js",
+      "files": 2976,
+      "logical_bytes": 72235523,
+      "allocated_bytes": 79949824
+    },
+    {
+      "name": ".h",
+      "files": 19239,
+      "logical_bytes": 69603787,
+      "allocated_bytes": 120705024
+    },
+    {
+      "name": ".npz",
+      "files": 29,
+      "logical_bytes": 41109554,
+      "allocated_bytes": 41181184
+    },
+    {
+      "name": ".tar",
+      "files": 1,
+      "logical_bytes": 37429684,
+      "allocated_bytes": 37433344
+    },
+    {
+      "name": ".msgpack",
+      "files": 2,
+      "logical_bytes": 22690406,
+      "allocated_bytes": 22695936
+    },
+    {
+      "name": ".map",
+      "files": 567,
+      "logical_bytes": 19841018,
+      "allocated_bytes": 21393408
+    },
+    {
+      "name": ".pdf",
+      "files": 4,
+      "logical_bytes": 17846846,
+      "allocated_bytes": 17854464
+    },
+    {
+      "name": ".ttf",
+      "files": 71,
+      "logical_bytes": 16249720,
+      "allocated_bytes": 16351232
+    },
+    {
+      "name": ".pyi",
+      "files": 984,
+      "logical_bytes": 12471450,
+      "allocated_bytes": 15036416
+    },
+    {
+      "name": ".ts",
+      "files": 1201,
+      "logical_bytes": 10426243,
+      "allocated_bytes": 13676544
+    },
+    {
+      "name": ".pb",
+      "files": 329,
+      "logical_bytes": 9871608,
+      "allocated_bytes": 11026432
+    },
+    {
+      "name": ".mjs",
+      "files": 556,
+      "logical_bytes": 9837823,
+      "allocated_bytes": 11239424
+    },
+    {
+      "name": ".db",
+      "files": 9,
+      "logical_bytes": 9791437,
+      "allocated_bytes": 9801728
+    },
+    {
+      "name": ".wasm",
+      "files": 1,
+      "logical_bytes": 9150351,
+      "allocated_bytes": 9150464
+    },
+    {
+      "name": ".mp3",
+      "files": 34,
+      "logical_bytes": 8600829,
+      "allocated_bytes": 8667136
+    },
+    {
+      "name": ".0",
+      "files": 3,
+      "logical_bytes": 8167383,
+      "allocated_bytes": 8175616
+    },
+    {
+      "name": ".geojson",
+      "files": 3,
+      "logical_bytes": 8105037,
+      "allocated_bytes": 8110080
+    },
+    {
+      "name": ".m4a",
+      "files": 7,
+      "logical_bytes": 7849919,
+      "allocated_bytes": 7864320
+    },
+    {
+      "name": ".whl",
+      "files": 5,
+      "logical_bytes": 6232774,
+      "allocated_bytes": 6242304
+    },
+    {
+      "name": ".aiff",
+      "files": 32,
+      "logical_bytes": 6074878,
+      "allocated_bytes": 6144000
+    },
+    {
+      "name": ".br",
+      "files": 712,
+      "logical_bytes": 5840353,
+      "allocated_bytes": 7954432
+    },
+    {
+      "name": ".cpp",
+      "files": 89,
+      "logical_bytes": 5748843,
+      "allocated_bytes": 5988352
+    },
+    {
+      "name": ".onnx",
+      "files": 153,
+      "logical_bytes": 5215272,
+      "allocated_bytes": 5775360
+    },
+    {
+      "name": ".webp",
+      "files": 1,
+      "logical_bytes": 4709972,
+      "allocated_bytes": 4710400
+    },
+    {
+      "name": ".pkl",
+      "files": 15,
+      "logical_bytes": 4537496,
+      "allocated_bytes": 4583424
+    },
+    {
+      "name": ".md",
+      "files": 515,
+      "logical_bytes": 4397318,
+      "allocated_bytes": 5545984
+    },
+    {
+      "name": ".html",
+      "files": 106,
+      "logical_bytes": 4389714,
+      "allocated_bytes": 4616192
+    },
+    {
+      "name": ".csv",
+      "files": 98,
+      "logical_bytes": 4260452,
+      "allocated_bytes": 4370432
+    },
+    {
+      "name": ".s16",
+      "files": 2,
+      "logical_bytes": 3805184,
+      "allocated_bytes": 3809280
+    },
+    {
+      "name": ".txt",
+      "files": 453,
+      "logical_bytes": 3704182,
+      "allocated_bytes": 5115904
+    },
+    {
+      "name": ".exe",
+      "files": 40,
+      "logical_bytes": 3209216,
+      "allocated_bytes": 3276800
+    },
+    {
+      "name": ".cjs",
+      "files": 370,
+      "logical_bytes": 2865772,
+      "allocated_bytes": 3923968
+    },
+    {
+      "name": ".cc",
+      "files": 67,
+      "logical_bytes": 2605977,
+      "allocated_bytes": 2740224
+    },
+    {
+      "name": ".css",
+      "files": 144,
+      "logical_bytes": 2554831,
+      "allocated_bytes": 2953216
+    },
+    {
+      "name": ".nbc",
+      "files": 40,
+      "logical_bytes": 2545452,
+      "allocated_bytes": 2621440
+    },
+    {
+      "name": ".pyx",
+      "files": 77,
+      "logical_bytes": 2192431,
+      "allocated_bytes": 2351104
+    },
+    {
+      "name": ".log",
+      "files": 194,
+      "logical_bytes": 1857704,
+      "allocated_bytes": 2310144
+    },
+    {
+      "name": ".dat",
+      "files": 26,
+      "logical_bytes": 1782087,
+      "allocated_bytes": 1859584
+    },
+    {
+      "name": ".tiktoken",
+      "files": 2,
+      "logical_bytes": 1652284,
+      "allocated_bytes": 1654784
+    },
+    {
+      "name": ".yaml",
+      "files": 18,
+      "logical_bytes": 1645971,
+      "allocated_bytes": 1695744
+    },
+    {
+      "name": ".pack",
+      "files": 1,
+      "logical_bytes": 1461433,
+      "allocated_bytes": 1462272
+    },
+    {
+      "name": ".pem",
+      "files": 5,
+      "logical_bytes": 1378713,
+      "allocated_bytes": 1392640
+    },
+    {
+      "name": ".cuh",
+      "files": 112,
+      "logical_bytes": 1344533,
+      "allocated_bytes": 1622016
+    },
+    {
+      "name": ".woff2",
+      "files": 50,
+      "logical_bytes": 1201292,
+      "allocated_bytes": 1314816
+    },
+    {
+      "name": ".xsl",
+      "files": 9,
+      "logical_bytes": 1098543,
+      "allocated_bytes": 1105920
+    },
+    {
+      "name": ".hpp",
+      "files": 125,
+      "logical_bytes": 1094803,
+      "allocated_bytes": 1376256
+    },
+    {
+      "name": ".c",
+      "files": 55,
+      "logical_bytes": 1046847,
+      "allocated_bytes": 1171456
+    },
+    {
+      "name": ".stl",
+      "files": 1,
+      "logical_bytes": 675084,
+      "allocated_bytes": 675840
+    },
+    {
+      "name": ".pdl",
+      "files": 54,
+      "logical_bytes": 616106,
+      "allocated_bytes": 729088
+    },
+    {
+      "name": ".woff",
+      "files": 40,
+      "logical_bytes": 606232,
+      "allocated_bytes": 688128
+    },
+    {
+      "name": ".pxd",
+      "files": 58,
+      "logical_bytes": 554367,
+      "allocated_bytes": 720896
+    },
+    {
+      "name": ".cmake",
+      "files": 61,
+      "logical_bytes": 537915,
+      "allocated_bytes": 667648
+    },
+    {
+      "name": ".gz",
+      "files": 109,
+      "logical_bytes": 518224,
+      "allocated_bytes": 860160
+    },
+    {
+      "name": ".tp",
+      "files": 24,
+      "logical_bytes": 466106,
+      "allocated_bytes": 503808
+    },
+    {
+      "name": ".npy",
+      "files": 40,
+      "logical_bytes": 461082,
+      "allocated_bytes": 602112
+    },
+    {
+      "name": ".bz2",
+      "files": 14,
+      "logical_bytes": 393055,
+      "allocated_bytes": 425984
+    },
+    {
+      "name": ".cts",
+      "files": 97,
+      "logical_bytes": 383253,
+      "allocated_bytes": 700416
+    },
+    {
+      "name": ".jpeg",
+      "files": 1,
+      "logical_bytes": 349746,
+      "allocated_bytes": 352256
+    },
+    {
+      "name": ".framemd5",
+      "files": 2,
+      "logical_bytes": 348914,
+      "allocated_bytes": 352256
+    },
+    {
+      "name": ".node",
+      "files": 1,
+      "logical_bytes": 280256,
+      "allocated_bytes": 282624
+    },
+    {
+      "name": ".obj",
+      "files": 2,
+      "logical_bytes": 270919,
+      "allocated_bytes": 274432
+    },
+    {
+      "name": ".a",
+      "files": 6,
+      "logical_bytes": 268072,
+      "allocated_bytes": 282624
+    },
+    {
+      "name": ".gltf",
+      "files": 1,
+      "logical_bytes": 240667,
+      "allocated_bytes": 241664
+    },
+    {
+      "name": ".sav",
+      "files": 47,
+      "logical_bytes": 211903,
+      "allocated_bytes": 294912
+    },
+    {
+      "name": ".arff",
+      "files": 16,
+      "logical_bytes": 210323,
+      "allocated_bytes": 266240
+    },
+    {
+      "name": ".proto",
+      "files": 8,
+      "logical_bytes": 159626,
+      "allocated_bytes": 176128
+    },
+    {
+      "name": ".jinja",
+      "files": 20,
+      "logical_bytes": 148066,
+      "allocated_bytes": 188416
+    },
+    {
+      "name": ".mts",
+      "files": 19,
+      "logical_bytes": 147768,
+      "allocated_bytes": 212992
+    },
+    {
+      "name": ".glb",
+      "files": 1,
+      "logical_bytes": 120484,
+      "allocated_bytes": 122880
+    },
+    {
+      "name": ".zi",
+      "files": 1,
+      "logical_bytes": 104919,
+      "allocated_bytes": 106496
+    },
+    {
+      "name": ".gif",
+      "files": 2,
+      "logical_bytes": 94090,
+      "allocated_bytes": 98304
+    },
+    {
+      "name": ".f90",
+      "files": 171,
+      "logical_bytes": 82082,
+      "allocated_bytes": 700416
+    },
+    {
+      "name": ".rst",
+      "files": 18,
+      "logical_bytes": 74118,
+      "allocated_bytes": 114688
+    },
+    {
+      "name": ".mat",
+      "files": 110,
+      "logical_bytes": 70153,
+      "allocated_bytes": 475136
+    },
+    {
+      "name": ".sample",
+      "files": 28,
+      "logical_bytes": 53576,
+      "allocated_bytes": 131072
+    },
+    {
+      "name": ".third-party",
+      "files": 2,
+      "logical_bytes": 52644,
+      "allocated_bytes": 57344
+    },
+    {
+      "name": ".apache",
+      "files": 5,
+      "logical_bytes": 50870,
+      "allocated_bytes": 61440
+    },
+    {
+      "name": ".tab",
+      "files": 4,
+      "logical_bytes": 49667,
+      "allocated_bytes": 61440
+    },
+    {
+      "name": ".build",
+      "files": 31,
+      "logical_bytes": 48544,
+      "allocated_bytes": 139264
+    },
+    {
+      "name": ".lark",
+      "files": 6,
+      "logical_bytes": 38897,
+      "allocated_bytes": 57344
+    },
+    {
+      "name": ".tsbuildinfo",
+      "files": 1,
+      "logical_bytes": 36445,
+      "allocated_bytes": 36864
+    },
+    {
+      "name": ".srt",
+      "files": 41,
+      "logical_bytes": 35912,
+      "allocated_bytes": 167936
+    },
+    {
+      "name": ".1",
+      "files": 5,
+      "logical_bytes": 35053,
+      "allocated_bytes": 40960
+    },
+    {
+      "name": ".ps1",
+      "files": 4,
+      "logical_bytes": 33723,
+      "allocated_bytes": 45056
+    },
+    {
+      "name": ".f",
+      "files": 69,
+      "logical_bytes": 32188,
+      "allocated_bytes": 282624
+    },
+    {
+      "name": ".toml",
+      "files": 4,
+      "logical_bytes": 31179,
+      "allocated_bytes": 40960
+    },
+    {
+      "name": ".g4",
+      "files": 6,
+      "logical_bytes": 30048,
+      "allocated_bytes": 49152
+    },
+    {
+      "name": ".lgpl",
+      "files": 1,
+      "logical_bytes": 26432,
+      "allocated_bytes": 28672
+    },
+    {
+      "name": ".fits",
+      "files": 3,
+      "logical_bytes": 25920,
+      "allocated_bytes": 36864
+    },
+    {
+      "name": ".thirdparty",
+      "files": 2,
+      "logical_bytes": 25122,
+      "allocated_bytes": 32768
+    },
+    {
+      "name": ".al",
+      "files": 48,
+      "logical_bytes": 22770,
+      "allocated_bytes": 196608
+    },
+    {
+      "name": ".eigen",
+      "files": 1,
+      "logical_bytes": 16726,
+      "allocated_bytes": 20480
+    },
+    {
+      "name": ".nbi",
+      "files": 12,
+      "logical_bytes": 15601,
+      "allocated_bytes": 49152
+    },
+    {
+      "name": ".thrift",
+      "files": 2,
+      "logical_bytes": 13450,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".vtt",
+      "files": 19,
+      "logical_bytes": 12826,
+      "allocated_bytes": 77824
+    },
+    {
+      "name": ".r",
+      "files": 1,
+      "logical_bytes": 12037,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".gyp",
+      "files": 1,
+      "logical_bytes": 10818,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".fish",
+      "files": 4,
+      "logical_bytes": 10789,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".js~",
+      "files": 5,
+      "logical_bytes": 9299,
+      "allocated_bytes": 24576
+    },
+    {
+      "name": ".tsx",
+      "files": 4,
+      "logical_bytes": 9160,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".tpl",
+      "files": 8,
+      "logical_bytes": 8852,
+      "allocated_bytes": 32768
+    },
+    {
+      "name": ".trie",
+      "files": 3,
+      "logical_bytes": 8091,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".cu",
+      "files": 14,
+      "logical_bytes": 6938,
+      "allocated_bytes": 57344
+    },
+    {
+      "name": ".bsd",
+      "files": 5,
+      "logical_bytes": 6720,
+      "allocated_bytes": 20480
+    },
+    {
+      "name": ".pyf",
+      "files": 20,
+      "logical_bytes": 6715,
+      "allocated_bytes": 81920
+    },
+    {
+      "name": ".sh",
+      "files": 3,
+      "logical_bytes": 6500,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".csh",
+      "files": 5,
+      "logical_bytes": 6482,
+      "allocated_bytes": 20480
+    },
+    {
+      "name": ".cfg",
+      "files": 7,
+      "logical_bytes": 6474,
+      "allocated_bytes": 32768
+    },
+    {
+      "name": ".b99",
+      "files": 4,
+      "logical_bytes": 6088,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".template",
+      "files": 3,
+      "logical_bytes": 4970,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".pxi",
+      "files": 2,
+      "logical_bytes": 4911,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".ts~",
+      "files": 3,
+      "logical_bytes": 4630,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".ani",
+      "files": 1,
+      "logical_bytes": 4362,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".gzip",
+      "files": 5,
+      "logical_bytes": 4093,
+      "allocated_bytes": 20480
+    },
+    {
+      "name": ".xsh",
+      "files": 1,
+      "logical_bytes": 3838,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".xz",
+      "files": 6,
+      "logical_bytes": 3836,
+      "allocated_bytes": 24576
+    },
+    {
+      "name": ".a99",
+      "files": 4,
+      "logical_bytes": 3504,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".lzma",
+      "files": 5,
+      "logical_bytes": 3467,
+      "allocated_bytes": 20480
+    },
+    {
+      "name": ".nu",
+      "files": 1,
+      "logical_bytes": 3462,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".nc",
+      "files": 3,
+      "logical_bytes": 3432,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".idx",
+      "files": 1,
+      "logical_bytes": 3368,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".render",
+      "files": 1,
+      "logical_bytes": 3361,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".bat",
+      "files": 3,
+      "logical_bytes": 3260,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".ini",
+      "files": 9,
+      "logical_bytes": 2553,
+      "allocated_bytes": 36864
+    },
+    {
+      "name": ".machine",
+      "files": 2,
+      "logical_bytes": 2427,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".json~",
+      "files": 2,
+      "logical_bytes": 1836,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".ptx",
+      "files": 2,
+      "logical_bytes": 1792,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".typed",
+      "files": 140,
+      "logical_bytes": 1457,
+      "allocated_bytes": 77824
+    },
+    {
+      "name": ".xml",
+      "files": 2,
+      "logical_bytes": 1256,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".in",
+      "files": 4,
+      "logical_bytes": 1244,
+      "allocated_bytes": 16384
+    },
+    {
+      "name": ".sh~",
+      "files": 1,
+      "logical_bytes": 1145,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".markdown-it",
+      "files": 1,
+      "logical_bytes": 1073,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".renv",
+      "files": 1,
+      "logical_bytes": 1052,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".12",
+      "files": 6,
+      "logical_bytes": 964,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".tmpl",
+      "files": 5,
+      "logical_bytes": 961,
+      "allocated_bytes": 20480
+    },
+    {
+      "name": ".bnf",
+      "files": 1,
+      "logical_bytes": 702,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".yml",
+      "files": 2,
+      "logical_bytes": 684,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".mod",
+      "files": 2,
+      "logical_bytes": 455,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".pth",
+      "files": 3,
+      "logical_bytes": 449,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".ld",
+      "files": 1,
+      "logical_bytes": 430,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".iml",
+      "files": 1,
+      "logical_bytes": 411,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".pc",
+      "files": 2,
+      "logical_bytes": 382,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".rev",
+      "files": 1,
+      "logical_bytes": 380,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".lock",
+      "files": 1,
+      "logical_bytes": 351,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".bzl",
+      "files": 1,
+      "logical_bytes": 348,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".f95",
+      "files": 2,
+      "logical_bytes": 278,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".rockspec",
+      "files": 1,
+      "logical_bytes": 212,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".gdb",
+      "files": 2,
+      "logical_bytes": 202,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".gemspec",
+      "files": 1,
+      "logical_bytes": 195,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".z",
+      "files": 3,
+      "logical_bytes": 123,
+      "allocated_bytes": 12288
+    },
+    {
+      "name": ".pl",
+      "files": 1,
+      "logical_bytes": 104,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".bazel",
+      "files": 1,
+      "logical_bytes": 104,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".inc",
+      "files": 2,
+      "logical_bytes": 32,
+      "allocated_bytes": 8192
+    },
+    {
+      "name": ".go",
+      "files": 1,
+      "logical_bytes": 29,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".opts",
+      "files": 1,
+      "logical_bytes": 15,
+      "allocated_bytes": 4096
+    },
+    {
+      "name": ".rs",
+      "files": 1,
+      "logical_bytes": 13,
+      "allocated_bytes": 4096
+    }
+  ],
+  "requested_media_extensions": [
+    {
+      "extension": ".mp4",
+      "file_entries": 169,
+      "regular_files": 169,
+      "symlinks": 0,
+      "logical_bytes": 1076294578,
+      "allocated_bytes": 1076649984
+    },
+    {
+      "extension": ".wav",
+      "file_entries": 277,
+      "regular_files": 277,
+      "symlinks": 0,
+      "logical_bytes": 564224038,
+      "allocated_bytes": 564834304
+    },
+    {
+      "extension": ".mp3",
+      "file_entries": 34,
+      "regular_files": 34,
+      "symlinks": 0,
+      "logical_bytes": 8600829,
+      "allocated_bytes": 8667136
+    },
+    {
+      "extension": ".m4a",
+      "file_entries": 7,
+      "regular_files": 7,
+      "symlinks": 0,
+      "logical_bytes": 7849919,
+      "allocated_bytes": 7864320
+    },
+    {
+      "extension": ".mov",
+      "file_entries": 0,
+      "regular_files": 0,
+      "symlinks": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "extension": ".webm",
+      "file_entries": 0,
+      "regular_files": 0,
+      "symlinks": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "extension": ".png",
+      "file_entries": 5532,
+      "regular_files": 5532,
+      "symlinks": 0,
+      "logical_bytes": 3794487080,
+      "allocated_bytes": 3805716480
+    },
+    {
+      "extension": ".jpg",
+      "file_entries": 10903,
+      "regular_files": 10903,
+      "symlinks": 0,
+      "logical_bytes": 1682966990,
+      "allocated_bytes": 1704951808
+    },
+    {
+      "extension": ".svg",
+      "file_entries": 97,
+      "regular_files": 97,
+      "symlinks": 0,
+      "logical_bytes": 107660739,
+      "allocated_bytes": 107880448
+    },
+    {
+      "extension": ".ttf",
+      "file_entries": 71,
+      "regular_files": 71,
+      "symlinks": 0,
+      "logical_bytes": 16249720,
+      "allocated_bytes": 16351232
+    }
+  ],
+  "requested_directory_views": [
+    {
+      "path": "node_modules",
+      "file_entries": 5108,
+      "regular_files": 5098,
+      "symlinks": 10,
+      "logical_bytes": 192326468,
+      "allocated_bytes": 206217216
+    },
+    {
+      "path": ".venv",
+      "file_entries": 24805,
+      "regular_files": 24802,
+      "symlinks": 3,
+      "logical_bytes": 893727116,
+      "allocated_bytes": 952791040
+    },
+    {
+      "path": "voice/chatterbox/env",
+      "file_entries": 45154,
+      "regular_files": 45151,
+      "symlinks": 3,
+      "logical_bytes": 1249767052,
+      "allocated_bytes": 1358618624
+    },
+    {
+      "path": ".tools/asset-treatment-venv",
+      "file_entries": 6326,
+      "regular_files": 6323,
+      "symlinks": 3,
+      "logical_bytes": 190011679,
+      "allocated_bytes": 204230656
+    },
+    {
+      "path": ".cache",
+      "file_entries": 607,
+      "regular_files": 607,
+      "symlinks": 0,
+      "logical_bytes": 1819853255,
+      "allocated_bytes": 1821433856
+    },
+    {
+      "path": "voice/chatterbox/cache",
+      "file_entries": 669,
+      "regular_files": 669,
+      "symlinks": 0,
+      "logical_bytes": 367175479,
+      "allocated_bytes": 368754688
+    },
+    {
+      "path": "voice/chatterbox/model",
+      "file_entries": 8,
+      "regular_files": 7,
+      "symlinks": 1,
+      "logical_bytes": 3208854761,
+      "allocated_bytes": 3208876032
+    },
+    {
+      "path": ".cache/whisper",
+      "file_entries": 1,
+      "regular_files": 1,
+      "symlinks": 0,
+      "logical_bytes": 1528008539,
+      "allocated_bytes": 1528008704
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1",
+      "file_entries": 1028,
+      "regular_files": 1028,
+      "symlinks": 0,
+      "logical_bytes": 862697890,
+      "allocated_bytes": 864866304
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1-1",
+      "file_entries": 800,
+      "regular_files": 800,
+      "symlinks": 0,
+      "logical_bytes": 647192421,
+      "allocated_bytes": 648847360
+    },
+    {
+      "path": "brand/bay-referee/motion-lab-v1-2",
+      "file_entries": 829,
+      "regular_files": 829,
+      "symlinks": 0,
+      "logical_bytes": 663296092,
+      "allocated_bytes": 664850432
+    },
+    {
+      "path": "brand",
+      "file_entries": 8739,
+      "regular_files": 8739,
+      "symlinks": 0,
+      "logical_bytes": 3252188112,
+      "allocated_bytes": 3270107136
+    },
+    {
+      "path": "audio/sfx",
+      "file_entries": 65,
+      "regular_files": 65,
+      "symlinks": 0,
+      "logical_bytes": 53253846,
+      "allocated_bytes": 53403648
+    },
+    {
+      "path": "audio/sfx/football-core-v1-1",
+      "file_entries": 32,
+      "regular_files": 32,
+      "symlinks": 0,
+      "logical_bytes": 26622931,
+      "allocated_bytes": 26693632
+    },
+    {
+      "path": "brand/bay-referee/channel-skill",
+      "file_entries": 10,
+      "regular_files": 10,
+      "symlinks": 0,
+      "logical_bytes": 92866,
+      "allocated_bytes": 114688
+    },
+    {
+      "path": "scripts",
+      "file_entries": 184,
+      "regular_files": 184,
+      "symlinks": 0,
+      "logical_bytes": 1385812,
+      "allocated_bytes": 1728512
+    },
+    {
+      "path": "formats",
+      "file_entries": 2208,
+      "regular_files": 2208,
+      "symlinks": 0,
+      "logical_bytes": 568457175,
+      "allocated_bytes": 573079552
+    },
+    {
+      "path": "engine/templates",
+      "file_entries": 0,
+      "regular_files": 0,
+      "symlinks": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": "videolar",
+      "file_entries": 0,
+      "regular_files": 0,
+      "symlinks": 0,
+      "logical_bytes": 0,
+      "allocated_bytes": 0
+    },
+    {
+      "path": ".git",
+      "file_entries": 19,
+      "regular_files": 19,
+      "symlinks": 0,
+      "logical_bytes": 33407,
+      "allocated_bytes": 90112
+    }
+  ],
+  "recognized_virtualenv_roots": [
+    ".venv",
+    "voice/chatterbox/env",
+    ".tools/asset-treatment-venv"
+  ],
+  "git_state_counts_at_inventory": {
+    "ignored_untracked": 83195,
+    "untracked_visible": 19138,
+    "unclassified": 150,
+    "git_internal": 19
+  },
+  "git": {
+    "schema": "portable-repository-git-history-v1",
+    "collected_at": "2026-10-17T11:25:41.704690+03:00",
+    "read_only": true,
+    "network_used": false,
+    "head_exists": false,
+    "head": null,
+    "symbolic_head": "refs/heads/main",
+    "is_shallow": false,
+    "commit_count_all_refs": 0,
+    "refs": [],
+    "remote_names": [],
+    "remote_urls_not_read_or_emitted": true,
+    "tracked_count": 0,
+    "untracked_visible_count": 19138,
+    "ignored_untracked_count": 83196,
+    "git_directory_file_sizes": {
+      "path": ".git",
+      "regular_files": 19,
+      "file_entries": 19,
+      "logical_bytes": 33407,
+      "allocated_file_bytes": 90112
+    },
+    "count_objects": {
+      "count": "0",
+      "size": "0",
+      "in-pack": "0",
+      "packs": "0",
+      "size-pack": "0",
+      "prune-packable": "0",
+      "garbage": "0",
+      "size-garbage": "0"
+    },
+    "reachable_objects": 0,
+    "reachable_blobs": 0,
+    "largest_50_history_blobs": [],
+    "large_blob_threshold_bytes": 10485760,
+    "committed_large_blobs": [],
+    "committed_large_media": [],
+    "history_rewrite_needed_for_large_blobs": false,
+    "notes": [
+      "No commit/index/branch/tag changes were made.",
+      "Empty reachable history does not claim anything about remote repositories; no remote was contacted.",
+      "Untracked/ignored files are working-copy inventory, not committed history."
+    ]
+  },
+  "external_symlink_count": 10,
+  "scan_errors": [],
+  "portable_candidate_snapshot": {
+    "manifest_path": "docs/portable-repo-manifest.json",
+    "manifest_sha256_at_report": "bbc148eaf3435e3276d4e73b04dc20409914fd74be72929186c7458ddf52b4d0",
+    "source_file_count": 240,
+    "source_worktree_bytes": 33710838,
+    "binary_file_count": 42,
+    "binary_bytes": 30543250,
+    "largest_binary": {
+      "path": "mascot/engin-avatar-v1/master/master-identity.png",
+      "bytes": 7233850,
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "sha256": "0a55089d8fc45f32e9463ed142c430a9471d1c4c0fea28579c57679117feb1a1"
+    },
+    "lfs_recommended": false,
+    "warning_threshold_bytes": 26214400,
+    "scope_note": "Separate later candidate-selection snapshot, not part of the original workspace scan. Regenerated manifests can include subsequent documentation; use the final manifest for final candidate totals."
+  },
+  "interpretation_notes": [
+    "All bytes are exact integer bytes; human sizes use IEC KiB/MiB/GiB (1024 powers).",
+    "Recursive directories overlap; nested rows cannot be added. Overlapping tags and requested views cannot be added either.",
+    "Exclusive categories assign each file entry once; their sum equals all_file_entry_logical_bytes. Tag and extension views can cross those categories.",
+    "Model/cache/skills/templates tags are filename/path heuristics and include dependency contents. Requested exact directory views distinguish primary roots from those broad tags.",
+    "The model tag includes model-related package files; exact model stores are voice/chatterbox/model and .cache/whisper. The latter is also a cache.",
+    "Root .git is 33,407 logical bytes. The larger git_metadata category also includes nested Git metadata and is not the root repository history size.",
+    "No videolar directory was present in the repository or its inspected parent during the original audit; parent held video-engine and .DS_Store.",
+    "Allocated sums use st_blocks*512 and do not determine APFS clone/dedup physical ownership. Unique inode allocation only avoids hardlink double counting.",
+    "Inventory and Git listing are separate read-only observations in a non-atomic scan; concurrent file changes can explain count differences.",
+    "No commits, index entries, refs, object packs or history blobs exist in this repository snapshot. Remote repository state was not inspected.",
+    "Generated inventory, audit, clean-clone and later implementation files were not retroactively added to original-workspace totals."
+  ]
+}

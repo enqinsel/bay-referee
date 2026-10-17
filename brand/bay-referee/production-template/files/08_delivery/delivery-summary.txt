@@ -1,0 +1,9 @@
+BAY REFEREE — {{slug}}
+Durum: SCAFFOLD — yalnız klasör ve boş içerik şablonları; medya üretilmedi.
+
+Planlanan Türkçe master: 03_video/{{slug}}-bay-referee-tr.mp4
+Planlanan EN anlatım: 02_audio/en/narration-en.wav / narration-en.mp3
+Planlanan ES anlatım: 02_audio/es/narration-es.wav / narration-es.mp3
+Planlanan kapaklar: 05_cover/cover-reels-1080x1920.png / cover-youtube-1280x720.png
+Planlanan sosyal metinler: 06_social/
+QA: NOT_RUN

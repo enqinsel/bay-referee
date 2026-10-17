@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "0.1.0",
+  "video": { "width": 1080, "height": 1920, "fps": 30, "targetDurationSeconds": [45, 90] },
+  "transcription": {
+    "language": "tr",
+    "models": { "smoke": "tiny", "production": "medium" },
+    "defaultProfile": "smoke",
+    "device": "auto",
+    "modelCache": ".cache/whisper",
+    "wordTimestamps": true
+  },
+  "higgsfield": { "integration": "official-codex-plugin", "generationEnabled": false },
+  "style": { "status": "unapproved", "channelPreset": null },
+  "audio": { "normalizeOriginal": false },
+  "editorial": {
+    "assetPriority": ["real_video", "real_photo", "archive", "document_or_map", "code_graphic", "generated"],
+    "timingAuthority": "recorded_audio",
+    "criticalFactsNeedTimedVisuals": true
+  }
+}

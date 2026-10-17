@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "source": "brand/bay-referee/channel-skill/bay-referee",
+  "target": "/Users/engin/.codex/skills/bay-referee",
+  "sourceTreeSha256": "da505ce426d1693dba2b460976736cac0d531d380e2acf9171da2decb74066c2",
+  "managedFiles": 10,
+  "changedFiles": [],
+  "retainedExtraFiles": [
+    ".DS_Store"
+  ],
+  "validation": {
+    "status": "PASS",
+    "name": "bay-referee",
+    "files": [
+      {
+        "path": "agents/openai.yaml",
+        "sha256": "5fe562f88cbd0057d493f70d06b7ca94699622332c23e8012687104ec22b5631",
+        "bytes": 278
+      },
+      {
+        "path": "references/engine-and-qa.md",
+        "sha256": "97dd6beb949e9886407cd2bb63bd52b1d0225bff57d412fd64f6c1d1c9c158a6",
+        "bytes": 7475
+      },
+      {
+        "path": "references/format-and-brand.md",
+        "sha256": "9d52b6d8ff12ded2b09a37635b15db9ff023d8c7819ad6a6721032871f59cf5e",
+        "bytes": 9091
+      },
+      {
+        "path": "references/motion-grammar.md",
+        "sha256": "ed99d9955841ea28947aba36d442e7cdaec7bb5c229d431cfbf942acc914c04f",
+        "bytes": 16234
+      },
+      {
+        "path": "references/motion-pattern-library.md",
+        "sha256": "b8f8a146bdfa7ffbceed0b6227f620980743ce019c688dd3173e5bdd3da93612",
+        "bytes": 23992
+      },
+      {
+        "path": "references/motion-review-checklist.md",
+        "sha256": "0ce50b519d14f7760e9d9b74f7d2e560879acbfbf6304f7b4d80d47f68c228b8",
+        "bytes": 5166
+      },
+      {
+        "path": "references/production-mode.md",
+        "sha256": "c1137aa286b1bc667cdde967bd3e62ae708777f80ebb87f42a2ba4d2084c75d6",
+        "bytes": 14026
+      },
+      {
+        "path": "references/production-workflow.md",
+        "sha256": "e7afeffc1f0156827adc1f55f902fdefa90e9b42b1c0d3e57c74764c9a5c5105",
+        "bytes": 6411
+      },
+      {
+        "path": "references/voice-and-dubbing.md",
+        "sha256": "0d5c27819ce859a5b4f12bc253b9e9a108e28c2a959fa6ea3ea6c9500290cdce",
+        "bytes": 7262
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "edd5036ec6ef894412dec38b8555c2091a6b7c296786143d7641c1760abda903",
+        "bytes": 5243
+      }
+    ],
+    "localReferences": 20,
+    "sourceTreeSha256": "da505ce426d1693dba2b460976736cac0d531d380e2acf9171da2decb74066c2"
+  },
+  "destructiveDeletion": false,
+  "mode": "check"
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-10-10T10:42:20Z",
+  "status": "OFFICIAL_TOOLS_DISCOVERED_AUTH_READ_VERIFIED_GENERATION_NOT_TESTED",
+  "probe": {
+    "tool": "mcp__codex_apps__higgsfield_list_workspaces",
+    "result": "SUCCESS",
+    "accessible_workspace_count": 1,
+    "explicitly_selected_workspace_count": 0,
+    "workspace_selection_changed": false,
+    "account_identifiers_retained": false
+  },
+  "prior_evidence": "docs/HIGGSFIELD.md records a separate successful read on 2026-10-06; this file is the current audit and does not overwrite that history.",
+  "verified": [
+    "117 Higgsfield tool names exposed in the current Codex session.",
+    "19 relevant published contracts inventoried.",
+    "Read-only account/workspace access succeeded."
+  ],
+  "not_verified": [
+    "Model-specific generation readiness or output quality",
+    "End-to-end reference upload",
+    "Paid quote accuracy at a future submission",
+    "Completed output ingest/download",
+    "Publication or commercial-rights clearance"
+  ],
+  "audit_activity": {
+    "generation_calls": 0,
+    "quote_calls": 0,
+    "upload_calls": 0,
+    "project_mutations": 0,
+    "workspace_mutations": 0,
+    "credits_spent_by_this_audit": 0
+  },
+  "claim_limit": "Zero spend follows from this audit issuing no spend-capable calls. It is not an account-wide balance-difference measurement.",
+  "adapter_type": "Documented official connector contract and JSON schemas; no custom HTTP client, unsupported API or local generation runtime."
+}

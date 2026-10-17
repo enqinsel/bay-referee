@@ -1,0 +1,14 @@
+BAY REFEREE — {{slug}}
+Durum: NOT_RUN — yalnız scaffold; üretim doğrulaması yapılmadı.
+
+research: NOT_RUN
+voice: NOT_RUN
+timing: NOT_RUN
+captions: NOT_RUN
+motion: NOT_RUN
+sfx: NOT_RUN
+cover: NOT_RUN
+dub: NOT_RUN
+decode: NOT_RUN
+
+Bilinen sınırlama: Konu, metin, medya ve zamanlama henüz yok.

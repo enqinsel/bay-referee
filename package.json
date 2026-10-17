@@ -1,0 +1,39 @@
+{
+  "name": "video-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local, narration-led vertical video production engine",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.1.0",
+    "@ffprobe-installer/ffprobe": "2.1.2",
+    "gsap": "3.15.0",
+    "hyperframes": "0.8.137",
+    "sharp": "0.35.5",
+    "fontkit": "2.0.4"
+  },
+  "scripts": {
+    "postinstall": "node scripts/setup.mjs",
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "new_episode": "node scripts/python.mjs scripts/new_episode.py",
+    "validate_episode": "node scripts/python.mjs scripts/validate_episode.py",
+    "transcribe": "node scripts/python.mjs scripts/transcribe.py",
+    "hf": "node scripts/hyperframes.mjs",
+    "lint": "node scripts/hyperframes.mjs lint engine/composition/smoke",
+    "check": "node scripts/hyperframes.mjs check engine/composition/smoke --strict --at 0,0.5,1,2,3.5",
+    "preview": "node scripts/hyperframes.mjs preview engine/composition/smoke --no-open --foreground",
+    "snapshot": "node scripts/hyperframes.mjs snapshot engine/composition/smoke --at 0,1,2,3.9 --output qa/bootstrap/snapshots",
+    "render": "node scripts/render-smoke.mjs",
+    "probe": "node scripts/probe.mjs renders/previews/engine-smoke.mp4",
+    "test": "node scripts/python.mjs -m unittest discover -s tests -v",
+    "smoke": "node scripts/smoke.mjs",
+    "setup:bay-referee": "node scripts/setup-bay-referee.mjs",
+    "smoke:portable": "node scripts/portable-smoke.mjs",
+    "test:portable": "node --test tests/portable-repository.test.mjs tests/portable-skill-sync.test.mjs tests/test-portable-production.mjs tests/bay-referee-new-episode.test.mjs",
+    "portable:manifest": "python3 scripts/portable-repo-manifest.py",
+    "portable:export": "python3 scripts/portable-repo-export.py"
+  }
+}

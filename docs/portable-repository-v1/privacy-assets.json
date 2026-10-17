@@ -1,0 +1,939 @@
+{
+  "audit_date": "2026-10-17",
+  "scope": "Read-only filesystem/provenance inspection; no identity upload, generation, media render, migration, deletion or remote action.",
+  "private_values_redacted": true,
+  "private_raw_sources": [
+    {
+      "path": "mascot/engin-avatar-v1/provenance/user-identity-reference.png",
+      "bytes": 1982132,
+      "classification": "SECRET_OR_PRIVATE",
+      "issue_class": "raw_personal_identity_photo",
+      "tracked_recommendation": false,
+      "second_machine_needed": false,
+      "reason": "Engin remote custom voice and approved transformed assets are production authorities; raw identity/clone reference is not a portable runtime input.",
+      "same_bytes_other_paths": []
+    },
+    {
+      "path": "voice/reference/raw/benimses.wav",
+      "bytes": 32774666,
+      "classification": "SECRET_OR_PRIVATE",
+      "issue_class": "personal_voice_clone_reference",
+      "tracked_recommendation": false,
+      "second_machine_needed": false,
+      "reason": "Engin remote custom voice and approved transformed assets are production authorities; raw identity/clone reference is not a portable runtime input.",
+      "same_bytes_other_paths": []
+    },
+    {
+      "path": "voice/reference/candidates/ref-a.wav",
+      "bytes": 1055832,
+      "classification": "SECRET_OR_PRIVATE",
+      "issue_class": "personal_voice_clone_reference",
+      "tracked_recommendation": false,
+      "second_machine_needed": false,
+      "reason": "Engin remote custom voice and approved transformed assets are production authorities; raw identity/clone reference is not a portable runtime input.",
+      "same_bytes_other_paths": []
+    },
+    {
+      "path": "voice/reference/candidates/ref-b.wav",
+      "bytes": 1130802,
+      "classification": "SECRET_OR_PRIVATE",
+      "issue_class": "personal_voice_clone_reference",
+      "tracked_recommendation": false,
+      "second_machine_needed": false,
+      "reason": "Engin remote custom voice and approved transformed assets are production authorities; raw identity/clone reference is not a portable runtime input.",
+      "same_bytes_other_paths": []
+    },
+    {
+      "path": "voice/reference/candidates/ref-c.wav",
+      "bytes": 1243698,
+      "classification": "SECRET_OR_PRIVATE",
+      "issue_class": "personal_voice_clone_reference",
+      "tracked_recommendation": false,
+      "second_machine_needed": false,
+      "reason": "Engin remote custom voice and approved transformed assets are production authorities; raw identity/clone reference is not a portable runtime input.",
+      "same_bytes_other_paths": []
+    }
+  ],
+  "approved_transformed_runtime_assets": [
+    {
+      "path": "brand/bay-referee/avatar/poses/advantage.png",
+      "bytes": 480986,
+      "sha256": "5a1c4313838fa1b7d4f39ed3104e656ec18133976e572dc20534ab2e315f1070",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/calm-down.png",
+      "bytes": 497370,
+      "sha256": "ce6f32365dee1622c48a80b2ddd2cdfe23884df216020f5f51effd096ce9ed55",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/compare-both.png",
+      "bytes": 531959,
+      "sha256": "c840a54d6975fa7a7973d4f2a6c8df5b5869cffd3623e5924f145d7e841ba0fc",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/conclusion.png",
+      "bytes": 518138,
+      "sha256": "9a07f60aa75ccd8ddb3865d9f62e17b8a1df271c3bab59e8f61aa7a3dd53c799",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/confirm.png",
+      "bytes": 542528,
+      "sha256": "f89c11d4b5dbabad3d19098cf00354bdbfd2fc249af85502578c2c9f82d4fc49",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/explain-forward.png",
+      "bytes": 517900,
+      "sha256": "eaaf1a95748fe81b1a4a4506f9fbb0969e31843ab462c3a7463b96c6c6b555b5",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/final-decision.png",
+      "bytes": 519455,
+      "sha256": "2ecde07ea5b1e1859f21b825139f6aaf392a984df9126bfb4cf8ecf2cda53308",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/hands-open.png",
+      "bytes": 520001,
+      "sha256": "cd451d4b1782573dd6c03a62c6bc4d938380802405fb8311c5b82a2f757c0d6a",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/neutral.png",
+      "bytes": 544632,
+      "sha256": "4b7b0063a0be85d917112d42a6239521016212c9cfce818fe4f277d95aea28fb",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/point-left.png",
+      "bytes": 537910,
+      "sha256": "37f372cdd6b75e0af7f3ab929ffd834481c9f419de196d84283e3ba17e92125e",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/point-right.png",
+      "bytes": 548913,
+      "sha256": "7643c5342b625b4daf1527add59527a6da2d802ab741405e0f85ee0b7c963063",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/point-to-spot.png",
+      "bytes": 524608,
+      "sha256": "1305e1a8985014451c328a0a9be9ef9ff314a14fc60b418edf32b7ae1927dac3",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/point-up-left.png",
+      "bytes": 565567,
+      "sha256": "6fbdb1f35c1d6996b528b67b2808f3b66188ca0492bc0bbf20a0332e2bc7a2a1",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/point-up-right.png",
+      "bytes": 565060,
+      "sha256": "3b2644a921a27c0ea1e2c3bec57e5a1d36563ea3cea51c942c5a50e6171ea693",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/presenting-object-left.png",
+      "bytes": 510396,
+      "sha256": "9617931ddda8b381d9708a9d38f11f3b9de4fb2eb0511c519bed85eade6be73d",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/presenting-object-right.png",
+      "bytes": 503775,
+      "sha256": "bcf06745f9ba91c20c72d247b1e5d636b74f9d53f8373a00632028cd77e508be",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/red-card.png",
+      "bytes": 492144,
+      "sha256": "018d27ecdd429ee96768ed84fc1c972cbb7cb21179e3b4733bf0ce6db6b6c3b2",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/stop-wait.png",
+      "bytes": 506241,
+      "sha256": "51e79b519a19fb2327399e48d7b6c32acf5a747a975477108fa7793e701c1401",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/surprised.png",
+      "bytes": 520829,
+      "sha256": "033629ded7c22defe3928e22c80657f7246b0ca6b164f2dac2b8a1cf8414c08b",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/thinking.png",
+      "bytes": 494472,
+      "sha256": "ce9f2aaabbfac09c10b47352beb7da4c2c30b4e8286b3ca6df37a855d782cae0",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/var-rectangle.png",
+      "bytes": 489826,
+      "sha256": "9dddc502afb2b6c380af93891c2fa71dd99092ffbbcba8c7f081d9723f3effb2",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/whistle-blow.png",
+      "bytes": 479586,
+      "sha256": "08ed81f72cc61e0b9bfe5c51d08dc1124cf4d6c3e60b48c656b7d9a502927eb7",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/whistle-ready.png",
+      "bytes": 496242,
+      "sha256": "54a55af98f670453697de289d8e73ecedb2313b2b6eb29abb293cb2ae36025c1",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/poses/yellow-card.png",
+      "bytes": 487556,
+      "sha256": "eea978e70d1c378ef4b5ccf9d2fc89134f18b06506ea152d87af8a07380cfff2",
+      "role": "approved transformed final referee pose",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/pose-manifest.json",
+      "bytes": 18610,
+      "sha256": "cd454ceccdadb57fcc6262411ea380f9fa5423490bc4d4e34f1c47c138845f27",
+      "role": "final pose names, hashes, anchors and relative extraction provenance",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/head.png",
+      "bytes": 1097809,
+      "sha256": "1c8f3ee1880cebe8e19ec2c70d5b76e35fe9cc71244cf88f78d13c76a32b5c24",
+      "role": "approved transparent illustrated brand head for sign-off and bug",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/wordmark/wordmark.png",
+      "bytes": 18895,
+      "sha256": "1c0deb514e2f9af3da5c67876ed887e06fe6d9f3848144e5cc6839fd7390fe0c",
+      "role": "approved wordmark for sign-off",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/watermark/lockup.png",
+      "bytes": 12837,
+      "sha256": "d3f1400da5eb2db62dfbf49c3e8c9c18ad3b29b23204d739e0ae30cc8843a6fa",
+      "role": "quiet persistent watermark",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/tokens/brand.json",
+      "bytes": 1471,
+      "sha256": "b52fcc5dde607685baa4720700c5eb3d608a2480a558694231be3a87be73430a",
+      "role": "brand palette and export authority",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/tokens/watermark.json",
+      "bytes": 1379,
+      "sha256": "455ca1ff14e6c44562c2b8fcef8f0817716493715d326436a4fa3af20e3a4727",
+      "role": "watermark position/alpha authority",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/tokens/signoff.json",
+      "bytes": 2339,
+      "sha256": "b33bc96116d0575d5aa0c6aed68ce878b0c0a840af0564d08cde86401fe12410",
+      "role": "closure recipe; historical core timing must not be reused for new episodes",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "formats/football-comparison-v1/fonts/Archivo-variable.ttf",
+      "bytes": 658596,
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "role": "caption/editorial/brand variable font",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "formats/football-comparison-v1/fonts/Archivo-OFL.txt",
+      "bytes": 4388,
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "role": "font redistribution license",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "formats/football-production-kit-v1/system/caption-style.json",
+      "bytes": 1845,
+      "sha256": "cf6b70426edb31e1b1d210f7504de2f771c6450c76fa99da6ee2da70fff11532",
+      "role": "caption geometry/style authority",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "formats/football-comparison-v1/fonts/Manrope-Medium.ttf",
+      "bytes": 97536,
+      "sha256": "4284b77c788f5ca4284ef02b25c478447c91bd0c3ade41ffb449e7a53977384c",
+      "role": "font supported by the extracted portable typography helper",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    },
+    {
+      "path": "formats/football-comparison-v1/fonts/Manrope-OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "role": "bundled OFL for the supported Manrope font",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": true
+    }
+  ],
+  "approved_transformed_source_masters": [
+    {
+      "path": "mascot/engin-avatar-v1/master/master-identity.png",
+      "bytes": 7233850,
+      "sha256": "0a55089d8fc45f32e9463ed142c430a9471d1c4c0fea28579c57679117feb1a1",
+      "role": "approved illustrated identity authority; not raw user photograph",
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "second_machine_needed": true
+    },
+    {
+      "path": "brand/bay-referee/avatar/master/referee-master.png",
+      "bytes": 6716719,
+      "sha256": "4dea0c5bfd5eba814c765264491b57d77681f4543d3abf7f9ef58e1512b0eac9",
+      "role": "approved transformed referee master; source authority for asset maintenance",
+      "classification": "REQUIRED_BUT_LFS_CANDIDATE",
+      "second_machine_needed": true
+    }
+  ],
+  "optional_reusable_brand_exports": [
+    {
+      "path": "brand/bay-referee/brand-bug/corner-128.png",
+      "bytes": 21943,
+      "sha256": "74206d15ca6e8d14ad1084e8749aa708c1a0c9a70831e0a14afcd616cefaf89d",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/corner-48.png",
+      "bytes": 4140,
+      "sha256": "fab1d63f6bde27fec54be379695a803e6688f7599c5fd17f7ea39964b58bb940",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/corner-64.png",
+      "bytes": 6641,
+      "sha256": "9897a4013ae942b9575b0df644cfcb351bce996e4c6a185173fc298ec2233b8f",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/corner-96.png",
+      "bytes": 13488,
+      "sha256": "7a765aeb32190c63d07b2c854fd280a6d81783361beff26751ef44aaec0d86c5",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/brand-bug/head-monochrome.png",
+      "bytes": 587678,
+      "sha256": "295643e786f293a476da483d6cd59489daf338098791650c3cb1168a134b9799",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/wordmark/wordmark-dark.png",
+      "bytes": 18885,
+      "sha256": "f99d1ac4d22fab4715acf7c35195e6cf30396b4d6fbaf5ed08af9719ffd528be",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/wordmark/wordmark-dark.svg",
+      "bytes": 2493,
+      "sha256": "c65d6e56d829a7fbf7ff3d4b57818a51be042111fe6f1398fdb0b1765ad87787",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/wordmark/wordmark.svg",
+      "bytes": 2493,
+      "sha256": "2a294dff7e7b5a6c85c8104b4789d07435722bee2e4fe41f421819fcf051cec9",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/watermark/overlay-1080x1920.png",
+      "bytes": 22437,
+      "sha256": "099ff0183c71c85ed911eb67da6e44b422da8b74f8dd568b8207f5b4916c4555",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/profile/profile-square-128.png",
+      "bytes": 24432,
+      "sha256": "a9f5b727740002c434f47caf713f3c9c3f370425fc7514496bc0c92d8acd0b6d",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/profile/profile-square-256.png",
+      "bytes": 86275,
+      "sha256": "7571bd2b874ec0305db65403188534715587011d0ef0793802160c70fccf7e2e",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/profile/profile-square-512.png",
+      "bytes": 320183,
+      "sha256": "331edfd9bbb94ae134e05de5af270c5566b478af102fedd6e336d5a69d959f7d",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    },
+    {
+      "path": "brand/bay-referee/profile/profile-square.png",
+      "bytes": 1204812,
+      "sha256": "289225542572a39fe02b6f03821110a90e79799c17288120c527b2d112744e28",
+      "role": "optional reusable brand variant / prebuilt export",
+      "classification": "REQUIRED_IN_GIT",
+      "second_machine_needed": false
+    }
+  ],
+  "runtime_asset_bytes": 14316186,
+  "source_master_bytes": 13950569,
+  "optional_export_bytes": 2315900,
+  "font_policy": "Archivo is the default approved caption/editorial/brand typeface. The extracted portable typography helper also exposes Manrope, so its small font file and OFL are retained. Each font must remain paired with its bundled OFL.",
+  "intermediate_groups": [
+    {
+      "path": "brand/bay-referee/avatar/raws",
+      "bytes": 27459704,
+      "files": 5,
+      "classification": "R&D_ARCHIVE",
+      "reason": "Generated extraction sheets/repair source, not the raw user identity photo; not needed to render existing approved poses."
+    },
+    {
+      "path": "mascot/engin-avatar-v1/raws",
+      "bytes": 20267268,
+      "files": 4,
+      "classification": "R&D_ARCHIVE",
+      "reason": "Earlier transformed pose sheets; preserve locally."
+    },
+    {
+      "path": "mascot/engin-avatar-v1/poses",
+      "bytes": 10126277,
+      "files": 18,
+      "classification": "R&D_ARCHIVE",
+      "reason": "Older generic outfit pack; BAY referee final pack is current default. Optional only for legacy work."
+    },
+    {
+      "path": "brand/bay-referee/avatar/qa",
+      "bytes": 4583510,
+      "files": 27,
+      "classification": "R&D_ARCHIVE",
+      "reason": "Pose sheets and identity QA outputs, not runtime assets."
+    }
+  ],
+  "provenance_policy": "Source manifests may retain relative source-sheet names/hashes without tracking intermediates. Raw identity upload references and provider signed/private media URLs stay local; public-safe summaries must omit them.",
+  "voice_policy": {
+    "logical_authority": "voice/decision.json",
+    "logical_name": "Engin",
+    "voice_id_may_be_tracked": true,
+    "credential_may_be_tracked": false,
+    "remote_workspace_access_required": true,
+    "raw_clone_reference_bootstrap_required": false
+  },
+  "sfx": {
+    "kit": {
+      "path": "audio/sfx/football-core-v1-1",
+      "bytes": 26622931,
+      "files": 32
+    },
+    "raw": {
+      "path": "audio/sfx/football-core-v1-1/raw",
+      "bytes": 26393110,
+      "files": 23
+    },
+    "assets": [
+      {
+        "asset_id": "mixkit-air-woosh-1489",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-air-woosh-1489.wav",
+        "filename": "mixkit-air-woosh-1489.wav",
+        "source": "Mixkit",
+        "source_item_id": "1489",
+        "source_url": "https://mixkit.co/free-sound-effects/whoosh/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "fdc4f87eb2c6d29ec3567b299fdc3b2aeea2432afe27801db80c496bda084499",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 614126,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-fast-whoosh-transition-1490",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-fast-whoosh-transition-1490.wav",
+        "filename": "mixkit-fast-whoosh-transition-1490.wav",
+        "source": "Mixkit",
+        "source_item_id": "1490",
+        "source_url": "https://mixkit.co/free-sound-effects/whoosh/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "2f914dcec1276107b888557e2e33043396cff10adad9e7b6f6adf93cc011c08b",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 309928,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-page-turn-single-1104",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-page-turn-single-1104.wav",
+        "filename": "mixkit-page-turn-single-1104.wav",
+        "source": "Mixkit",
+        "source_item_id": "1104",
+        "source_url": "https://mixkit.co/free-sound-effects/paper/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "d1ccce088b96216c6ed725c1b56333722ba77c658d2327fc7aef3e7f3b98640f",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 80386,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-writing-pencil-3194",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-writing-pencil-3194.wav",
+        "filename": "mixkit-writing-pencil-3194.wav",
+        "source": "Mixkit",
+        "source_item_id": "3194",
+        "source_url": "https://mixkit.co/free-sound-effects/paper/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "3698a52a1c74fb10c1a46bc01b407632ab65b0bced8bb8ba7f8bf5af3b2291a4",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 330286,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-typewriter-soft-click-1125",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-typewriter-soft-click-1125.wav",
+        "filename": "mixkit-typewriter-soft-click-1125.wav",
+        "source": "Mixkit",
+        "source_item_id": "1125",
+        "source_url": "https://mixkit.co/free-sound-effects/click/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "04837e10d65b23aede5626d833e4e46001e90e908817200da1dcf21a51d36205",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 58022,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-classic-click-1117",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-classic-click-1117.wav",
+        "filename": "mixkit-classic-click-1117.wav",
+        "source": "Mixkit",
+        "source_item_id": "1117",
+        "source_url": "https://mixkit.co/free-sound-effects/click/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "2209c1f25aacf19083cde9c0d4448a84da2e5c5b8e44071690a7837bff37fdb9",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 76280,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-mouse-click-close-1113",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-mouse-click-close-1113.wav",
+        "filename": "mixkit-mouse-click-close-1113.wav",
+        "source": "Mixkit",
+        "source_item_id": "1113",
+        "source_url": "https://mixkit.co/free-sound-effects/click/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "fe535fd085fe27f4397e2e6ab2e5798f66636f1d7244b559018aed85fa99348b",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 242840,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-gear-fast-lock-tap-2857",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-gear-fast-lock-tap-2857.wav",
+        "filename": "mixkit-gear-fast-lock-tap-2857.wav",
+        "source": "Mixkit",
+        "source_item_id": "2857",
+        "source_url": "https://mixkit.co/free-sound-effects/click/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "c05e7e46c1d5b9d18e9fe64161d1cc567ebfcfc2674959b6e3dd4947904cc2af",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 200748,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-fast-small-sweep-transition-166",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-fast-small-sweep-transition-166.wav",
+        "filename": "mixkit-fast-small-sweep-transition-166.wav",
+        "source": "Mixkit",
+        "source_item_id": "166",
+        "source_url": "https://mixkit.co/free-sound-effects/sweep/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "ca5a0206a7e6b12893a5727cb98a9d43ab02893153465eb21d43fb7b9e6616c3",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 138746,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-short-transition-sweep-175",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-short-transition-sweep-175.wav",
+        "filename": "mixkit-short-transition-sweep-175.wav",
+        "source": "Mixkit",
+        "source_item_id": "175",
+        "source_url": "https://mixkit.co/free-sound-effects/sweep/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "6b3d6d71c6724c27c155149ed6eb6a00543f7908657cf58cd24cdbf67f5994ea",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 160424,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-newspaper-falling-to-the-floor-386",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/motion/mixkit-newspaper-falling-to-the-floor-386.wav",
+        "filename": "mixkit-newspaper-falling-to-the-floor-386.wav",
+        "source": "Mixkit",
+        "source_item_id": "386",
+        "source_url": "https://mixkit.co/free-sound-effects/paper/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "68513061f5e2b6f8f3d759b61dc747b83a9aea9afa73294d325137e102f2a1fb",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 110344,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-hitting-soccer-ball-2112",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/ball/mixkit-hitting-soccer-ball-2112.wav",
+        "filename": "mixkit-hitting-soccer-ball-2112.wav",
+        "source": "Mixkit",
+        "source_item_id": "2112",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "9efeb9bbab81216ec7bcc9f76fc9d6b9f4ff32bc6fc859960303d434b33a639e",
+        "pilot_eligible": false,
+        "quality_hold": true,
+        "bytes": 377132,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "DO_NOT_BOOTSTRAP_INELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-soccer-ball-quick-kick-2108",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/ball/mixkit-soccer-ball-quick-kick-2108.wav",
+        "filename": "mixkit-soccer-ball-quick-kick-2108.wav",
+        "source": "Mixkit",
+        "source_item_id": "2108",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "ab761dc7126ca1f0425dbd1b0cea3ccbab71ff156602d0a6953a140b8c55f659",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 246152,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_COMMON_KICK"
+      },
+      {
+        "asset_id": "mixkit-soccer-ball-kick-2099",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/ball/mixkit-soccer-ball-kick-2099.wav",
+        "filename": "mixkit-soccer-ball-kick-2099.wav",
+        "source": "Mixkit",
+        "source_item_id": "2099",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "1538539106444133f165b8d00d38a2c43443a8aea4835a7df012252f4145f2be",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 411260,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-ball-bouncing-in-the-ground-2077",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/ball/mixkit-ball-bouncing-in-the-ground-2077.wav",
+        "filename": "mixkit-ball-bouncing-in-the-ground-2077.wav",
+        "source": "Mixkit",
+        "source_item_id": "2077",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "94090a1caf27d11c5ef00e90d2e4f809aec8b7efa8bedb31f4577e8320aeaa48",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 274944,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-ambient-sports-crowd-sound-2097",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/stadium/mixkit-ambient-sports-crowd-sound-2097.wav",
+        "filename": "mixkit-ambient-sports-crowd-sound-2097.wav",
+        "source": "Mixkit",
+        "source_item_id": "2097",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "8740da56ff12f05eea73fd04bb405ffc013a91668c605fd98c7da962bee3a1b3",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 13543148,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-crowd-at-the-stadium-2111",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/stadium/mixkit-crowd-at-the-stadium-2111.wav",
+        "filename": "mixkit-crowd-at-the-stadium-2111.wav",
+        "source": "Mixkit",
+        "source_item_id": "2111",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "00479c8a35ac3f80d6d420fda379136ef0dc0d1e07786072460ad577d9283227",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 924360,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-crowd-yelling-at-stadium-2110",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/stadium/mixkit-crowd-yelling-at-stadium-2110.wav",
+        "filename": "mixkit-crowd-yelling-at-stadium-2110.wav",
+        "source": "Mixkit",
+        "source_item_id": "2110",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "99ecc0964527216ffd3d26e44bb1c732d560c1095205fff24084e856357e059e",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 1118560,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-stadium-joy-shouting-crowd-3022",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/stadium/mixkit-stadium-joy-shouting-crowd-3022.wav",
+        "filename": "mixkit-stadium-joy-shouting-crowd-3022.wav",
+        "source": "Mixkit",
+        "source_item_id": "3022",
+        "source_url": "https://mixkit.co/free-sound-effects/soccer/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "f289617541c8ba4027345a3b30a277f4be42bb036135847b1e1076ddc981f27c",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 2781290,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-police-short-whistle-615",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/player-field/mixkit-police-short-whistle-615.wav",
+        "filename": "mixkit-police-short-whistle-615.wav",
+        "source": "Mixkit",
+        "source_item_id": "615",
+        "source_url": "https://mixkit.co/free-sound-effects/whistle/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "0ce2c7c74df78879c0c30e4cdcde789ba67edbe8feb0c72242f623743c1efac2",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 279500,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "REQUIRED_BRAND_WHISTLE"
+      },
+      {
+        "asset_id": "mixkit-grass-step-1920",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/player-field/mixkit-grass-step-1920.wav",
+        "filename": "mixkit-grass-step-1920.wav",
+        "source": "Mixkit",
+        "source_item_id": "1920",
+        "source_url": "https://mixkit.co/free-sound-effects/footsteps/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "b12a352009d7ad6510cfaad273c4a25f9cd74b2035694c91241366b3775748d0",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 154076,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "mixkit-walking-on-grass-1921",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/player-field/mixkit-walking-on-grass-1921.wav",
+        "filename": "mixkit-walking-on-grass-1921.wav",
+        "source": "Mixkit",
+        "source_item_id": "1921",
+        "source_url": "https://mixkit.co/free-sound-effects/footsteps/",
+        "license": "Mixkit Sound Effects Free License",
+        "license_url": "https://mixkit.co/license/#sfxFree",
+        "sha256": "7f3437fc38af17b98f935a66218b9388dae85f9ca7ab542a92a98dd163ff0a95",
+        "pilot_eligible": true,
+        "quality_hold": false,
+        "bytes": 3861920,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "OPTIONAL_ELIGIBLE"
+      },
+      {
+        "asset_id": "pixabay-net-hit-313216",
+        "local_filepath": "audio/sfx/football-core-v1-1/raw/ball/forza1903-a-football-hits-the-net-goal-313216.mp3",
+        "filename": "forza1903-a-football-hits-the-net-goal-313216.mp3",
+        "source": "Pixabay",
+        "source_item_id": "313216",
+        "source_url": "https://pixabay.com/sound-effects/film-special-effects-a-football-hits-the-net-goal-313216/",
+        "license": "Pixabay Content License",
+        "license_url": "https://pixabay.com/service/license-summary/",
+        "sha256": "f1343e65beef6c810d5ca619e011c745a8b5b561abb6d45ee6e991d0d4898839",
+        "pilot_eligible": false,
+        "quality_hold": false,
+        "bytes": 98638,
+        "tracked_recommendation": false,
+        "lfs_recommendation": false,
+        "bootstrap_tier": "DO_NOT_BOOTSTRAP_INELIGIBLE"
+      }
+    ],
+    "asset_count": 23,
+    "eligible_count": 21,
+    "strategy": "B_MANIFEST_AND_LOCAL_ACQUISITION_IMPORT",
+    "closure_source": "mixkit-police-short-whistle-615",
+    "derived_closure": {
+      "path": "brand/bay-referee/outro/audio/referee-triple-final.wav",
+      "bytes": 172856,
+      "tracked_recommendation": false,
+      "classification": "LOCAL_REGENERATABLE",
+      "reason": "Standalone audio source still embeds licensed recording; retain recipe/tokens and rebuild locally after validated source acquisition."
+    }
+  },
+  "portable_runtime_manifest": "config/bay-referee-portable-assets.json",
+  "runtime_asset_bytes_before_portable_typography_extraction": 14214263,
+  "new_portable_closure_verification": {
+    "reported_by": "engine audit agent",
+    "source_records": 2,
+    "repository_asset_records": 31,
+    "verification": "Pure closure recipe compared in memory against approved existing local cue, 43,200 samples and maximum sample difference 0. No audio file generated; no source audio downloaded.",
+    "license_policy": "Raw and isolated derived SFX remain local-only."
+  }
+}

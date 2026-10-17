@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Asset Plan v1.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "episode_id": {
+      "type": "string",
+      "pattern": "^episode-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "ready"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "pattern": "^asset_[a-zA-Z0-9_-]+$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "video",
+              "image",
+              "archive",
+              "document",
+              "map",
+              "graphic"
+            ]
+          },
+          "scene_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^scene_[a-zA-Z0-9_-]+$"
+            },
+            "uniqueItems": true
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "real",
+              "motion_graphic",
+              "ai_generated"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "asset",
+                "type": "string"
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "attribution": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "license_notes": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "provenance_notes": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "direct_file_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "institution": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "classification": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "license_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              }
+            },
+            "required": [
+              "kind",
+              "url",
+              "title",
+              "attribution",
+              "license_notes",
+              "provenance_notes"
+            ],
+            "additionalProperties": false
+          },
+          "local_filepath": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "resolution": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "width": {
+                "type": "integer",
+                "exclusiveMinimum": 0
+              },
+              "height": {
+                "type": "integer",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "width",
+              "height"
+            ],
+            "additionalProperties": false
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "sourced",
+              "ready",
+              "rejected"
+            ]
+          },
+          "treatment": {
+            "type": "string"
+          },
+          "generation": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "provider": {
+                "type": "string",
+                "const": "higgsfield"
+              },
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "no_real_material",
+                  "historical_reenactment",
+                  "abstract_concept",
+                  "visual_bridge"
+                ]
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "provider",
+              "reason",
+              "rationale"
+            ],
+            "additionalProperties": false
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "selection_status": {
+            "type": "string",
+            "enum": [
+              "selected",
+              "candidate",
+              "rejected",
+              "unavailable"
+            ]
+          },
+          "rights_status": {
+            "type": "string",
+            "enum": [
+              "approved_clear_rights",
+              "candidate_rights_review",
+              "rejected",
+              "unavailable"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "description",
+          "type",
+          "scene_ids",
+          "origin",
+          "source",
+          "local_filepath",
+          "resolution",
+          "status",
+          "treatment",
+          "generation"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "episode_id",
+    "status",
+    "assets"
+  ],
+  "additionalProperties": false
+}

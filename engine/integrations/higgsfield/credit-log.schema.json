@@ -1,0 +1,198 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:video-engine:higgsfield:credit-log:1",
+  "title": "Per-attempt credit audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "episode_id",
+    "experiment_id",
+    "attempt_id",
+    "status",
+    "tool",
+    "model",
+    "job_id",
+    "quoted_credits",
+    "actual_credits",
+    "actual_credit_evidence",
+    "payment_mode",
+    "decision_path",
+    "occurred_at",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "episode_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "attempt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "NONE",
+        "QUOTED",
+        "SUBMITTED",
+        "SUBMISSION_UNKNOWN",
+        "FAILED",
+        "SETTLED"
+      ]
+    },
+    "tool": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "job_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "quoted_credits": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "actual_credits": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "actual_credit_evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payment_mode": {
+      "enum": [
+        "not_applicable",
+        "credits",
+        "explicit_free_generation",
+        "explicit_unlimited_allowance",
+        "unresolved"
+      ]
+    },
+    "decision_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "NONE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "tool": {
+            "type": "null"
+          },
+          "model": {
+            "type": "null"
+          },
+          "job_id": {
+            "type": "null"
+          },
+          "quoted_credits": {
+            "const": 0
+          },
+          "actual_credits": {
+            "const": 0
+          },
+          "payment_mode": {
+            "const": "not_applicable"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "SUBMISSION_UNKNOWN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "actual_credits": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "QUOTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "job_id": {
+            "type": "null"
+          },
+          "quoted_credits": {
+            "type": "number",
+            "minimum": 0
+          },
+          "actual_credits": {
+            "const": 0
+          }
+        }
+      }
+    }
+  ]
+}

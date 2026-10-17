@@ -1,0 +1,48 @@
+{
+  "id": "football-full-caption-v1",
+  "version": 1,
+  "purpose": "Complete spoken narration, separate from editorial emphasis and object labels.",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "font": {
+    "file": "formats/football-comparison-v1/fonts/Archivo-variable.ttf",
+    "family": "Archivo",
+    "axes": {"wght": 820, "wdth": 65},
+    "size_px": 48,
+    "case": "canonical-natural-case",
+    "auto_shrink": false
+  },
+  "fill": "#F4F1DA",
+  "contrast": {"type": "stroke", "color": "#072C21", "width_px": 3, "paint_order": "stroke fill"},
+  "box": null,
+  "highlight": {"mode": "none", "reason": "Existing editorial semantic highlights retain sole emphasis; no karaoke."},
+  "layout": {
+    "zone": "consistent-lower-left",
+    "x": 72,
+    "first_baseline": 1404,
+    "line_height": 59,
+    "max_width": 336,
+    "max_lines": 2,
+    "anchor": "start",
+    "one_line_baseline": 1404,
+    "movement": "none"
+  },
+  "chunking": {
+    "typical_words": [3, 7],
+    "allow_meaningful_two_word_phrase": true,
+    "single_filler_words": false,
+    "authority": "Canonical narration; never substitute Whisper spelling."
+  },
+  "timing": {
+    "authority": "Current approved final narration WAV mapped by local Whisper medium/tr.",
+    "entry": "phrase native first-word start, quantized down to video frame",
+    "exit": "phrase native last-word end, quantized up and clamped to next phrase entry",
+    "animation": "none",
+    "word_by_word_recoloring": false
+  },
+  "safe_area": {
+    "avoid_right_of": 936,
+    "avoid_below": 1680,
+    "glyph_envelope_expected": {"x": 72, "right_max": 408, "y": 1357, "bottom_max": 1475},
+    "notes": "This lower-left slot is measured for the approved VAR/SAOT mascot and tactics. Revalidate actual alpha and action geometry for a new composition; never blindly reuse safe-zone claims."
+  }
+}

@@ -1,0 +1,1201 @@
+{
+  "schema": "bay-referee-portable-assets-v1",
+  "version": 1,
+  "frame": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "paths": {
+    "default_cache": ".cache/bay-referee-assets"
+  },
+  "asset_refs": {
+    "head": "brand-head",
+    "wordmark": "brand-wordmark",
+    "watermark": "brand-watermark",
+    "archivo": "font-archivo",
+    "manrope": "font-manrope"
+  },
+  "tokens": {
+    "brand": {
+      "name": "BAY REFEREE",
+      "palette": {
+        "paper": "#F4F1DA",
+        "ink": "#102820",
+        "referee_charcoal": "#252729",
+        "field": "#144C37",
+        "field_dark": "#092C22",
+        "field_light": "#285E40",
+        "muted_lime": "#CCD968",
+        "line": "#B5D3AE"
+      },
+      "wordmark": {
+        "family": "Archivo",
+        "weight": 820,
+        "width_axis": 93,
+        "case": "uppercase",
+        "content": "BAY REFEREE",
+        "tracking_font_units": 5,
+        "outline_export": true,
+        "extra_slogan": false
+      },
+      "bug": {
+        "transparent_size": 1024,
+        "corner_sizes": [
+          48,
+          64,
+          96,
+          128
+        ],
+        "minimum_recommended_video_size_px": 64,
+        "default_video_size_px": 72,
+        "preferred_small_device_size_px": 96,
+        "no_enclosing_news_box": true
+      }
+    },
+    "watermark": {
+      "schema": "bay-referee-watermark-v1",
+      "frame": {
+        "width": 1080,
+        "height": 1920
+      },
+      "text": "BAY REFEREE",
+      "opacity": {
+        "default": 0.42,
+        "min": 0.3,
+        "max": 0.55
+      },
+      "placement": {
+        "left": 72,
+        "top": 1550,
+        "width": 316,
+        "height": 64
+      },
+      "head": {
+        "left": 0,
+        "top": 0,
+        "width": 64,
+        "height": 64
+      },
+      "wordmark": {
+        "left": 78,
+        "centerY": 33,
+        "width": 238
+      },
+      "scale_range": {
+        "min": 0.85,
+        "max": 1.15
+      },
+      "caption_min_clearance_px": 48,
+      "rules": [
+        "Keep the lockup in the lower-left safe area, left of the host and below the current caption reserve.",
+        "Do not animate/pulse the watermark during the story. Role/highlight colors remain separate.",
+        "If another episode caption extends into the reserved lockup area, move the entire lockup upward to captionTop−48−lockupHeight. Never move the authoritative caption to fit branding.",
+        "Check the new location against host alpha and tactical objects; if occupied, choose another quiet left safe area and document it in the episode token override.",
+        "Keep right edge before x900 and bottom before y1660 for this1080x1920 layout; platform-specific overlays must still be checked at publication.",
+        "On the27-frame sign-off, the central face/wordmark takes over branding; do not duplicate the corner lockup."
+      ]
+    },
+    "caption": {
+      "id": "football-full-caption-v1",
+      "version": 1,
+      "purpose": "Complete spoken narration, separate from editorial emphasis and object labels.",
+      "canvas": {
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      },
+      "font": {
+        "file": "formats/football-comparison-v1/fonts/Archivo-variable.ttf",
+        "family": "Archivo",
+        "axes": {
+          "wght": 820,
+          "wdth": 65
+        },
+        "size_px": 48,
+        "case": "canonical-natural-case",
+        "auto_shrink": false
+      },
+      "fill": "#F4F1DA",
+      "contrast": {
+        "type": "stroke",
+        "color": "#072C21",
+        "width_px": 3,
+        "paint_order": "stroke fill"
+      },
+      "box": null,
+      "highlight": {
+        "mode": "none",
+        "reason": "Existing editorial semantic highlights retain sole emphasis; no karaoke."
+      },
+      "layout": {
+        "zone": "consistent-lower-left",
+        "x": 72,
+        "first_baseline": 1404,
+        "line_height": 59,
+        "max_width": 336,
+        "max_lines": 2,
+        "anchor": "start",
+        "one_line_baseline": 1404,
+        "movement": "none"
+      },
+      "chunking": {
+        "typical_words": [
+          2,
+          5
+        ],
+        "allow_meaningful_two_word_phrase": true,
+        "single_filler_words": false,
+        "authority": "Canonical final narration, 2–5 natural words, exact final-take Whisper timing; no auto-shrink or karaoke."
+      },
+      "timing": {
+        "authority": "The current episode final narration and independently generated segment/word timestamps.",
+        "entry": "phrase native first-word start, quantized down to video frame",
+        "exit": "phrase native last-word end, quantized up and clamped to next phrase entry",
+        "animation": "none",
+        "word_by_word_recoloring": false
+      },
+      "safe_area": {
+        "avoid_right_of": 936,
+        "avoid_below": 1680,
+        "glyph_envelope_expected": {
+          "x": 72,
+          "right_max": 408,
+          "y": 1357,
+          "bottom_max": 1475
+        }
+      }
+    },
+    "signoff": {
+      "timing": {
+        "fps": 30,
+        "frames": 27,
+        "duration": 0.9,
+        "sampleRate": 48000
+      },
+      "composition": {
+        "canvas": [
+          1080,
+          1920
+        ],
+        "head": {
+          "centre_x": 540,
+          "top": 630,
+          "width": 414,
+          "height": 450
+        },
+        "wordmark": {
+          "centre_x": 540,
+          "top": 1140,
+          "max_width": 740,
+          "max_height": 112
+        },
+        "background": {
+          "top": "#092C22",
+          "centre": "#1C5037",
+          "bottom": "#0D382B",
+          "pitch_line": "#B5D3AE",
+          "pitch_line_opacity": 0.12
+        },
+        "additional_copy": false
+      },
+      "motion": {
+        "head": "8px upward settle and 0.98→1 rigid scale over 0.14s",
+        "wordmark": "10px upward settle over 0.17s; fully readable thereafter",
+        "closure": "2px rigid head nod on the final whistle; no face deformation",
+        "fade_to_black": false,
+        "loop": false
+      },
+      "sound": {
+        "source_sha256": "0ce2c7c74df78879c0c30e4cdcde789ba67edbe8feb0c72242f623743c1efac2",
+        "first_blow_local_seconds": 0.1,
+        "blow_onsets_local_seconds": [
+          0.1,
+          0.34,
+          0.58
+        ],
+        "blow_durations_seconds": [
+          0.19,
+          0.19,
+          0.28
+        ],
+        "peak_targets_dbfs": [
+          -19,
+          -19.5,
+          -18.5
+        ],
+        "source_in_seconds": 0.095,
+        "fade_in_seconds": 0.005,
+        "fade_out_seconds": [
+          0.035,
+          0.035,
+          0.055
+        ],
+        "pitch_shift": false,
+        "time_stretch": false,
+        "compressor": false,
+        "limiter": false,
+        "normalization_of_voice": false,
+        "source_asset_id": "mixkit-police-short-whistle-615"
+      },
+      "rule": "Append after the current episode complete payoff and narration. Keep at least80ms between spoken audio and first whistle. The scene clock always comes from the current final voice."
+    }
+  },
+  "poses": [
+    {
+      "id": "neutral",
+      "asset_id": "pose:neutral",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "explain-forward",
+      "asset_id": "pose:explain-forward",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "point-left",
+      "asset_id": "pose:point-left",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "point-right",
+      "asset_id": "pose:point-right",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "point-up-left",
+      "asset_id": "pose:point-up-left",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "point-up-right",
+      "asset_id": "pose:point-up-right",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "compare-both",
+      "asset_id": "pose:compare-both",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "thinking",
+      "asset_id": "pose:thinking",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "confirm",
+      "asset_id": "pose:confirm",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "surprised",
+      "asset_id": "pose:surprised",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "hands-open",
+      "asset_id": "pose:hands-open",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "conclusion",
+      "asset_id": "pose:conclusion",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "whistle-ready",
+      "asset_id": "pose:whistle-ready",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "advantage",
+      "asset_id": "pose:advantage",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "stop-wait",
+      "asset_id": "pose:stop-wait",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "yellow-card",
+      "asset_id": "pose:yellow-card",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "red-card",
+      "asset_id": "pose:red-card",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "var-rectangle",
+      "asset_id": "pose:var-rectangle",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "point-to-spot",
+      "asset_id": "pose:point-to-spot",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "calm-down",
+      "asset_id": "pose:calm-down",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "final-decision",
+      "asset_id": "pose:final-decision",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "presenting-object-left",
+      "asset_id": "pose:presenting-object-left",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "presenting-object-right",
+      "asset_id": "pose:presenting-object-right",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "whistle-blow",
+      "asset_id": "pose:whistle-blow",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "pose:neutral",
+      "path": "brand/bay-referee/avatar/poses/neutral.png",
+      "role": "approved_avatar_pose",
+      "bytes": 544632,
+      "sha256": "4b7b0063a0be85d917112d42a6239521016212c9cfce818fe4f277d95aea28fb",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "neutral",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:explain-forward",
+      "path": "brand/bay-referee/avatar/poses/explain-forward.png",
+      "role": "approved_avatar_pose",
+      "bytes": 517900,
+      "sha256": "eaaf1a95748fe81b1a4a4506f9fbb0969e31843ab462c3a7463b96c6c6b555b5",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "explain-forward",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:point-left",
+      "path": "brand/bay-referee/avatar/poses/point-left.png",
+      "role": "approved_avatar_pose",
+      "bytes": 537910,
+      "sha256": "37f372cdd6b75e0af7f3ab929ffd834481c9f419de196d84283e3ba17e92125e",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "point-left",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:point-right",
+      "path": "brand/bay-referee/avatar/poses/point-right.png",
+      "role": "approved_avatar_pose",
+      "bytes": 548913,
+      "sha256": "7643c5342b625b4daf1527add59527a6da2d802ab741405e0f85ee0b7c963063",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "point-right",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:point-up-left",
+      "path": "brand/bay-referee/avatar/poses/point-up-left.png",
+      "role": "approved_avatar_pose",
+      "bytes": 565567,
+      "sha256": "6fbdb1f35c1d6996b528b67b2808f3b66188ca0492bc0bbf20a0332e2bc7a2a1",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "point-up-left",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:point-up-right",
+      "path": "brand/bay-referee/avatar/poses/point-up-right.png",
+      "role": "approved_avatar_pose",
+      "bytes": 565060,
+      "sha256": "3b2644a921a27c0ea1e2c3bec57e5a1d36563ea3cea51c942c5a50e6171ea693",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "point-up-right",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:compare-both",
+      "path": "brand/bay-referee/avatar/poses/compare-both.png",
+      "role": "approved_avatar_pose",
+      "bytes": 531959,
+      "sha256": "c840a54d6975fa7a7973d4f2a6c8df5b5869cffd3623e5924f145d7e841ba0fc",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "compare-both",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:thinking",
+      "path": "brand/bay-referee/avatar/poses/thinking.png",
+      "role": "approved_avatar_pose",
+      "bytes": 494472,
+      "sha256": "ce9f2aaabbfac09c10b47352beb7da4c2c30b4e8286b3ca6df37a855d782cae0",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "thinking",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:confirm",
+      "path": "brand/bay-referee/avatar/poses/confirm.png",
+      "role": "approved_avatar_pose",
+      "bytes": 542528,
+      "sha256": "f89c11d4b5dbabad3d19098cf00354bdbfd2fc249af85502578c2c9f82d4fc49",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "confirm",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:surprised",
+      "path": "brand/bay-referee/avatar/poses/surprised.png",
+      "role": "approved_avatar_pose",
+      "bytes": 520829,
+      "sha256": "033629ded7c22defe3928e22c80657f7246b0ca6b164f2dac2b8a1cf8414c08b",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "surprised",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:hands-open",
+      "path": "brand/bay-referee/avatar/poses/hands-open.png",
+      "role": "approved_avatar_pose",
+      "bytes": 520001,
+      "sha256": "cd451d4b1782573dd6c03a62c6bc4d938380802405fb8311c5b82a2f757c0d6a",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "hands-open",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:conclusion",
+      "path": "brand/bay-referee/avatar/poses/conclusion.png",
+      "role": "approved_avatar_pose",
+      "bytes": 518138,
+      "sha256": "9a07f60aa75ccd8ddb3865d9f62e17b8a1df271c3bab59e8f61aa7a3dd53c799",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "conclusion",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:whistle-ready",
+      "path": "brand/bay-referee/avatar/poses/whistle-ready.png",
+      "role": "approved_avatar_pose",
+      "bytes": 496242,
+      "sha256": "54a55af98f670453697de289d8e73ecedb2313b2b6eb29abb293cb2ae36025c1",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "whistle-ready",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:advantage",
+      "path": "brand/bay-referee/avatar/poses/advantage.png",
+      "role": "approved_avatar_pose",
+      "bytes": 480986,
+      "sha256": "5a1c4313838fa1b7d4f39ed3104e656ec18133976e572dc20534ab2e315f1070",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "advantage",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:stop-wait",
+      "path": "brand/bay-referee/avatar/poses/stop-wait.png",
+      "role": "approved_avatar_pose",
+      "bytes": 506241,
+      "sha256": "51e79b519a19fb2327399e48d7b6c32acf5a747a975477108fa7793e701c1401",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "stop-wait",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:yellow-card",
+      "path": "brand/bay-referee/avatar/poses/yellow-card.png",
+      "role": "approved_avatar_pose",
+      "bytes": 487556,
+      "sha256": "eea978e70d1c378ef4b5ccf9d2fc89134f18b06506ea152d87af8a07380cfff2",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "yellow-card",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:red-card",
+      "path": "brand/bay-referee/avatar/poses/red-card.png",
+      "role": "approved_avatar_pose",
+      "bytes": 492144,
+      "sha256": "018d27ecdd429ee96768ed84fc1c972cbb7cb21179e3b4733bf0ce6db6b6c3b2",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "red-card",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:var-rectangle",
+      "path": "brand/bay-referee/avatar/poses/var-rectangle.png",
+      "role": "approved_avatar_pose",
+      "bytes": 489826,
+      "sha256": "9dddc502afb2b6c380af93891c2fa71dd99092ffbbcba8c7f081d9723f3effb2",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "var-rectangle",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:point-to-spot",
+      "path": "brand/bay-referee/avatar/poses/point-to-spot.png",
+      "role": "approved_avatar_pose",
+      "bytes": 524608,
+      "sha256": "1305e1a8985014451c328a0a9be9ef9ff314a14fc60b418edf32b7ae1927dac3",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "point-to-spot",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:calm-down",
+      "path": "brand/bay-referee/avatar/poses/calm-down.png",
+      "role": "approved_avatar_pose",
+      "bytes": 497370,
+      "sha256": "ce6f32365dee1622c48a80b2ddd2cdfe23884df216020f5f51effd096ce9ed55",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "calm-down",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:final-decision",
+      "path": "brand/bay-referee/avatar/poses/final-decision.png",
+      "role": "approved_avatar_pose",
+      "bytes": 519455,
+      "sha256": "2ecde07ea5b1e1859f21b825139f6aaf392a984df9126bfb4cf8ecf2cda53308",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "final-decision",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:presenting-object-left",
+      "path": "brand/bay-referee/avatar/poses/presenting-object-left.png",
+      "role": "approved_avatar_pose",
+      "bytes": 510396,
+      "sha256": "9617931ddda8b381d9708a9d38f11f3b9de4fb2eb0511c519bed85eade6be73d",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "presenting-object-left",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:presenting-object-right",
+      "path": "brand/bay-referee/avatar/poses/presenting-object-right.png",
+      "role": "approved_avatar_pose",
+      "bytes": 503775,
+      "sha256": "bcf06745f9ba91c20c72d247b1e5d636b74f9d53f8373a00632028cd77e508be",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "presenting-object-right",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "pose:whistle-blow",
+      "path": "brand/bay-referee/avatar/poses/whistle-blow.png",
+      "role": "approved_avatar_pose",
+      "bytes": 479586,
+      "sha256": "08ed81f72cc61e0b9bfe5c51d08dc1124cf4d6c3e60b48c656b7d9a502927eb7",
+      "storage": "repository_asset",
+      "required": true,
+      "pose_id": "whistle-blow",
+      "canvas": {
+        "width": 1024,
+        "height": 1200
+      },
+      "anchors": {
+        "ground": {
+          "x": 512,
+          "y": 1150
+        }
+      }
+    },
+    {
+      "id": "brand-head",
+      "path": "brand/bay-referee/brand-bug/head.png",
+      "role": "approved_brand_head",
+      "bytes": 1097809,
+      "sha256": "1c8f3ee1880cebe8e19ec2c70d5b76e35fe9cc71244cf88f78d13c76a32b5c24",
+      "storage": "repository_asset",
+      "required": true
+    },
+    {
+      "id": "brand-wordmark",
+      "path": "brand/bay-referee/wordmark/wordmark.png",
+      "role": "approved_wordmark",
+      "bytes": 18895,
+      "sha256": "1c0deb514e2f9af3da5c67876ed887e06fe6d9f3848144e5cc6839fd7390fe0c",
+      "storage": "repository_asset",
+      "required": true
+    },
+    {
+      "id": "brand-watermark",
+      "path": "brand/bay-referee/watermark/lockup.png",
+      "role": "approved_watermark",
+      "bytes": 12837,
+      "sha256": "d3f1400da5eb2db62dfbf49c3e8c9c18ad3b29b23204d739e0ae30cc8843a6fa",
+      "storage": "repository_asset",
+      "required": true,
+      "alpha_opacity_baked": true
+    },
+    {
+      "id": "font-archivo",
+      "path": "formats/football-comparison-v1/fonts/Archivo-variable.ttf",
+      "role": "font",
+      "bytes": 658596,
+      "sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "storage": "repository_asset",
+      "required": true,
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "id": "font-archivo-license",
+      "path": "formats/football-comparison-v1/fonts/Archivo-OFL.txt",
+      "role": "font_license",
+      "bytes": 4388,
+      "sha256": "108b4e57c9c796d3d38d0428ca7ee39de47ad93187302718d9b2d8864b9b716b",
+      "storage": "repository_asset",
+      "required": true
+    },
+    {
+      "id": "font-manrope",
+      "path": "formats/football-comparison-v1/fonts/Manrope-Medium.ttf",
+      "role": "font",
+      "bytes": 97536,
+      "sha256": "4284b77c788f5ca4284ef02b25c478447c91bd0c3ade41ffb449e7a53977384c",
+      "storage": "repository_asset",
+      "required": true,
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "id": "font-manrope-license",
+      "path": "formats/football-comparison-v1/fonts/Manrope-OFL.txt",
+      "role": "font_license",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "storage": "repository_asset",
+      "required": true
+    }
+  ],
+  "sfx": [
+    {
+      "id": "mixkit-police-short-whistle-615",
+      "provider": "Mixkit",
+      "source_item_id": "615",
+      "title": "Police short whistle",
+      "source_page": "https://mixkit.co/free-sound-effects/whistle/",
+      "license": "Mixkit Sound Effects Free License",
+      "license_url": "https://mixkit.co/license/modal/sfxFree/",
+      "terms_url": "https://mixkit.co/terms/",
+      "filename": "mixkit-police-short-whistle-615.wav",
+      "cache_relative_path": "sfx/mixkit-police-short-whistle-615.wav",
+      "bytes": 279500,
+      "sha256": "0ce2c7c74df78879c0c30e4cdcde789ba67edbe8feb0c72242f623743c1efac2",
+      "duration_seconds": 1.056009,
+      "eligible": true,
+      "required_for_brand_closure": true,
+      "semantic_roles": [
+        "referee-whistle-short"
+      ],
+      "classification_note": "Source is tagged Sports but titled Police. Reusable whistle candidate; not a recorded match/referee provenance claim.",
+      "storage": "local_cache_only",
+      "repository_distribution": "prohibited_raw_or_standalone_derived_cue",
+      "download": {
+        "mode": "public-direct",
+        "url": "https://assets.mixkit.co/active_storage/sfx/615/615.wav",
+        "official_download_page": "https://mixkit.co/free-sound-effects/download/615/?context=item+grid",
+        "verified_url_date": "2026-10-17",
+        "allowed_hostname": "assets.mixkit.co",
+        "credentials": false
+      },
+      "usage_terms": "Acquire from the public provider or import a lawfully held matching original into a private local cache. Incorporate only in a larger edited end product. Do not commit raw audio or standalone derived cues to Git/LFS or distribute them with source, tools or templates."
+    },
+    {
+      "id": "mixkit-soccer-ball-quick-kick-2108",
+      "provider": "Mixkit",
+      "source_item_id": "2108",
+      "title": "Soccer ball quick kick",
+      "source_page": "https://mixkit.co/free-sound-effects/soccer/",
+      "license": "Mixkit Sound Effects Free License",
+      "license_url": "https://mixkit.co/license/modal/sfxFree/",
+      "terms_url": "https://mixkit.co/terms/",
+      "filename": "mixkit-soccer-ball-quick-kick-2108.wav",
+      "cache_relative_path": "sfx/mixkit-soccer-ball-quick-kick-2108.wav",
+      "bytes": 246152,
+      "sha256": "ab761dc7126ca1f0425dbd1b0cea3ccbab71ff156602d0a6953a140b8c55f659",
+      "duration_seconds": 0.929977,
+      "eligible": true,
+      "required_for_brand_closure": false,
+      "semantic_roles": [
+        "medium-kick"
+      ],
+      "classification_note": "Source tags include Ball, Balloon, Hit; exact playing surface not stated.",
+      "storage": "local_cache_only",
+      "repository_distribution": "prohibited_raw_or_standalone_derived_cue",
+      "download": {
+        "mode": "public-direct",
+        "url": "https://assets.mixkit.co/active_storage/sfx/2108/2108.wav",
+        "official_download_page": "https://mixkit.co/free-sound-effects/download/2108/?context=item+grid",
+        "verified_url_date": "2026-10-17",
+        "allowed_hostname": "assets.mixkit.co",
+        "credentials": false
+      },
+      "usage_terms": "Acquire from the public provider or import a lawfully held matching original into a private local cache. Incorporate only in a larger edited end product. Do not commit raw audio or standalone derived cues to Git/LFS or distribute them with source, tools or templates."
+    }
+  ],
+  "distribution": {
+    "repository_assets": "Approved avatar/brand derivatives and OFL fonts; exact hashes below. Raw identity photos and private voice references are not runtime inputs.",
+    "licensed_audio": "Raw Mixkit files and standalone cues are local-cache-only, never Git/LFS artifacts.",
+    "source_generation_material": "Raw pose sheets, old previews, old episode media and historic clocks are not required by this module."
+  }
+}

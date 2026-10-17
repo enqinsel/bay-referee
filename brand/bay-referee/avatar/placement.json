@@ -1,0 +1,174 @@
+{
+  "version": "bay-referee-v1",
+  "note": "Same approved 717x840 avatar canvas; shared horizontal position may be adjusted after exact caption geometry check.",
+  "poses": {
+    "neutral": {
+      "file": "./poses/neutral.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "explain-forward": {
+      "file": "./poses/explain-forward.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "point-left": {
+      "file": "./poses/point-left.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "point-right": {
+      "file": "./poses/point-right.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "point-up-left": {
+      "file": "./poses/point-up-left.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "point-up-right": {
+      "file": "./poses/point-up-right.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "compare-both": {
+      "file": "./poses/compare-both.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "thinking": {
+      "file": "./poses/thinking.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "confirm": {
+      "file": "./poses/confirm.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "surprised": {
+      "file": "./poses/surprised.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "hands-open": {
+      "file": "./poses/hands-open.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "conclusion": {
+      "file": "./poses/conclusion.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "whistle-ready": {
+      "file": "./poses/whistle-ready.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "advantage": {
+      "file": "./poses/advantage.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "stop-wait": {
+      "file": "./poses/stop-wait.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "yellow-card": {
+      "file": "./poses/yellow-card.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "red-card": {
+      "file": "./poses/red-card.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "var-rectangle": {
+      "file": "./poses/var-rectangle.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "point-to-spot": {
+      "file": "./poses/point-to-spot.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "calm-down": {
+      "file": "./poses/calm-down.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "final-decision": {
+      "file": "./poses/final-decision.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "presenting-object-left": {
+      "file": "./poses/presenting-object-left.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "presenting-object-right": {
+      "file": "./poses/presenting-object-right.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    },
+    "whistle-blow": {
+      "file": "./poses/whistle-blow.png",
+      "width": 717,
+      "height": 840,
+      "left": 214,
+      "top": 900
+    }
+  }
+}

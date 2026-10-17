@@ -1,0 +1,43 @@
+{
+  "language": "tr",
+  "status": "UNVERIFIED_CANONICAL_BASELINE",
+  "policy": "Apply only entries with verified=true; preserve canonical text separately; unknown terms pass through unchanged, never invent approved phonetics.",
+  "entries": [
+    {
+      "canonical": "VAR",
+      "tts_form": "VAR",
+      "verified": false,
+      "notes": "Canonical yazım değiştirilmedi. Fonetik alternatif üretilmedi; telaffuz ve olası override insan dinlemesini bekliyor."
+    },
+    {
+      "canonical": "yarı otomatik ofsayt",
+      "tts_form": "yarı otomatik ofsayt",
+      "verified": false,
+      "notes": "Canonical yazım değiştirilmedi. Fonetik alternatif üretilmedi; telaffuz ve olası override insan dinlemesini bekliyor."
+    },
+    {
+      "canonical": "Kevin De Bruyne",
+      "tts_form": "Kevin De Bruyne",
+      "verified": false,
+      "notes": "Canonical yazım değiştirilmedi. Fonetik alternatif üretilmedi; telaffuz ve olası override insan dinlemesini bekliyor."
+    },
+    {
+      "canonical": "Xabi Alonso",
+      "tts_form": "Xabi Alonso",
+      "verified": false,
+      "notes": "Canonical yazım değiştirilmedi. Fonetik alternatif üretilmedi; telaffuz ve olası override insan dinlemesini bekliyor."
+    },
+    {
+      "canonical": "Gegenpressing",
+      "tts_form": "Gegenpressing",
+      "verified": false,
+      "notes": "Canonical yazım değiştirilmedi. Fonetik alternatif üretilmedi; telaffuz ve olası override insan dinlemesini bekliyor."
+    },
+    {
+      "canonical": "Champions League",
+      "tts_form": "Champions League",
+      "verified": false,
+      "notes": "Canonical yazım değiştirilmedi. Fonetik alternatif üretilmedi; telaffuz ve olası override insan dinlemesini bekliyor."
+    }
+  ]
+}

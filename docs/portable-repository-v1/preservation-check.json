@@ -1,0 +1,399 @@
+{
+  "schema": "bay-referee-preservation-check-v1",
+  "status": "PASS_WITH_EXPECTED_SOURCE_EDITS",
+  "check_started": "2026-10-17T11:43:39.224182+03:00",
+  "check_completed": "2026-10-17T11:43:39.472084+03:00",
+  "read_only_verification": true,
+  "no_network_render_delete_or_move": true,
+  "baseline": {
+    "path": "docs/portable-repository-v1/inventory.json",
+    "scan_started": "2026-10-17T11:25:37.544413+03:00",
+    "scan_completed": "2026-10-17T11:25:41.704690+03:00",
+    "sha256": "cf8c8c9b83170d369f7ed340a432711d72766a0319a0aab7e747a22953db25fe",
+    "matches_canonical_audit_baseline_hash": true,
+    "original_snapshot_immutable": true
+  },
+  "comparison_fields": [
+    "entry type",
+    "lstat byte size",
+    "mtime_ns",
+    "symlink target when applicable"
+  ],
+  "checked": {
+    "entries": 19793,
+    "regular_files": 19790,
+    "symlinks": 3,
+    "baseline_logical_bytes": 10707047413
+  },
+  "unchanged_checked_entries": 19783,
+  "expected_source_changes": [
+    {
+      "path": ".gitignore",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 1108,
+        "mtime_ns": 1791396355613667618
+      },
+      "after": {
+        "type": "file",
+        "bytes": 11792,
+        "mtime_ns": 1792226535841009000
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable source allowlist and local-only exclusions."
+    },
+    {
+      "path": "README.md",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 14747,
+        "mtime_ns": 1791653151539826033
+      },
+      "after": {
+        "type": "file",
+        "bytes": 15687,
+        "mtime_ns": 1792226533834892215
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable setup and source/output documentation."
+    },
+    {
+      "path": "brand/bay-referee/channel-skill/bay-referee/SKILL.md",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 4990,
+        "mtime_ns": 1792089336315700141
+      },
+      "after": {
+        "type": "file",
+        "bytes": 5243,
+        "mtime_ns": 1792225586645019899
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Maintained skill portability guidance."
+    },
+    {
+      "path": "brand/bay-referee/channel-skill/bay-referee/references/engine-and-qa.md",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 6940,
+        "mtime_ns": 1792084610789427269
+      },
+      "after": {
+        "type": "file",
+        "bytes": 7475,
+        "mtime_ns": 1792225586645390693
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable engine/setup authority."
+    },
+    {
+      "path": "brand/bay-referee/channel-skill/bay-referee/references/format-and-brand.md",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 8200,
+        "mtime_ns": 1792084683630979624
+      },
+      "after": {
+        "type": "file",
+        "bytes": 9091,
+        "mtime_ns": 1792225906094608119
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable brand/component authority."
+    },
+    {
+      "path": "brand/bay-referee/channel-skill/bay-referee/references/production-mode.md",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 13653,
+        "mtime_ns": 1792089336335866565
+      },
+      "after": {
+        "type": "file",
+        "bytes": 14026,
+        "mtime_ns": 1792225607637595446
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable production prerequisites."
+    },
+    {
+      "path": "brand/bay-referee/channel-skill/bay-referee/references/voice-and-dubbing.md",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 7002,
+        "mtime_ns": 1791746910712834117
+      },
+      "after": {
+        "type": "file",
+        "bytes": 7262,
+        "mtime_ns": 1792225607638043199
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable voice/dub prerequisites."
+    },
+    {
+      "path": "package-lock.json",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 71510,
+        "mtime_ns": 1791309958361476323
+      },
+      "after": {
+        "type": "file",
+        "bytes": 71565,
+        "mtime_ns": 1792225594573081128
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Lockfile corresponding to portable direct dependencies."
+    },
+    {
+      "path": "package.json",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 1385,
+        "mtime_ns": 1791310137445939368
+      },
+      "after": {
+        "type": "file",
+        "bytes": 1868,
+        "mtime_ns": 1792226533813397330
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Portable scripts and direct runtime dependencies."
+    },
+    {
+      "path": "requirements-lock-macos-arm64.txt",
+      "status": "CHANGED",
+      "fields": [
+        "bytes",
+        "mtime_ns"
+      ],
+      "before": {
+        "type": "file",
+        "bytes": 394,
+        "mtime_ns": 1791311487012298996
+      },
+      "after": {
+        "type": "file",
+        "bytes": 659,
+        "mtime_ns": 1792225768200570183
+      },
+      "expected_source_change": true,
+      "source_change_reason": "Reproducible Python environment pinning."
+    }
+  ],
+  "unexpected_changes": [],
+  "missing_entries": [],
+  "errors": [],
+  "excluded_mutable_dependencies_and_caches": {
+    "total": {
+      "entries": 82709,
+      "regular_files": 82690,
+      "symlinks": 19,
+      "baseline_logical_bytes": 4713230688
+    },
+    "groups": [
+      {
+        "reason": "node_modules",
+        "entries": 5108,
+        "regular_files": 5098,
+        "symlinks": 10,
+        "baseline_logical_bytes": 192326468
+      },
+      {
+        "reason": ".venv",
+        "entries": 24805,
+        "regular_files": 24802,
+        "symlinks": 3,
+        "baseline_logical_bytes": 893727116
+      },
+      {
+        "reason": "voice/chatterbox/env",
+        "entries": 45154,
+        "regular_files": 45151,
+        "symlinks": 3,
+        "baseline_logical_bytes": 1249767052
+      },
+      {
+        "reason": ".tools/asset-treatment-venv",
+        "entries": 6326,
+        "regular_files": 6323,
+        "symlinks": 3,
+        "baseline_logical_bytes": 190011679
+      },
+      {
+        "reason": ".cache",
+        "entries": 607,
+        "regular_files": 607,
+        "symlinks": 0,
+        "baseline_logical_bytes": 1819853255
+      },
+      {
+        "reason": "voice/chatterbox/cache",
+        "entries": 669,
+        "regular_files": 669,
+        "symlinks": 0,
+        "baseline_logical_bytes": 367175479
+      },
+      {
+        "reason": "other __pycache__",
+        "entries": 40,
+        "regular_files": 40,
+        "symlinks": 0,
+        "baseline_logical_bytes": 369639
+      }
+    ],
+    "rule": "Skip listed install/cache roots and any other __pycache__ directory. They are rebuildable, mutable and not archival preservation targets. Their present bytes/mtimes were not compared; no unchanged assertion is made for them, including cached Whisper weights or clean-clone fixtures."
+  },
+  "protected_views_overlap": true,
+  "protected_views": [
+    {
+      "name": "existing_media_and_archives",
+      "entries": 16910,
+      "regular_files": 16910,
+      "symlinks": 0,
+      "baseline_logical_bytes": 7354309842,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    },
+    {
+      "name": "historical_episode_lab_and_voice_output_trees",
+      "entries": 9264,
+      "regular_files": 9264,
+      "symlinks": 0,
+      "baseline_logical_bytes": 5470890804,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    },
+    {
+      "name": "historical_brand_outro",
+      "entries": 16,
+      "regular_files": 16,
+      "symlinks": 0,
+      "baseline_logical_bytes": 20810049,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    },
+    {
+      "name": "raw_sfx_catalog_and_files",
+      "entries": 65,
+      "regular_files": 65,
+      "symlinks": 0,
+      "baseline_logical_bytes": 53253846,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    },
+    {
+      "name": "personal_voice_reference",
+      "entries": 6,
+      "regular_files": 6,
+      "symlinks": 0,
+      "baseline_logical_bytes": 36220590,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    },
+    {
+      "name": "non_cache_model_store",
+      "entries": 8,
+      "regular_files": 7,
+      "symlinks": 1,
+      "baseline_logical_bytes": 3208854761,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    },
+    {
+      "name": "root_git_metadata",
+      "entries": 19,
+      "regular_files": 19,
+      "symlinks": 0,
+      "baseline_logical_bytes": 33407,
+      "changed_or_missing_count": 0,
+      "changed_or_missing_paths": []
+    }
+  ],
+  "git": {
+    "state_matches_original_empty_repository": true,
+    "commands_read_only": true,
+    "optional_locks_disabled": true,
+    "results": {
+      "head": {
+        "exit_code": 128,
+        "value": ""
+      },
+      "symbolic_head": {
+        "exit_code": 0,
+        "value": "refs/heads/main"
+      },
+      "refs": {
+        "exit_code": 1,
+        "value": ""
+      },
+      "tracked": {
+        "exit_code": 0,
+        "value": 0
+      },
+      "remote_names": {
+        "exit_code": 0,
+        "value": ""
+      },
+      "objects": {
+        "exit_code": 0,
+        "value": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0"
+      }
+    },
+    "interpretation": "Original repository remains unborn on refs/heads/main with zero tracked files, refs, remote names, objects and packs. This verifies observed local state; it does not infer unobservable remote activity. No Git mutation or remote command was performed by this check."
+  },
+  "limits": [
+    "The original inventory contains metadata, not historical content hashes. Unchanged means equal recorded type/size/mtime/target, not a cryptographic proof that contents never changed.",
+    "New files created after the original snapshot are outside this preservation comparison; they do not replace or alter its original totals.",
+    "The original scan and this check are non-atomic; the report binds observations at the stated times.",
+    "Excluded dependency/cache changes are neither failures nor preservation claims. All checked pre-existing media/archive/output entries have unchanged metadata.",
+    "Filename/type tests and named historical trees overlap; protected-view totals must not be added."
+  ]
+}

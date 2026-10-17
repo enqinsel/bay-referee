@@ -1,0 +1,50 @@
+{
+  "status": "MOTION_GRAMMAR_APPROVED_FOR_NEW_EPISODES",
+  "decision_date": "2026-10-15",
+  "authority": "User's explicit Motion Grammar Consolidation human-review decision",
+  "motion_lab": "CLOSED",
+  "v1_1": {
+    "human_review": "Clear and successful creative improvement",
+    "production_reference": "Visible choreography level; adapt relationships to each story, not exact scene layouts or timings",
+    "approved_repertoire": [
+      "FOCUS_SHIFT",
+      "CONTEXT_RETAIN",
+      "PROCESS_BUILD",
+      "YIELD_SPACE",
+      "HANDOFF",
+      "DOCK",
+      "LINE_ANCHOR"
+    ]
+  },
+  "v1_2": {
+    "human_review": "Technically more refined; small perceptual difference from V1.1 at normal speed",
+    "full_choreography_production_default": false,
+    "conditional_reusable_principles": [
+      "ANTICIPATION_ACTION_SETTLE",
+      "SPACE_EXCHANGE",
+      "CAUSALITY_CHAIN",
+      "OWNERSHIP_CHANGE",
+      "POSE_CUT_AT_ACTION_APEX",
+      "PHYSICAL_FOLLOW_THROUGH"
+    ],
+    "mandatory_in_every_scene": false,
+    "global_easing_pixel_frame_defaults": false
+  },
+  "new_episode_design_order": [
+    "SCRIPT",
+    "FINAL VOICE",
+    "WHISPER",
+    "SEMANTIC BEATS",
+    "VISUAL STATES",
+    "MOTION PLAN"
+  ],
+  "motion_designed_during_storyboard": true,
+  "pattern_library_count": 58,
+  "var_saot_master": "PRESERVE_DO_NOT_RERENDER",
+  "historical_lab_reports": "Preserved as evidence of their delivery-time review state; superseded by this human decision for future production authority",
+  "starts_new_episode": false,
+  "maintained_skill": "brand/bay-referee/channel-skill/bay-referee/",
+  "motion_reference": "brand/bay-referee/channel-skill/bay-referee/references/motion-grammar.md",
+  "validation_record": "brand/bay-referee/qa/motion-consolidation/validation.json",
+  "installation_record": "brand/bay-referee/qa/motion-consolidation/installation.json"
+}

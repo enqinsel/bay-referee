@@ -1,0 +1,86 @@
+{
+  "schema": "bay-referee-signoff-v1",
+  "status": "IMPLEMENTED_REQUIRES_HUMAN_BRAND_REVIEW",
+  "timing": {
+    "fps": 30,
+    "coreFrames": 1326,
+    "coreDuration": 44.2,
+    "frames": 27,
+    "duration": 0.9,
+    "finalFrames": 1353,
+    "finalDuration": 45.1,
+    "sampleRate": 48000
+  },
+  "composition": {
+    "canvas": [
+      1080,
+      1920
+    ],
+    "head": {
+      "centre_x": 540,
+      "top": 630,
+      "width": 414,
+      "height": 450
+    },
+    "wordmark": {
+      "centre_x": 540,
+      "top": 1140,
+      "max_width": 740,
+      "max_height": 112
+    },
+    "background": {
+      "top": "#092C22",
+      "centre": "#1C5037",
+      "bottom": "#0D382B",
+      "pitch_line": "#B5D3AE",
+      "pitch_line_opacity": 0.12
+    },
+    "additional_copy": false
+  },
+  "motion": {
+    "head": "8px upward settle and 0.98→1 rigid scale over 0.14s",
+    "wordmark": "10px upward settle over 0.17s; fully readable thereafter",
+    "closure": "2px rigid head nod on the final whistle; no face deformation",
+    "fade_to_black": false,
+    "loop": false
+  },
+  "sound": {
+    "source": "audio/sfx/football-core-v1-1/raw/player-field/mixkit-police-short-whistle-615.wav",
+    "source_sha256": "0ce2c7c74df78879c0c30e4cdcde789ba67edbe8feb0c72242f623743c1efac2",
+    "first_blow_local_seconds": 0.1,
+    "blow_onsets_local_seconds": [
+      0.1,
+      0.34,
+      0.58
+    ],
+    "blow_durations_seconds": [
+      0.19,
+      0.19,
+      0.28
+    ],
+    "peak_targets_dbfs": [
+      -19,
+      -19.5,
+      -18.5
+    ],
+    "source_in_seconds": 0.095,
+    "fade_in_seconds": 0.005,
+    "fade_out_seconds": [
+      0.035,
+      0.035,
+      0.055
+    ],
+    "voice_gain": 1,
+    "core_mix_gain": 1,
+    "pitch_shift": false,
+    "time_stretch": false,
+    "compressor": false,
+    "limiter": false,
+    "normalization_of_voice": false
+  },
+  "rule": "Append after the complete payoff and narration. No opening bumper. All three blows occur after the approved voice has ended. Future episodes must use their own completed core duration and retain at least 80ms of clean voice-to-whistle separation.",
+  "limits": [
+    "Short-whistle recording repeated three times; source title is Police short whistle, not a claim of recorded match/referee provenance.",
+    "No claim that waveform/peak checks substitute for human listening."
+  ]
+}

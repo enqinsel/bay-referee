@@ -1,0 +1,43 @@
+{
+  "schema": "bay-referee-watermark-v1",
+  "frame": {
+    "width": 1080,
+    "height": 1920
+  },
+  "text": "BAY REFEREE",
+  "opacity": {
+    "default": 0.42,
+    "min": 0.3,
+    "max": 0.55
+  },
+  "placement": {
+    "left": 72,
+    "top": 1550,
+    "width": 316,
+    "height": 64
+  },
+  "head": {
+    "left": 0,
+    "top": 0,
+    "width": 64,
+    "height": 64
+  },
+  "wordmark": {
+    "left": 78,
+    "centerY": 33,
+    "width": 238
+  },
+  "scale_range": {
+    "min": 0.85,
+    "max": 1.15
+  },
+  "caption_min_clearance_px": 48,
+  "rules": [
+    "Keep the lockup in the lower-left safe area, left of the host and below the current caption reserve.",
+    "Do not animate/pulse the watermark during the story. Role/highlight colors remain separate.",
+    "If another episode caption extends into the reserved lockup area, move the entire lockup upward to captionTop−48−lockupHeight. Never move the authoritative caption to fit branding.",
+    "Check the new location against host alpha and tactical objects; if occupied, choose another quiet left safe area and document it in the episode token override.",
+    "Keep right edge before x900 and bottom before y1660 for this1080x1920 layout; platform-specific overlays must still be checked at publication.",
+    "On the27-frame sign-off, the central face/wordmark takes over branding; do not duplicate the corner lockup."
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "schema_version": "2.0",
+  "reviewed_on": "2026-10-07",
+  "timezone": "Europe/Istanbul",
+  "default_profile": "project_cross_platform",
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "visual_bleed_rect": {
+    "left": 0,
+    "top": 0,
+    "right": 1080,
+    "bottom": 1920
+  },
+  "qa": {
+    "critical_tolerance_px": 0,
+    "text_density_warning": {
+      "minimum_words": 14,
+      "minimum_groups": 3,
+      "requires_human_review": true
+    },
+    "default_font_cap_px": 170,
+    "font_cap_exception_requires_human_review": true,
+    "caption_default_rect": {
+      "left": 100,
+      "top": 1430,
+      "right": 850,
+      "bottom": 1610
+    },
+    "scope": "Technical QA guardrails; not permanent channel design tokens.",
+    "legacy_font_cap_scope": "default_font_cap_px is the preserved V3 reviewer threshold, not a V4 design size limit",
+    "ui_exclusion_font_review_cap_px": 220
+  },
+  "profiles": {
+    "project_cross_platform": {
+      "id": "project_cross_platform",
+      "title": "Project UI exclusions and readability",
+      "critical_safe_rect": {
+        "left": 96,
+        "top": 220,
+        "right": 864,
+        "bottom": 1520
+      },
+      "margins": {
+        "left": 96,
+        "right": 216,
+        "top": 220,
+        "bottom": 400
+      },
+      "authority": "project_exclusion_assumptions_not_official_exact_pixels",
+      "scope": "Organic vertical-video project QA",
+      "official_exact_pixels_verified": false,
+      "sources": [
+        {
+          "kind": "user_instruction",
+          "title": "Michelin V3 FINAL POLISH + ENGINE HARDENING, sections 2–5",
+          "date": "2026-10-07"
+        },
+        {
+          "kind": "user_instruction",
+          "title": "Michelin V4 DESIGN + MOTION + SOUND PREFLIGHT, sections 2–6",
+          "date": "2026-10-07",
+          "finding": "Three safety classes, UI-exclusion preview, lower caption band and semantic focal regions; prior central rectangle retained for V3 reproduction only."
+        }
+      ],
+      "uncertainty": "A project fallback, not a platform guarantee. UI, expanded descriptions, captions and device crops vary.",
+      "qa_model": "ui_exclusion_and_semantic_visibility",
+      "exclusions": [
+        {
+          "id": "right-toolbar",
+          "severity": "exclude",
+          "rect": {
+            "left": 900,
+            "top": 400,
+            "right": 1080,
+            "bottom": 1680
+          },
+          "assumption": "Project preview of collapsed organic right interaction UI; not official exact pixels."
+        },
+        {
+          "id": "bottom-description-audio",
+          "severity": "exclude",
+          "rect": {
+            "left": 0,
+            "top": 1680,
+            "right": 1080,
+            "bottom": 1920
+          },
+          "assumption": "Collapsed description/audio controls only. Expanded description is not modelled."
+        },
+        {
+          "id": "top-ui-caution",
+          "severity": "caution",
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "right": 1080,
+            "bottom": 170
+          },
+          "assumption": "Variable app navigation and device edge caution; does not prohibit full-bleed imagery."
+        }
+      ],
+      "exact_static_dynamic": {
+        "official_exact_organic_pixels": false,
+        "official_guidance": "user_design_targets",
+        "project_mask": "static_preview_assumptions"
+      },
+      "exclusion_assumptions": [
+        "1080x1920 portrait; collapsed organic feed controls only",
+        "Rectangles illustrate variable UI; must be checked in platform editor before future publication",
+        "Different platform/device exports may supply different masks without reframing every object into a centre box"
+      ],
+      "caption_preferred_band": {
+        "left": 100,
+        "right": 850,
+        "baseline_top": 1430,
+        "baseline_bottom": 1610
+      },
+      "text_policy": {
+        "canvas_containment": true,
+        "hard_exclusion_overlap_tolerance_px": 0,
+        "caution_requires_review": true
+      },
+      "semantic_policy": {
+        "whole_object_containment": false,
+        "region_min_visible_default": 0.75,
+        "anchor_required_when_no_region": true
+      }
+    },
+    "instagram_reels": {
+      "id": "instagram_reels",
+      "title": "Instagram Reels — project fallback",
+      "critical_safe_rect": {
+        "left": 96,
+        "top": 220,
+        "right": 864,
+        "bottom": 1520
+      },
+      "fallback_profile": "project_cross_platform",
+      "authority": "project_exclusion_assumptions_not_official_exact_pixels",
+      "scope": "Organic Instagram Reels; not an advertising-placement certification",
+      "official_exact_pixels_verified": false,
+      "sources": [
+        {
+          "url": "https://www.facebook.com/business/ads/facebook-instagram-reels-ads",
+          "title": "Instagram & Facebook Reels: Create Short Video Ads",
+          "accessed_on": "2026-10-07",
+          "access": "Official search-index text readable; direct page redirected to login/temporary-block response",
+          "finding": "Meta describes a safe-zone checker for Reels ads; an exact organic-pixel rectangle was not verified."
+        },
+        {
+          "url": "https://www.facebook.com/business/ads-guide/update/video/instagram-reels/outcome-engagement",
+          "title": "Meta Ads Guide — Instagram Reels",
+          "accessed_on": "2026-10-07",
+          "access": "Login/temporary-block response",
+          "finding": "Numeric ad-placement claims seen on blogs were not promoted to verified authority."
+        },
+        {
+          "url": "https://www.facebook.com/business/help/980593475366490",
+          "title": "Text overlay and safe zone guidance",
+          "accessed_on": "2026-10-07",
+          "access": "Login/temporary-block response",
+          "finding": "No template downloaded from the blocked page; no access-control workaround attempted."
+        }
+      ],
+      "uncertainty": "Fallback selected because exact, currently verified organic Reels coordinates are unavailable; not a claim of universal Instagram UI clearance.",
+      "qa_model": "ui_exclusion_and_semantic_visibility",
+      "exclusions": [
+        {
+          "id": "right-toolbar",
+          "severity": "exclude",
+          "rect": {
+            "left": 900,
+            "top": 400,
+            "right": 1080,
+            "bottom": 1680
+          },
+          "assumption": "Project preview of collapsed organic right interaction UI; not official exact pixels."
+        },
+        {
+          "id": "bottom-description-audio",
+          "severity": "exclude",
+          "rect": {
+            "left": 0,
+            "top": 1680,
+            "right": 1080,
+            "bottom": 1920
+          },
+          "assumption": "Collapsed description/audio controls only. Expanded description is not modelled."
+        },
+        {
+          "id": "top-ui-caution",
+          "severity": "caution",
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "right": 1080,
+            "bottom": 170
+          },
+          "assumption": "Variable app navigation and device edge caution; does not prohibit full-bleed imagery."
+        }
+      ],
+      "exact_static_dynamic": {
+        "official_exact_organic_pixels": false,
+        "official_guidance": "checker_template_approach",
+        "project_mask": "static_preview_assumptions"
+      },
+      "exclusion_assumptions": [
+        "1080x1920 portrait; collapsed organic feed controls only",
+        "Rectangles illustrate variable UI; must be checked in platform editor before future publication",
+        "Different platform/device exports may supply different masks without reframing every object into a centre box"
+      ],
+      "caption_preferred_band": {
+        "left": 100,
+        "right": 850,
+        "baseline_top": 1430,
+        "baseline_bottom": 1610
+      },
+      "text_policy": {
+        "canvas_containment": true,
+        "hard_exclusion_overlap_tolerance_px": 0,
+        "caution_requires_review": true
+      },
+      "semantic_policy": {
+        "whole_object_containment": false,
+        "region_min_visible_default": 0.75,
+        "anchor_required_when_no_region": true
+      }
+    },
+    "youtube_shorts": {
+      "id": "youtube_shorts",
+      "title": "YouTube Shorts — project fallback",
+      "critical_safe_rect": {
+        "left": 96,
+        "top": 220,
+        "right": 864,
+        "bottom": 1520
+      },
+      "fallback_profile": "project_cross_platform",
+      "authority": "project_exclusion_assumptions_not_official_exact_pixels",
+      "scope": "Organic YouTube Shorts",
+      "official_exact_pixels_verified": false,
+      "sources": [
+        {
+          "url": "https://support.google.com/youtube/answer/16215842?hl=en",
+          "title": "Enhance your Shorts — Use visual guides",
+          "accessed_on": "2026-10-07",
+          "access": "Official page read",
+          "finding": "Editor guides indicate buttons/description and device-edge risk; no universal numeric rectangle is specified."
+        }
+      ],
+      "advertising_reference_profile": "youtube_vertical_ads_reference",
+      "uncertainty": "Organic Shorts guidance is contextual. The separately verified Google Ads rectangle has a different advertising scope and is not silently substituted.",
+      "qa_model": "ui_exclusion_and_semantic_visibility",
+      "exclusions": [
+        {
+          "id": "right-toolbar",
+          "severity": "exclude",
+          "rect": {
+            "left": 900,
+            "top": 400,
+            "right": 1080,
+            "bottom": 1680
+          },
+          "assumption": "Project preview of collapsed organic right interaction UI; not official exact pixels."
+        },
+        {
+          "id": "bottom-description-audio",
+          "severity": "exclude",
+          "rect": {
+            "left": 0,
+            "top": 1680,
+            "right": 1080,
+            "bottom": 1920
+          },
+          "assumption": "Collapsed description/audio controls only. Expanded description is not modelled."
+        },
+        {
+          "id": "top-ui-caution",
+          "severity": "caution",
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "right": 1080,
+            "bottom": 170
+          },
+          "assumption": "Variable app navigation and device edge caution; does not prohibit full-bleed imagery."
+        }
+      ],
+      "exact_static_dynamic": {
+        "official_exact_organic_pixels": false,
+        "official_guidance": "dynamic_editor_guides",
+        "project_mask": "static_preview_assumptions"
+      },
+      "exclusion_assumptions": [
+        "1080x1920 portrait; collapsed organic feed controls only",
+        "Rectangles illustrate variable UI; must be checked in platform editor before future publication",
+        "Different platform/device exports may supply different masks without reframing every object into a centre box"
+      ],
+      "caption_preferred_band": {
+        "left": 100,
+        "right": 850,
+        "baseline_top": 1430,
+        "baseline_bottom": 1610
+      },
+      "text_policy": {
+        "canvas_containment": true,
+        "hard_exclusion_overlap_tolerance_px": 0,
+        "caution_requires_review": true
+      },
+      "semantic_policy": {
+        "whole_object_containment": false,
+        "region_min_visible_default": 0.75,
+        "anchor_required_when_no_region": true
+      }
+    },
+    "youtube_vertical_ads_reference": {
+      "id": "youtube_vertical_ads_reference",
+      "title": "Google Ads vertical safe area — advertising reference only",
+      "critical_safe_rect": {
+        "left": 48,
+        "top": 288,
+        "right": 888,
+        "bottom": 1248
+      },
+      "margins": {
+        "left": 48,
+        "right": 192,
+        "top": 288,
+        "bottom": 672
+      },
+      "authority": "official_numeric_advertising_reference",
+      "scope": "YouTube vertical ads across eligible advertising inventory, including Shorts",
+      "official_exact_pixels_verified": true,
+      "sources": [
+        {
+          "url": "https://support.google.com/google-ads/answer/9128498?hl=en",
+          "title": "Use square and vertical video to engage mobile customers",
+          "accessed_on": "2026-10-07",
+          "direct_file_url": "https://storage.googleapis.com/support-kms-prod/jbb4hOyc2nGdunbKddqpFAEQpHOQvy582jIR",
+          "local_filepath": "research/platform-safe-zone-materials/google-ads-vertical-safe-zone.svg",
+          "finding": "Official image inspected: 1080×1920, margins top 288, bottom 672, left 48, right 192."
+        }
+      ],
+      "uncertainty": "Advertising-only reference; screen/inventory differences remain. Not selected for this organic episode."
+    }
+  },
+  "active_qa_model": "ui_exclusion_and_semantic_visibility",
+  "legacy_rect_policy": "critical_safe_rect remains exclusively for reproducible V3 QA; never use it as the V4 design container.",
+  "safety_classes": {
+    "A": "Full bleed: photos/video/archive/texture/large illustration/road/map/background objects; no central containment",
+    "B": "Text safe: actual glyph runs must remain in canvas and outside hard UI masks",
+    "C": "Semantic object: measure explicitly authored focal anchors/regions, not complete object bounding box"
+  }
+}

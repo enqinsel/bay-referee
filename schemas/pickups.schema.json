@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pickups v1.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "episode_id": {
+      "type": "string",
+      "pattern": "^episode-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "ready",
+        "SUPERSEDED_BY_FULL_V2_NARRATION"
+      ]
+    },
+    "timing_authority": {
+      "type": "string",
+      "const": "audio/voice_original.wav"
+    },
+    "pickups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pickup_id": {
+            "type": "string",
+            "pattern": "^pickup_[a-zA-Z0-9_-]+$"
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "suggested_line": {
+            "type": "string",
+            "minLength": 1
+          },
+          "replacement_audio": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "requested",
+              "recorded",
+              "cancelled"
+            ]
+          }
+        },
+        "required": [
+          "pickup_id",
+          "start",
+          "end",
+          "reason",
+          "suggested_line",
+          "replacement_audio",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "episode_id",
+    "status",
+    "timing_authority",
+    "pickups"
+  ],
+  "additionalProperties": false
+}

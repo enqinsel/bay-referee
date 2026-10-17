@@ -1,0 +1,807 @@
+{
+  "schema_version": "1.0",
+  "status": "generic_editorial_contracts_not_channel_style",
+  "count": 17,
+  "aliases": {
+    "mapFocus": "archiveDetailFocus"
+  },
+  "techniques": [
+    {
+      "id": "archiveHero",
+      "narrative_problem": "Gerçek bir nesneyi, olayı veya materyali ilk bakışta kurmak.",
+      "when_to_use": "Görüntünün kendi ayrıntısı anlatıyı taşıdığında.",
+      "when_not_to_use": "Kaynak çözünürlüğü yetmiyorsa veya yalnız dekor için seçildiyse.",
+      "required_assets": [
+        "rights-cleared photograph, footage frame or archive scan"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Ek headline çoğu durumda gereksiz; caption ve gerekli tarih ayrımı ayrıca değerlendirilir.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Sabit güçlü crop; yalnız yeni ayrıntı kazandıran tek camera move; tanınma ve son hold.",
+      "transition_options": [
+        {
+          "relation": "material cut",
+          "preset_required": false
+        },
+        {
+          "relation": "same-object detail cut",
+          "preset_required": false
+        },
+        {
+          "relation": "shared-edge reveal",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P01",
+        "P14",
+        "P24"
+      ],
+      "reference_ids": [
+        "HF-009",
+        "HF-017",
+        "RC-002"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "archiveDetailFocus",
+      "narrative_problem": "İzleyicinin gerçek materyalde hangi ayrıntıya bakacağını seçmek.",
+      "when_to_use": "Önceki genel kadraj ilgili satır/nesneyi tanıttığında.",
+      "when_not_to_use": "Crop gerçek kanıtı bağlamından koparıyorsa veya büyütme çözünürlüğü aşıyorsa.",
+      "required_assets": [
+        "rights-cleared high-enough-resolution material",
+        "authored region of interest"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Detay tanımlanıyorsa kısa local annotation; aynı bilginin dev headline tekrarını çıkar.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Whole/detail pose; tek fixed camera wrapper veya static reframe cut; son poz okunmalı.",
+      "transition_options": [
+        {
+          "relation": "whole-to-detail cut",
+          "preset_required": false
+        },
+        {
+          "relation": "motivated local mask",
+          "preset_required": false
+        },
+        {
+          "relation": "return-to-context cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P04",
+        "P05",
+        "P17"
+      ],
+      "reference_ids": [
+        "HF-001",
+        "HF-017",
+        "RC-004"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "documentHighlight",
+      "narrative_problem": "Bir iddiayı gerçek belge/ürün üzerindeki belirli kanıtla bağlamak.",
+      "when_to_use": "Gerçek satır veya bölge iddiayı doğrudan destekliyorsa.",
+      "when_not_to_use": "Belgede olmayan metni, sembolü veya tarihi kaynak kanıtı gibi gösterecekse.",
+      "required_assets": [
+        "rights-cleared document or object label",
+        "verified target region and factual reference"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Doğal belge metni ile ek annotation ayrılır; ek metin kanıtın yerini tarif etmeli.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Belge kurulur; local mask/underline/contrast ile bölge seçilir; geri kalan materyal sabit.",
+      "transition_options": [
+        {
+          "relation": "same-document handoff",
+          "preset_required": false
+        },
+        {
+          "relation": "local highlight to factual graphic",
+          "preset_required": false
+        },
+        {
+          "relation": "editorial cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P04",
+        "P15",
+        "P25"
+      ],
+      "reference_ids": [
+        "HF-001",
+        "RC-002",
+        "RC-003",
+        "MIC-V2"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "mixedMediaCollage",
+      "narrative_problem": "Farklı kanıt materyallerini tek anlamlı kompozisyonda ilişkilendirmek.",
+      "when_to_use": "Arşiv, fotoğraf ve açıklayıcı grafiğin farklı görevleri varsa.",
+      "when_not_to_use": "Parçalar yalnız görsel yoğunluk veya zine görünümü için birikiyorsa.",
+      "required_assets": [
+        "at least one primary real material",
+        "secondary context with distinct role"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Bir ana metin görevi; küçük materyal etiketleri ancak ayrımı açıklıyorsa.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Primary önce okunur; ikincil parça material edge veya controlled overlap ile gelir.",
+      "transition_options": [
+        {
+          "relation": "shared edge",
+          "preset_required": false
+        },
+        {
+          "relation": "object continuation",
+          "preset_required": false
+        },
+        {
+          "relation": "detail cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P07",
+        "P08",
+        "P25"
+      ],
+      "reference_ids": [
+        "HF-005",
+        "HF-010",
+        "OS-009"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "splitContrast",
+      "narrative_problem": "İki nesne veya durumun gerçek karşıtlığını bir bakışta açıklamak.",
+      "when_to_use": "Anlatı önce/sonra, beklenen/gerçek veya ilişkisiz görünen iki dünya kuruyorsa.",
+      "when_not_to_use": "Üç kart veya 50/50 bölünme yalnız format alışkanlığıysa.",
+      "required_assets": [
+        "two semantically comparable real materials or factual graphics"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Her taraf için en çok gereken tanım; caption ile yineleniyorsa label şart değil.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Önce bir taraf kurulabilir; ikinci taraf shared boundary üzerinden ağırlığı değiştirir.",
+      "transition_options": [
+        {
+          "relation": "shared-boundary cut",
+          "preset_required": false
+        },
+        {
+          "relation": "mask match",
+          "preset_required": false
+        },
+        {
+          "relation": "single-side detail cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P02",
+        "P24"
+      ],
+      "reference_ids": [
+        "OS-002",
+        "MIC-V2"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "visualEquation",
+      "narrative_problem": "Sebep/sonuç veya dönüşüm ilişkisini gereksiz flowchart olmadan göstermek.",
+      "when_to_use": "Nesneler arasındaki ilişki görüntü ile açıklanabiliyorsa.",
+      "when_not_to_use": "Sembol ilişkisinin doğruluğu belirsizse veya bütün anlatı oklarla doluyorsa.",
+      "required_assets": [
+        "clear input and outcome objects",
+        "verified relationship"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Bağlantıyı isimlendiren kısa ifade; her düğümde açıklama paragrafı yok.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Bir ilişki tek seferde görünür; outcome established old input can recede.",
+      "transition_options": [
+        {
+          "relation": "shared-object handoff",
+          "preset_required": false
+        },
+        {
+          "relation": "outcome match cut",
+          "preset_required": false
+        },
+        {
+          "relation": "editorial cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P10",
+        "P19",
+        "P24"
+      ],
+      "reference_ids": [
+        "HF-013",
+        "OS-004",
+        "MIC-V1"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "mapRoute",
+      "narrative_problem": "Yer, rota veya yolculuk çabasının farkını açıklamak.",
+      "when_to_use": "Coğrafya anlatı mekanizmasıysa; temsiliyse açıkça kayıtlıysa.",
+      "when_not_to_use": "Gerçek harita dekor olarak rastgele konum/mesafe iddiası yaratıyorsa.",
+      "required_assets": [
+        "licensed map or explicit schematic geography",
+        "route geometry",
+        "origin and destination roles"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Yer/tarih/disclosure yalnız gerektiği kadar; route zaten anlamı taşıyorsa ekstra headline yok.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Geography establishes; one p(t) owns line and marker; tangent and endpoint physical.",
+      "transition_options": [
+        {
+          "relation": "persistent-geography continuation",
+          "preset_required": false
+        },
+        {
+          "relation": "map detail cut",
+          "preset_required": false
+        },
+        {
+          "relation": "route endpoint handoff",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P17",
+        "P18",
+        "P19",
+        "P20"
+      ],
+      "reference_ids": [
+        "RC-004",
+        "OS-005",
+        "HF-013"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "photoToDiagram",
+      "narrative_problem": "Gerçek durumun görünmeyen ilişkisini açıklayıcı grafiğe geçirmek.",
+      "when_to_use": "Fotoğraf olayı kurmuş, ilişki veya mekanizma ayrıca gösterilmeli ise.",
+      "when_not_to_use": "Generic ikon gerçek materyalin özgüllüğünü azaltıyorsa.",
+      "required_assets": [
+        "real scene reference",
+        "factual explanatory geometry"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Görüntüden grafiğe geçince bilgi görevi yeniden seçilir; aynı açıklama iki katmanda yinelenmez.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Same anchor or meaningful geometry persists; graph added after actual context.",
+      "transition_options": [
+        {
+          "relation": "anchor match cut",
+          "preset_required": false
+        },
+        {
+          "relation": "motivated foreground reveal",
+          "preset_required": false
+        },
+        {
+          "relation": "local diagram overlay",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P10",
+        "P16",
+        "P26"
+      ],
+      "reference_ids": [
+        "OS-004",
+        "RC-003",
+        "RC-006"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "documentToTimeline",
+      "narrative_problem": "Belgedeki gerçek bilgiyi kronolojik ilişkiye dönüştürmek.",
+      "when_to_use": "Belge ve tarih arasında doğrulanmış açık ilişki varsa.",
+      "when_not_to_use": "1900/1929 belgesi 1926/1931in bulunmayan özgün sayfası gibi görünecekse.",
+      "required_assets": [
+        "verified document",
+        "verified dates and factual relationship"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Tarihler bağlam; değişen ilişki primary; küçük timeline kart zinciri zorunlu değil.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Document edge or key mark remains; chronology reorganises around it, not a blank reset.",
+      "transition_options": [
+        {
+          "relation": "document edge handoff",
+          "preset_required": false
+        },
+        {
+          "relation": "same-symbol continuity",
+          "preset_required": false
+        },
+        {
+          "relation": "editorial cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P09",
+        "P12",
+        "P15"
+      ],
+      "reference_ids": [
+        "HF-005",
+        "RC-004",
+        "MIC-P4"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "headlineReplacement",
+      "narrative_problem": "Kısa ifadedeki anlam değişimini tipografik olarak belirginleştirmek.",
+      "when_to_use": "Bir terim değişerek karşıtlık veya sonuç üretiyorsa.",
+      "when_not_to_use": "Uzun captionı word-by-word popa dönüştürüyorsa.",
+      "required_assets": [
+        "short authored factual phrase",
+        "explicit changing term"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Sabit bölüm ile değişen terim birlikte rahat okunmalı; eski rol bitince çıkar.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Local mask of changed term; absolute-time state and clean hold; not all letters animate.",
+      "transition_options": [
+        {
+          "relation": "same-baseline replacement",
+          "preset_required": false
+        },
+        {
+          "relation": "graphic handoff",
+          "preset_required": false
+        },
+        {
+          "relation": "clean cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P11",
+        "P13"
+      ],
+      "reference_ids": [
+        "OS-003",
+        "HF-004",
+        "HF-020"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "numberImpact",
+      "narrative_problem": "Ölçülen büyüklüğü veya tarihi doğru anda ana bilgi yapmak.",
+      "when_to_use": "Sayı o anda anlatının gerçek haberi ise.",
+      "when_not_to_use": "Sayı yalnız dev type etkisi veya uydurma count-up içinse.",
+      "required_assets": [
+        "verified number/date",
+        "unit or context when required"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Tek sayısal görev; unit/context hierarchy; font scale is scene choice.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Direct reveal; optionally restrained object movement; no fabricated interpolation values.",
+      "transition_options": [
+        {
+          "relation": "number-to-object cut",
+          "preset_required": false
+        },
+        {
+          "relation": "date annotation handoff",
+          "preset_required": false
+        },
+        {
+          "relation": "shared glyph mask",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P12",
+        "P24"
+      ],
+      "reference_ids": [
+        "RC-006",
+        "RC-004",
+        "OS-006"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "sharedObjectTransition",
+      "narrative_problem": "Bağlantılı sahneler arasında aynı nesneyi algısal köprü yapmak.",
+      "when_to_use": "Yeni bilgi önceki materyalin devamıysa.",
+      "when_not_to_use": "İki farklı nesne veya belge aynı kaynakmış gibi gösterilecekse.",
+      "required_assets": [
+        "same object/anchor or explicitly related visual",
+        "before/after geometry"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Transition sırasında eski/new label yarışmamalı; metin görevi devredilir.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Before/after focal anchor measured; one object owns motion; next scene ready behind/adjacent.",
+      "transition_options": [
+        {
+          "relation": "same object",
+          "preset_required": false
+        },
+        {
+          "relation": "shared edge",
+          "preset_required": false
+        },
+        {
+          "relation": "shared geometry",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P08",
+        "P09",
+        "P10",
+        "P19"
+      ],
+      "reference_ids": [
+        "OS-009",
+        "HF-011",
+        "HF-023"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "maskMatchCut",
+      "narrative_problem": "İlişkili iki görseli ortak şekil/kenar üzerinden bağlamak.",
+      "when_to_use": "Ortak geometri anlatılan karşıtlığı veya devamı görünür kılıyorsa.",
+      "when_not_to_use": "Mask şekli sadece gösterişli olduğu için seçildiyse.",
+      "required_assets": [
+        "two related materials",
+        "explicit matching edge or focal shape"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Mask önemli metni yarıda bırakmamalı; label gerekliyse sonrasında.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Fixed geometry; reveal progress; cut or mask motivated by edge, no bounce.",
+      "transition_options": [
+        {
+          "relation": "shared geometry",
+          "preset_required": false
+        },
+        {
+          "relation": "material edge",
+          "preset_required": false
+        },
+        {
+          "relation": "editorial cut fallback",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P02",
+        "P06",
+        "P09",
+        "P23"
+      ],
+      "reference_ids": [
+        "HF-021",
+        "HF-011",
+        "OS-007"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "editorialPush",
+      "narrative_problem": "Yeni materyali mevcut mekânsal bağlam içinden devralmak.",
+      "when_to_use": "Yan yana/önünde duran içerik bir sonraki fikri hazırlıyorsa.",
+      "when_not_to_use": "Her scene bir carousel paneli gibi kayacaksa.",
+      "required_assets": [
+        "existing composition edge",
+        "next material with directional relation"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Yeni bilgi kurulana kadar eski metin ömrü sınırlı; tek ana okuma görevi.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Single object/plane translation with staging and hold; camera only when justified.",
+      "transition_options": [
+        {
+          "relation": "shared edge",
+          "preset_required": false
+        },
+        {
+          "relation": "adjacent object selection",
+          "preset_required": false
+        },
+        {
+          "relation": "settled hard cut",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P08",
+        "P21",
+        "P23"
+      ],
+      "reference_ids": [
+        "HF-024",
+        "OS-009"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "foregroundReveal",
+      "narrative_problem": "Ön plan nesnesiyle ilgili arka materyali açıklamak.",
+      "when_to_use": "Örtülme/depth ilişkisinin fiziksel veya editorial nedeni varsa.",
+      "when_not_to_use": "Rastgele shape wipe ya da fake cinematic parıltı ekliyorsa.",
+      "required_assets": [
+        "meaningful foreground edge",
+        "underlying material"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Ön plan kritik yazıyı gizlemez; tekrar eden full-screen headline istemez.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Foreground owns reveal; background framing stable; focal anchor becomes visible.",
+      "transition_options": [
+        {
+          "relation": "material mask",
+          "preset_required": false
+        },
+        {
+          "relation": "shared edge",
+          "preset_required": false
+        },
+        {
+          "relation": "foreground exit",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P06",
+        "P07",
+        "P23"
+      ],
+      "reference_ids": [
+        "HF-021",
+        "HF-005"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "photoStack",
+      "narrative_problem": "Bir seri materyali, koleksiyon veya kanıt dizisi olarak karşılaştırmak.",
+      "when_to_use": "Birden çok fotoğrafın sırası/ilişkisi gerçekten anlam taşıyorsa.",
+      "when_not_to_use": "Her foto aynı kart animasyonuyla atılıyor veya yığın okunamıyorsa.",
+      "required_assets": [
+        "related rights-cleared photos/documents",
+        "selection order"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Seçili parçanın etiketi yeterli; her katman aynı anda başlık almaz.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Selected item dominant; next item can be prepared; controlled overlap with readable hold.",
+      "transition_options": [
+        {
+          "relation": "selected-object handoff",
+          "preset_required": false
+        },
+        {
+          "relation": "stack detail cut",
+          "preset_required": false
+        },
+        {
+          "relation": "shared edge",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P07",
+        "P08",
+        "P21"
+      ],
+      "reference_ids": [
+        "HF-019",
+        "OS-009"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    },
+    {
+      "id": "dataOverlay",
+      "narrative_problem": "Gerçek konu görüntüsü üstünde ölçülen ilişkiyi açıklamak.",
+      "when_to_use": "Grafik ile bağlam birbirini destekliyor ve veri doğrulanmışsa.",
+      "when_not_to_use": "Grafik dekor, sahte sayı veya okunmaz arka plan yarışıysa.",
+      "required_assets": [
+        "verified data",
+        "related source image or established diagram",
+        "legible axes/context"
+      ],
+      "text_budget": {
+        "mode": "advisory_scene_specific",
+        "guidance": "Grafik title/unit gerekli olabilir; headline/caption duty explicitly separated.",
+        "fixed_font_px": null,
+        "fixed_caption_y": null,
+        "max_objects": null
+      },
+      "motion_behavior": "Reference axes stable; only meaningful data component changes; background secondary.",
+      "transition_options": [
+        {
+          "relation": "data-to-context cut",
+          "preset_required": false
+        },
+        {
+          "relation": "same-axis comparison",
+          "preset_required": false
+        },
+        {
+          "relation": "outcome hold",
+          "preset_required": false
+        }
+      ],
+      "hierarchy_requirement": "Declare primary, secondary and tertiary by narrative role; intentional absence is allowed.",
+      "staging_requirement": "Author establish/action/hold according to speech and material complexity, without a universal stagger.",
+      "pattern_ids": [
+        "P04",
+        "P10",
+        "P16",
+        "P24"
+      ],
+      "reference_ids": [
+        "RC-003",
+        "OS-004",
+        "OS-008"
+      ],
+      "reference_scope": "Observed compositions/sample states and authored adaptation; no claim of reproducing original source implementation or heard sound.",
+      "implementation": "Compose existing deterministic primitives. A contract is not a prebuilt visual effect.",
+      "critique_question": "Would this framing/movement still be justified if its decorative styling and sound were removed?"
+    }
+  ]
+}

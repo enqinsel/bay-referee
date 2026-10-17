@@ -1,0 +1,183 @@
+{
+  "schema": "bay-referee-second-machine-smoke-v1",
+  "status": "PASS_NO_MEDIA_CLEAN_CLONE",
+  "tested_source": {
+    "files": 246,
+    "bytes": 33911126,
+    "directory": "/private/tmp/bay-referee-portable-v1-final-9gp23gy1/second machine/video-engine",
+    "source_export_sha256": "efa3b528ef8edb38b13ea8a14902af3cd4d6c41ffde01b2cc0ab767f9d6d8d5c",
+    "final_source_patch": {
+      "original_export": "source-export.json",
+      "updated_paths": [
+        "scripts/bay-referee-assets.mjs",
+        "tests/test-portable-production.mjs"
+      ],
+      "reason": "Final independently reproduced cache ancestor symlink regression fixed after the fresh dependency restore."
+    },
+    "non_documentation_source_files": 216,
+    "non_documentation_source_sha256": "ab59e75b1387d30b9f521522344f06a1e20415c519000f8dbc8d31fcddedb3a0",
+    "live_source_differs": [],
+    "note": "Final review adds/updates documentation only; runtime, setup, lockfiles, skill, assets and tests are byte-identical to this tested source export."
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "v26.0.0",
+    "python": "3.12.14",
+    "path_with_spaces": true,
+    "platform_coverage": "macOS arm64 only; a real second physical Mac and case-sensitive filesystem were not tested."
+  },
+  "restoration": {
+    "node": "Fresh npm ci --ignore-scripts:80 packages installed from package-lock.json",
+    "python": "Fresh project venv plus23 exact scoped packages installed from requirements-production.txt; pip check passed",
+    "runtime_selection": "Python3.12 was not on PATH; documented --python option selected the discovered interpreter. No old venv, node_modules, media or model cache was copied."
+  },
+  "setup_status": "PASS_LOCAL_SETUP",
+  "readonly_rerun_status": "PASS_LOCAL_SETUP",
+  "checks": {
+    "portable_node": {
+      "status": "PASS",
+      "passed": 31,
+      "failed": 0,
+      "log_sha256": "232666a500556be33620d2a5e963ae80db8aa92487f2d5fe468b0cecc7da2d93",
+      "local_log": "/private/tmp/bay-referee-portable-v1-final-9gp23gy1/node-tests.log"
+    },
+    "runtime_node": {
+      "status": "PASS",
+      "passed": 51,
+      "failed": 0,
+      "log_sha256": "b771143004b35e24577c5b129620c914d0a114c1fabd0626fb9b140fa14ccd43",
+      "local_log": "/private/tmp/bay-referee-portable-v1-final-9gp23gy1/runtime-tests.log"
+    },
+    "python": {
+      "status": "PASS",
+      "passed": 39,
+      "failed": 0,
+      "log_sha256": "bdc90f6b6368d9c8169b78a8e8b8f94f7ca27c570d624744c31a618555d1ca5a",
+      "local_log": "/private/tmp/bay-referee-portable-v1-final-9gp23gy1/python-tests.log"
+    }
+  },
+  "total_unit_tests_passed": 121,
+  "smoke": {
+    "status": "PASS",
+    "root": "/private/tmp/bay-referee-portable-v1-final-9gp23gy1/second machine/video-engine",
+    "checks": [
+      {
+        "name": "production_source_imports",
+        "status": "PASS",
+        "detail": {
+          "modules": [
+            "engine/bay-referee/production.mjs",
+            "engine/bay-referee/highlight-system.mjs",
+            "engine/captions/phrases.mjs",
+            "engine/motion/editorial-state.mjs",
+            "engine/motion/editorial-primitives.mjs",
+            "engine/audio/mix-sfx.mjs",
+            "engine/audio/preflight-mix.mjs",
+            "engine/qa/platform-exclusions.mjs",
+            "engine/qa/platform-safety.mjs",
+            "engine/assets/publication-gate.mjs",
+            "formats/football-comparison-v1/system/grammar.mjs",
+            "formats/football-comparison-v2/system/football-world.mjs"
+          ],
+          "mediaCreated": false
+        }
+      },
+      {
+        "name": "brand_identity_and_source_assets",
+        "status": "PASS",
+        "detail": {
+          "poses": 24,
+          "font": "Archivo SemiBold",
+          "readOnlyMetadata": true
+        }
+      },
+      {
+        "name": "voice_and_caption_authorities",
+        "status": "PASS",
+        "detail": {
+          "voice": "Engin / Higgsfield / ElevenLabs v4",
+          "captionAuthorityPresent": true,
+          "remoteVoiceAccess": "MANUAL_CONNECTION_REQUIRED",
+          "oldNarrationLoaded": false
+        }
+      },
+      {
+        "name": "daily_package_template",
+        "status": "PASS",
+        "detail": {
+          "directories": 13,
+          "textTemplates": 20,
+          "mediaGenerated": false
+        }
+      },
+      {
+        "name": "maintained_skill",
+        "status": "PASS",
+        "detail": {
+          "files": 10,
+          "localReferences": 20,
+          "sha256": "da505ce426d1693dba2b460976736cac0d531d380e2acf9171da2decb74066c2"
+        }
+      },
+      {
+        "name": "portable_asset_metadata",
+        "status": "PASS",
+        "detail": {
+          "present": true,
+          "schema": "bay-referee-portable-assets-v1",
+          "licensedAudio": "Must be acquired and checked locally; no stock audio bundled or downloaded by smoke."
+        }
+      }
+    ],
+    "mode": "NO_MEDIA_IMPORT_ONLY",
+    "mediaGenerated": false,
+    "providerJobs": 0,
+    "remoteAccountVerified": false
+  },
+  "initializer": {
+    "status": "PASS",
+    "slug": "portable-clone-smoke",
+    "directories": 13,
+    "text_json_files": 20,
+    "media_generated": false
+  },
+  "skill": {
+    "sandbox_install": "PASS",
+    "source_tree_sha256": "da505ce426d1693dba2b460976736cac0d531d380e2acf9171da2decb74066c2",
+    "home_install": "PASS",
+    "evidence": "installed-skill-sync.json; installed-skill-check.json"
+  },
+  "resolved_findings": [
+    {
+      "finding": "Initial isolated dependency restore exposed ffprobe EACCES with npm lifecycle scripts disabled.",
+      "fix": "Setup now verifies binary is a regular file physically inside local node_modules, then repairs execute permission in normal mode only.",
+      "verification": "Fresh restore and regression tests passed."
+    },
+    {
+      "finding": "Python3.12 was not discoverable on PATH.",
+      "fix": "Used documented --python prerequisite override; setup did not copy the old project environment.",
+      "verification": "Fresh venv and all23 locks installed, pip check and Whisper profile passed."
+    }
+  ],
+  "preproduction_actions": [
+    "Connect the official Higgsfield account/workspace and verify Engin custom voice manually.",
+    "Run setup --download-whisper-model before transcription; medium cache intentionally absent from the clean export.",
+    "Acquire the approved licensed closing-whistle source into private local cache with bay-referee-assets.mjs; raw stock audio is never included in Git/LFS."
+  ],
+  "limitations": [
+    "No media render, cover generation, transcription inference, paid provider job or actual EN/ES synthesis was executed.",
+    "Import-only and scaffolding evidence demonstrates portable source closure, not a rendered episode approval.",
+    "Case/NFC collisions and exact-case static imports were audited; execution used this Mac filesystem."
+  ],
+  "actions_not_performed": {
+    "production_media_generation": true,
+    "paid_generation": true,
+    "higgsfield_job_submission": true,
+    "cloud_upload": true,
+    "remote_create": true,
+    "push": true,
+    "history_rewrite": true,
+    "archive_deletion_or_migration": true
+  }
+}

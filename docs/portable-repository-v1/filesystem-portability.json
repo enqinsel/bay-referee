@@ -1,0 +1,381 @@
+{
+  "audit_date": "2026-10-17",
+  "scope_regular_files": 19746,
+  "excluded_dependency_cache_dirs": [
+    "node_modules",
+    ".venv",
+    ".tools",
+    ".git",
+    ".cache",
+    "formats/football-production-kit-v1/system/vendor/higgsfield/__pycache__",
+    "brand/bay-referee/motion-research/evidence/characters-photos/__pycache__",
+    "tests/__pycache__",
+    "voice/chatterbox/cache",
+    "voice/chatterbox/env",
+    "voice/chatterbox/model",
+    "voice/chatterbox/source/chatterbox/.git",
+    "scripts/__pycache__",
+    "engine/transcription/__pycache__",
+    "engine/storyboard/__pycache__",
+    "engine/qa/__pycache__",
+    "engine/audio/__pycache__",
+    "engine/assets/__pycache__"
+  ],
+  "casefold_nfc_collisions": [],
+  "nfc_collisions": [],
+  "non_ascii_paths": [
+    "episodes/episode-michelin/audio/kayıt.wav"
+  ],
+  "space_paths": [
+    "episodes/episode-bosman/audio/incoming/ElevenLabs_2026-10-10T12_52_29_Lucas  - English, Turkish & All Languages_pvc_sp100_s50_sb75_v3.mp3"
+  ],
+  "non_nfc_paths": [],
+  "symlinks": [],
+  "executable_files": [],
+  "shebang_scripts": [
+    {
+      "path": "formats/football-production-kit-v1/system/vendor/higgsfield/caption_evidence.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "formats/football-production-kit-v1/system/vendor/higgsfield/subtitle_paper_burn.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "sfx-review/serve.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "brand/bay-referee/production/backpass-1992/v1/review-server.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "brand/bay-referee/production/backpass-1992/v1/scripts/package-timing.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "brand/bay-referee/production/backpass-1992/v1/scripts/mix-audio.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "brand/bay-referee/production/backpass-1992/v1/scripts/build-dub-subtitles.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "brand/bay-referee/production/backpass-1992/v1/scripts/align-dubs.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "brand/bay-referee/production/backpass-1992/v1/scripts/finalize-delivery.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "voice/chatterbox/source/chatterbox/build/lib/chatterbox/models/s3gen/xvector.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "voice/chatterbox/source/chatterbox/src/chatterbox/models/s3gen/xvector.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bay-referee-new-episode.mjs",
+      "interpreter": "#!/usr/bin/env node",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bosman-preflight-v2-media-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bay-referee-dubs-align.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/production-kit-caption-video-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/skill-bay-referee.mjs",
+      "interpreter": "#!/usr/bin/env node",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/eleven-v4-voice-video-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/asset-treatment-demo.mjs",
+      "interpreter": "#!/usr/bin/env node",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bay-referee-dubs-prepare.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/production-kit-v11-caption-video-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bay-referee-dubs-mix.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/production-kit-final-audio-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/portable-repo-manifest.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/production-kit-v11-audio-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/local-voice-reference-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/validate_episode.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/setup-bay-referee.mjs",
+      "interpreter": "#!/usr/bin/env node",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bay-referee-dubs-package.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/local-voice-reference-qa-candidates.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/eleven-v4-voice-align.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/higgsfield-voice-video-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/asset-treatment.mjs",
+      "interpreter": "#!/usr/bin/env node",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/transcribe.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bosman-full-internal-v1-audio.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/production-kit-burn.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/local-voice-output-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/new_episode.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/production-kit-sfx-catalog.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/higgsfield-voice-align.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/portable-repo-export.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/asset-treatment-setup.mjs",
+      "interpreter": "#!/usr/bin/env node",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/local-voice-align-selected.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bosman-preflight-media-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "scripts/bay-referee-caption-video-qa.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    },
+    {
+      "path": "engine/assets/sfx/provenance/prepare-library.py",
+      "interpreter": "#!/usr/bin/env python3",
+      "executable": false,
+      "invocation_note": "Explicit node/python/shell invocation does not require file executable bit."
+    }
+  ],
+  "root_path_note": "Current parent directory contains Turkish dotless i. Quoted paths and fileURLToPath are required; clean-clone should use a relocated path and separately a path with spaces/Unicode if feasible. New episode slugs are ASCII-safe.",
+  "apple_silicon_note": "Downloaded local binaries, .venv and native node_modules are machine-specific, excluded and rebuilt. Python/Torch/Whisper lock must match the supported runtime and architecture; x86 compatibility is not inferred.",
+  "candidate_recheck": {
+    "candidate_file_count": 256,
+    "candidate_list_sha256": "72ce4cc7c85261f203b20442eac7990efe87d27e1e08d2001071980f71443ea6",
+    "casefold_nfc_collisions": [],
+    "non_ascii_paths": [],
+    "space_paths": [],
+    "non_nfc_paths": [],
+    "symlinks": [],
+    "shebang_scripts": [
+      {
+        "path": "scripts/bay-referee-new-episode.mjs",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env node"
+      },
+      {
+        "path": "scripts/new_episode.py",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env python3"
+      },
+      {
+        "path": "scripts/portable-repo-export.py",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env python3"
+      },
+      {
+        "path": "scripts/portable-repo-ignore.py",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env python3"
+      },
+      {
+        "path": "scripts/portable-repo-manifest.py",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env python3"
+      },
+      {
+        "path": "scripts/portable-smoke.mjs",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env node"
+      },
+      {
+        "path": "scripts/setup-bay-referee.mjs",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env node"
+      },
+      {
+        "path": "scripts/skill-bay-referee.mjs",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env node"
+      },
+      {
+        "path": "scripts/transcribe.py",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env python3"
+      },
+      {
+        "path": "scripts/validate_episode.py",
+        "executable": false,
+        "interpreter": "#!/usr/bin/env python3"
+      }
+    ],
+    "status": "PASS_CASE_UNICODE_NAMES"
+  },
+  "mode_claim": "No permissions changed by this audit.",
+  "static_relative_js_import_case_audit": {
+    "status": "PASS",
+    "candidate_count": 256,
+    "candidate_list_sha256": "72ce4cc7c85261f203b20442eac7990efe87d27e1e08d2001071980f71443ea6",
+    "case_mismatches": [],
+    "outside_candidate_imports": [],
+    "method": "Parse literal relative import/from paths in candidate .mjs/.js, normalize POSIX relative segments, compare exact spelling against actual directory entries and candidate path set. No module execution.",
+    "limitations": "Dynamic computed imports and runtime asset paths are covered by smoke/asset checks, not this static pass."
+  }
+}

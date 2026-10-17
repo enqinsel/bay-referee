@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "count": 9,
+  "status": "generic_relational_recipes_not_channel_template",
+  "recipes": [
+    {
+      "id": "full-bleed-photo",
+      "narrative_problem": "Gerçek materyal kadrajı taşır.",
+      "relational_geometry": "Full canvas bleed; semantic subject may be asymmetric; caption sits in locally calm readable area.",
+      "hierarchy": "Material/detail, no extra headline by default.",
+      "variation_options": "Crop and subject scale change only for a new information task.",
+      "avoid": "Center object plus empty field repeated as poster.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "archive-document",
+      "narrative_problem": "Belge bir kaynak ve fiziksel nesnedir.",
+      "relational_geometry": "Document edge may exceed frame; preserve real content proportions and a readable evidence region.",
+      "hierarchy": "Actual evidence region primary; necessary date/disambiguation secondary.",
+      "variation_options": "Whole document, relevant detail or material-edge handoff.",
+      "avoid": "Fake interior page, invented archival stamp or UI card.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "asymmetric-portrait",
+      "narrative_problem": "Kişi kimliği ve anlatı yönü.",
+      "relational_geometry": "Face/gaze or subject weight determines open space; secondary identity finite.",
+      "hierarchy": "Person primary; name/context only when introduced.",
+      "variation_options": "Different scale/crop follows which identity is being explained.",
+      "avoid": "Two equal avatar cards with connector icons.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "split-contrast",
+      "narrative_problem": "İki dünya veya durum arasında karşıtlık.",
+      "relational_geometry": "Shared boundary; 50/50 not required; weight can change during the reveal.",
+      "hierarchy": "Contradiction primary; text names only what image cannot.",
+      "variation_options": "One side establishes then the other changes meaning.",
+      "avoid": "Every comparison forced into equal cards.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "mixed-media",
+      "narrative_problem": "Farklı gerçek kanıt katmanlarını ilişkilendirmek.",
+      "relational_geometry": "One dominant material; supporting layer overlaps by a motivated edge; tertiary surface recedes.",
+      "hierarchy": "Primary/secondary/tertiary explicitly unequal.",
+      "variation_options": "Layer source or selection changes, not all decoration at once.",
+      "avoid": "Equal-sized fragments, fake tape and texture everywhere.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "map-focus",
+      "narrative_problem": "Mekânsal ilişki ve rota.",
+      "relational_geometry": "Stable geography with retained landmarks; paths/destinations planned around UI exclusions.",
+      "hierarchy": "Current place/path primary; labels local; caption independent.",
+      "variation_options": "Context to detail, same geography or explicit geographic cut.",
+      "avoid": "Decorative map behind an arbitrary generic route.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "data-hero",
+      "narrative_problem": "Ölçülen bilgi ana haberdir.",
+      "relational_geometry": "One dominant number/chart relationship; unit and axis remain readable.",
+      "hierarchy": "Measured fact primary; temporal/place context secondary.",
+      "variation_options": "Reference geometry stays while actual variable changes.",
+      "avoid": "Count-up to invented intermediate facts or unrelated axes.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "document-detail",
+      "narrative_problem": "İlgili gerçek satır/işaret primary.",
+      "relational_geometry": "Static authored crop or one fixed-wrapper focus; target text/region retains context.",
+      "hierarchy": "Evidence primary; highlight secondary, caption not duplicating evidence.",
+      "variation_options": "Detail-to-whole or linked next document.",
+      "avoid": "Random zoom that reveals no additional information.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    },
+    {
+      "id": "visual-equation",
+      "narrative_problem": "Sebep, dönüşüm veya karşıtlık nesnelerle açıklanır.",
+      "relational_geometry": "Input and outcome share an intentional relation/anchor, not an automatic node grid.",
+      "hierarchy": "Relationship primary; object labels optional.",
+      "variation_options": "Only the explanatory relation changes; outcome earns a final hold.",
+      "avoid": "Flowchart of everything in the narration.",
+      "constraints": {
+        "safe_zone": "Use actual glyph/UI exclusion and semantic focal visibility, not a universal central box.",
+        "readability": "Evaluate chosen local type and background; no fixed px or Y imposed.",
+        "palette": null,
+        "channel_font": null
+      },
+      "signature_fields": [
+        "frame",
+        "headline",
+        "material",
+        "caption"
+      ],
+      "diversity": "Three consecutive equivalent canonical signatures request human review, even with a reason."
+    }
+  ]
+}

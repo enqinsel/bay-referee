@@ -1,0 +1,54 @@
+{
+  "schema": "bay-referee-pose-semantics-v1",
+  "status": "CONCEPTUAL_REVIEW_COMPLETE_ASSET_VISUAL_QA_SEPARATE",
+  "scope": "The 22 user-required groups plus two practical presentation poses. This is a semantic contract, not evidence that an image exists or that all poses belong in every episode.",
+  "core": [
+    {"id":"neutral","purpose":"Stable listening or a scene that already has sufficient motion."},
+    {"id":"explain-forward","purpose":"Address the viewer while defining one concept."},
+    {"id":"point-left","purpose":"Direct attention to a currently relevant left-side subject."},
+    {"id":"point-right","purpose":"Direct attention to a currently relevant right-side subject."},
+    {"id":"point-up-left","purpose":"Refer to the existing upper-left tactical actor or monitor."},
+    {"id":"point-up-right","purpose":"Refer to the existing upper-right tactical actor or field."},
+    {"id":"compare-both","purpose":"Name or compare two concepts without implying rivalry."},
+    {"id":"thinking","purpose":"Represent analysis, interpretation or a human check, without implying doubt where none is narrated."},
+    {"id":"confirm","purpose":"Confirm a specific just-validated proposition; never infer a final verdict from a machine alert."},
+    {"id":"surprised","purpose":"A narrated reversal or unusual fact; not constant reaction bait."},
+    {"id":"hands-open","purpose":"Present a connected explanation, then yield to the tactical motion."},
+    {"id":"conclusion","purpose":"Return attention to the viewer for the actual payoff."}
+  ],
+  "referee": [
+    {"id":"whistle-ready","purpose":"Prepare a meaningful referee intervention or the end sign-off; not every transition."},
+    {"id":"whistle-blow","purpose":"Referee intervention or brand closure only. The sign-off whistle is not an actual VAR decision signal."},
+    {"id":"advantage","purpose":"Explain play-on/advantage when the narration names that concept."},
+    {"id":"stop-wait","purpose":"Pause or reject an explicit assumption. Use without a card when no caution is being discussed."},
+    {"id":"yellow-card","purpose":"A narrated caution/warning concept. Do not use for a device alert, routine confirmation or generic emphasis."},
+    {"id":"red-card","purpose":"A narrated dismissal or explicit forbidden/wrong distinction, with appropriate context. Do not use as a decorative punctuation mark."},
+    {"id":"var-rectangle","purpose":"A video-review concept while the monitor is relevant. It must not imply every VAR check requires an on-field review."},
+    {"id":"point-to-decision","purpose":"Identify the human decision-maker or clearly described decision location; not a machine verdict."},
+    {"id":"calm-down","purpose":"Slow or settle a narrated dispute or distinction. No continuous repeated waving."},
+    {"id":"final-decision","purpose":"The human referee's final authority, after review rather than at automatic detection."}
+  ],
+  "extensions": [
+    {"id":"presenting-object-left","purpose":"Present the left monitor/actor without replacing it with an unrelated prop."},
+    {"id":"presenting-object-right","purpose":"Present the right field/actor without replacing it with an unrelated prop."}
+  ],
+  "current_var_saot_episode": {
+    "no_cards": true,
+    "reason": "The alert at 27.4 seconds is a technology-to-VAR message, not a disciplinary caution. Neither yellow nor red card adds correct meaning to this script.",
+    "referee_pose_candidates": [
+      {"anchor":"capture-start","time":8.0,"pose":"var-rectangle","condition":"One restrained review-related hold; ensure scene does not falsely depict a mandatory on-field review."},
+      {"anchor":"referee-judgement-start","time":35.32,"pose":"point-to-decision","condition":"Point to the already-present human referee, not to an invented spot decision."},
+      {"anchor":"state-s12","time":42.38,"pose":"final-decision","condition":"Keep the approved final sentence and referee authority as the focus."}
+    ],
+    "signoff": {"start":44.2,"duration":0.9,"head_icon_only":true,"first_whistle":44.3,"comment":"The closing icon need not visibly blow a whistle; no lip/face animation is manufactured."}
+  },
+  "performance_rules": [
+    "Change only on a narrated concept or an existing action/phase anchor.",
+    "Hold a useful pose while the tactical actor moves; do not schedule arbitrary periodic pose changes.",
+    "Show exactly one pose per frame; never crossfade different faces or hands.",
+    "Use rigid 2–3 frame anticipation/settle only if it preserves caption clearance.",
+    "No card, whistle, avatar and headline simultaneously demand equal attention.",
+    "Preserve identity, adult proportions, spectacles, hair, beard and charcoal referee outfit across all poses.",
+    "Generate left/right as real anatomical variants; never mirror text, face or garment details."
+  ]
+}

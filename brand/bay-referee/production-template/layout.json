@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "directories": [
+    "00_brief",
+    "01_script",
+    "02_audio",
+    "02_audio/tr",
+    "02_audio/en",
+    "02_audio/es",
+    "03_video",
+    "04_captions",
+    "05_cover",
+    "06_social",
+    "07_assets",
+    "08_delivery",
+    "_work"
+  ],
+  "files": [
+    {
+      "path": "00_brief/brief.md",
+      "template": "files/00_brief/brief.md"
+    },
+    {
+      "path": "00_brief/episode.json",
+      "template": "files/00_brief/episode.json"
+    },
+    {
+      "path": "00_brief/topic.txt",
+      "template": "files/00_brief/topic.txt"
+    },
+    {
+      "path": "01_script/claims-sources.json",
+      "template": "files/01_script/claims-sources.json"
+    },
+    {
+      "path": "01_script/script-en.txt",
+      "template": "files/01_script/script-en.txt"
+    },
+    {
+      "path": "01_script/script-es.txt",
+      "template": "files/01_script/script-es.txt"
+    },
+    {
+      "path": "01_script/script-tr.txt",
+      "template": "files/01_script/script-tr.txt"
+    },
+    {
+      "path": "05_cover/cover-brief.md",
+      "template": "files/05_cover/cover-brief.md"
+    },
+    {
+      "path": "05_cover/cover-title.txt",
+      "template": "files/05_cover/cover-title.txt"
+    },
+    {
+      "path": "06_social/hashtags.txt",
+      "template": "files/06_social/hashtags.txt"
+    },
+    {
+      "path": "06_social/instagram-caption.txt",
+      "template": "files/06_social/instagram-caption.txt"
+    },
+    {
+      "path": "06_social/youtube-description.txt",
+      "template": "files/06_social/youtube-description.txt"
+    },
+    {
+      "path": "06_social/youtube-tags.txt",
+      "template": "files/06_social/youtube-tags.txt"
+    },
+    {
+      "path": "06_social/youtube-title.txt",
+      "template": "files/06_social/youtube-title.txt"
+    },
+    {
+      "path": "07_assets/asset-manifest.json",
+      "template": "files/07_assets/asset-manifest.json"
+    },
+    {
+      "path": "07_assets/credits.txt",
+      "template": "files/07_assets/credits.txt"
+    },
+    {
+      "path": "07_assets/sources.md",
+      "template": "files/07_assets/sources.md"
+    },
+    {
+      "path": "08_delivery/delivery-summary.txt",
+      "template": "files/08_delivery/delivery-summary.txt"
+    },
+    {
+      "path": "08_delivery/manifest.json",
+      "template": "files/08_delivery/manifest.json"
+    },
+    {
+      "path": "08_delivery/qa-summary.txt",
+      "template": "files/08_delivery/qa-summary.txt"
+    }
+  ]
+}

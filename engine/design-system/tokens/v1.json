@@ -1,0 +1,26 @@
+{
+  "version": "editorial-motion-kit-1.0.0",
+  "scope": "Palette-independent authoring vocabulary, not a channel identity or a scene template",
+  "reference_width": 1080,
+  "spacing": {"hair": 4, "tight": 8, "related": 16, "group": 28, "separate": 48, "region": 80, "chapter": 128},
+  "stroke": {"detail": 2, "normal": 4, "emphasis": 7, "contour": 10},
+  "radius": {"none": 0, "small": 8, "medium": 20, "large": 36, "pill": 9999},
+  "type": {
+    "hero": {"size": 104, "weight": 750, "line_height": 1.02, "purpose": "One editorial assertion; never automatically duplicate narration"},
+    "section": {"size": 76, "weight": 700, "line_height": 1.08, "purpose": "Change of conceptual world"},
+    "number": {"size": 92, "weight": 700, "line_height": 1.0, "purpose": "Verified data or state value; no invented count-up"},
+    "caption": {"size": 56, "weight": 600, "line_height": 1.16, "max_lines": 2, "purpose": "Accessible spoken content; context-specific placement"},
+    "technical_label": {"size": 38, "weight": 650, "line_height": 1.15, "purpose": "Name a part or relationship close to its object"},
+    "badge": {"size": 34, "weight": 650, "line_height": 1.05, "purpose": "Compact categorical state; not a decorative pill quota"},
+    "micro_label": {"size": 26, "weight": 500, "line_height": 1.2, "purpose": "Optional provenance/detail; cannot carry an essential fact alone"},
+    "annotation": {"size": 36, "weight": 550, "line_height": 1.12, "purpose": "Local direction or explanation"}
+  },
+  "shadow": {"contact": {"x": 0, "y": 4, "blur": 10, "opacity": 0.18}, "separated": {"x": 0, "y": 14, "blur": 28, "opacity": 0.20}, "lifted": {"x": 5, "y": 24, "blur": 42, "opacity": 0.24}},
+  "outline": {"none": {"width": 0}, "edge": {"width": 4}, "sticker": {"width": 10}},
+  "depth": {"background": 0, "context": 10, "relationship": 20, "subject": 30, "annotation": 40, "caption": 60, "review_overlay": 100},
+  "motion_seconds": {"accent": [0.12, 0.24], "object": [0.28, 0.60], "relationship": [0.50, 1.20], "chapter": [0.40, 0.90], "inspection": [0.80, 1.80]},
+  "easing": {"explanatory": "smoothstep", "arrival": "easeOutCubic", "paired_transfer": "easeInOutSine", "mechanical": "linear"},
+  "safe_roles": {"visual": "full_bleed", "critical_text": "glyph_ui_exclusion", "subject": "semantic_focal_region", "caption": "scene_specific_lower_default"},
+  "color_roles": ["paper", "ink", "muted", "episode_accent", "contrast_on_accent", "outline", "shadow"],
+  "notes": ["Numbers are original starting points, not measured reference font/spacing copies.", "Type family and palette must be supplied per episode; no RAT10N or Google Maps brand tokens are retained.", "Motion families are editable ranges, not required effects or density targets.", "UI exclusion masks remain external project/platform inputs, never a central design container."]
+}

@@ -1,0 +1,4 @@
+# BAY REFEREE portable runtime, macOS Apple Silicon + Python 3.12.
+# Scoped closure only: local Whisper medium and NumPy audio/timing QA.
+# Historical PIL/scipy/soundfile/ONNX/local-clone experiments are not installed.
+-r requirements-lock-macos-arm64.txt

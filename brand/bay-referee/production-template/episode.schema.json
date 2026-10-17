@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bay-referee:episode:1",
+  "title": "BAY REFEREE episode metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "slug",
+    "status",
+    "created_at",
+    "topic",
+    "viewer_question",
+    "hook",
+    "canonical_script",
+    "languages",
+    "video",
+    "review",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 80
+    },
+    "status": {
+      "enum": [
+        "SCAFFOLD",
+        "IN_PROGRESS",
+        "READY",
+        "REVIEW_NEEDED",
+        "FAILED"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "topic": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "viewer_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hook": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "canonical_script": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "status"
+      ],
+      "properties": {
+        "path": {
+          "const": "01_script/script-tr.txt"
+        },
+        "status": {
+          "enum": [
+            "NOT_PROVIDED",
+            "DRAFT",
+            "APPROVED"
+          ]
+        }
+      }
+    },
+    "languages": {
+      "const": {
+        "master": "tr",
+        "alternate_narration": [
+          "en",
+          "es"
+        ]
+      }
+    },
+    "video": {
+      "const": {
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_enabled",
+        "required",
+        "reason"
+      ],
+      "properties": {
+        "default_enabled": {
+          "const": false
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "required": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "authority": {
+      "const": {
+        "skill": "brand/bay-referee/channel-skill/bay-referee/SKILL.md",
+        "voice": "voice/decision.json",
+        "motion": "brand/bay-referee/channel-skill/bay-referee/references/motion-grammar.md"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "READY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "topic": {
+            "type": "string",
+            "minLength": 1
+          },
+          "viewer_question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "hook": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonical_script": {
+            "properties": {
+              "status": {
+                "const": "APPROVED"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bay-referee:production-manifest:1",
+  "title": "BAY REFEREE production delivery manifest",
+  "description": "Metadata contract only. Validation does not prove file existence, hash correctness, decode success, timing, visual quality or approval. Runtime QA must verify each generated record against disk. The manifest does not hash itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "episode",
+    "slug",
+    "status",
+    "created_at",
+    "generated_at",
+    "manifest_path",
+    "files",
+    "voice",
+    "video",
+    "branding",
+    "research",
+    "qa",
+    "audio_packages",
+    "caption_timing"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "episode": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 80
+    },
+    "status": {
+      "enum": [
+        "SCAFFOLD",
+        "IN_PROGRESS",
+        "REVIEW_NEEDED",
+        "READY",
+        "FAILED"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "generated_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "manifest_path": {
+      "const": "08_delivery/manifest.json"
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "brief",
+        "episode_metadata",
+        "script_tr",
+        "script_en",
+        "script_es",
+        "claims_sources",
+        "audio_tr_wav",
+        "audio_tr_mp3",
+        "whisper_tr",
+        "word_map_tr",
+        "audio_en_wav",
+        "audio_en_mp3",
+        "whisper_en",
+        "word_map_en",
+        "audio_es_wav",
+        "audio_es_mp3",
+        "whisper_es",
+        "word_map_es",
+        "master_tr",
+        "captions_tr",
+        "captions_en",
+        "captions_es",
+        "cover_reels",
+        "cover_youtube",
+        "cover_title",
+        "cover_brief",
+        "instagram_caption",
+        "hashtags",
+        "youtube_title",
+        "youtube_description",
+        "youtube_tags",
+        "sources",
+        "credits",
+        "asset_manifest",
+        "delivery_summary",
+        "qa_summary"
+      ],
+      "properties": {
+        "topic": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "00_brief/topic.txt"
+                }
+              }
+            }
+          ]
+        },
+        "brief": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "00_brief/brief.md"
+                }
+              }
+            }
+          ]
+        },
+        "episode_metadata": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "00_brief/episode.json"
+                }
+              }
+            }
+          ]
+        },
+        "script_tr": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "01_script/script-tr.txt"
+                }
+              }
+            }
+          ]
+        },
+        "script_en": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "01_script/script-en.txt"
+                }
+              }
+            }
+          ]
+        },
+        "script_es": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "01_script/script-es.txt"
+                }
+              }
+            }
+          ]
+        },
+        "claims_sources": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "01_script/claims-sources.json"
+                }
+              }
+            }
+          ]
+        },
+        "audio_tr_wav": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/tr/narration-tr.wav"
+                }
+              }
+            }
+          ]
+        },
+        "audio_tr_mp3": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/tr/narration-tr.mp3"
+                }
+              }
+            }
+          ]
+        },
+        "whisper_tr": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/tr/whisper-tr.json"
+                }
+              }
+            }
+          ]
+        },
+        "word_map_tr": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/tr/word-map-tr.json"
+                }
+              }
+            }
+          ]
+        },
+        "audio_en_wav": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/en/narration-en.wav"
+                }
+              }
+            }
+          ]
+        },
+        "audio_en_mp3": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/en/narration-en.mp3"
+                }
+              }
+            }
+          ]
+        },
+        "whisper_en": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/en/whisper-en.json"
+                }
+              }
+            }
+          ]
+        },
+        "word_map_en": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/en/word-map-en.json"
+                }
+              }
+            }
+          ]
+        },
+        "audio_es_wav": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/es/narration-es.wav"
+                }
+              }
+            }
+          ]
+        },
+        "audio_es_mp3": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "audio"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/es/narration-es.mp3"
+                }
+              }
+            }
+          ]
+        },
+        "whisper_es": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/es/whisper-es.json"
+                }
+              }
+            }
+          ]
+        },
+        "word_map_es": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "02_audio/es/word-map-es.json"
+                }
+              }
+            }
+          ]
+        },
+        "master_tr": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "video"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "type": "string",
+                  "pattern": "^03_video/[a-z0-9]+(?:-[a-z0-9]+)*-bay-referee-tr\\.mp4$"
+                }
+              }
+            }
+          ]
+        },
+        "captions_tr": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "captions"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "04_captions/captions-tr.srt"
+                }
+              }
+            }
+          ]
+        },
+        "captions_en": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "captions"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "04_captions/captions-en.srt"
+                }
+              }
+            }
+          ]
+        },
+        "captions_es": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "captions"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "04_captions/captions-es.srt"
+                }
+              }
+            }
+          ]
+        },
+        "cover_reels": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "image"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "05_cover/cover-reels-1080x1920.png"
+                }
+              }
+            }
+          ]
+        },
+        "cover_youtube": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "image"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "05_cover/cover-youtube-1280x720.png"
+                }
+              }
+            }
+          ]
+        },
+        "cover_title": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "05_cover/cover-title.txt"
+                }
+              }
+            }
+          ]
+        },
+        "cover_brief": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "05_cover/cover-brief.md"
+                }
+              }
+            }
+          ]
+        },
+        "instagram_caption": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "06_social/instagram-caption.txt"
+                }
+              }
+            }
+          ]
+        },
+        "hashtags": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "06_social/hashtags.txt"
+                }
+              }
+            }
+          ]
+        },
+        "youtube_title": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "06_social/youtube-title.txt"
+                }
+              }
+            }
+          ]
+        },
+        "youtube_description": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "06_social/youtube-description.txt"
+                }
+              }
+            }
+          ]
+        },
+        "youtube_tags": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "06_social/youtube-tags.txt"
+                }
+              }
+            }
+          ]
+        },
+        "sources": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "07_assets/sources.md"
+                }
+              }
+            }
+          ]
+        },
+        "credits": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": false
+                },
+                "path": {
+                  "const": "07_assets/credits.txt"
+                }
+              }
+            }
+          ]
+        },
+        "asset_manifest": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "json"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "07_assets/asset-manifest.json"
+                }
+              }
+            }
+          ]
+        },
+        "delivery_summary": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "08_delivery/delivery-summary.txt"
+                }
+              }
+            }
+          ]
+        },
+        "qa_summary": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/file"
+            },
+            {
+              "properties": {
+                "kind": {
+                  "const": "text"
+                },
+                "content_required": {
+                  "const": true
+                },
+                "path": {
+                  "const": "08_delivery/qa-summary.txt"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "provider",
+        "engine",
+        "identity",
+        "voice_id",
+        "authority"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PLANNED",
+            "GENERATED"
+          ]
+        },
+        "provider": {
+          "const": "Higgsfield"
+        },
+        "engine": {
+          "const": "ElevenLabs v4"
+        },
+        "identity": {
+          "const": "Engin custom voice"
+        },
+        "voice_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authority": {
+          "const": "voice/decision.json"
+        }
+      }
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "duration_seconds"
+      ],
+      "properties": {
+        "width": {
+          "const": 1080
+        },
+        "height": {
+          "const": 1920
+        },
+        "fps": {
+          "const": 30
+        },
+        "duration_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "branding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "watermark",
+        "signoff"
+      ],
+      "properties": {
+        "watermark": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "asset_path"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PLANNED",
+                "APPLIED"
+              ]
+            },
+            "asset_path": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "signoff": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "duration_seconds"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PLANNED",
+                "APPLIED"
+              ]
+            },
+            "duration_seconds": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0.7,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "claims_count",
+        "source_count"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_RUN",
+            "PASS",
+            "WARNING",
+            "FAIL"
+          ]
+        },
+        "claims_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checks",
+        "evidence_paths",
+        "known_limitations"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "NOT_RUN",
+            "PASS",
+            "REVIEW_NEEDED",
+            "FAIL"
+          ]
+        },
+        "checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "research",
+            "voice",
+            "timing",
+            "captions",
+            "motion",
+            "sfx",
+            "cover",
+            "dub",
+            "decode"
+          ],
+          "properties": {
+            "research": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "voice": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "timing": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "captions": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "motion": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "sfx": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "cover": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "dub": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            },
+            "decode": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "WARNING",
+                "FAIL"
+              ]
+            }
+          }
+        },
+        "evidence_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+          },
+          "uniqueItems": true
+        },
+        "known_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "audio_packages": {
+      "description": "EN/ES are native narration-only packages by default, not guaranteed to match the Turkish picture duration. Any picture-aligned derivative must be separately labelled and aligned from its actual final audio.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "properties": {
+        "tr": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "status",
+            "wav_path",
+            "mp3_path"
+          ],
+          "properties": {
+            "kind": {
+              "const": "master_narration"
+            },
+            "status": {
+              "enum": [
+                "PLANNED",
+                "GENERATED"
+              ]
+            },
+            "wav_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "mp3_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "master_narration"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "wav_path": {
+                    "const": "02_audio/tr/narration-tr.wav"
+                  },
+                  "mp3_path": {
+                    "const": "02_audio/tr/narration-tr.mp3"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "status",
+            "wav_path",
+            "mp3_path"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "narration_only",
+                "picture_aligned_derivative"
+              ]
+            },
+            "status": {
+              "enum": [
+                "PLANNED",
+                "GENERATED"
+              ]
+            },
+            "wav_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "mp3_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "narration_only"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "wav_path": {
+                    "const": "02_audio/en/narration-en.wav"
+                  },
+                  "mp3_path": {
+                    "const": "02_audio/en/narration-en.mp3"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "es": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "status",
+            "wav_path",
+            "mp3_path"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "narration_only",
+                "picture_aligned_derivative"
+              ]
+            },
+            "status": {
+              "enum": [
+                "PLANNED",
+                "GENERATED"
+              ]
+            },
+            "wav_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "mp3_path": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "kind": {
+                    "const": "narration_only"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "wav_path": {
+                    "const": "02_audio/es/narration-es.wav"
+                  },
+                  "mp3_path": {
+                    "const": "02_audio/es/narration-es.mp3"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "caption_timing": {
+      "description": "Each SRT follows timestamps from the exact audio listed in its own authority, not Turkish video timing borrowed by another language. A picture-aligned derivative requires a nonempty label plus its own Whisper and word-map paths.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "properties": {
+        "tr": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "srt_path",
+            "authority"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PLANNED",
+                "ALIGNED"
+              ]
+            },
+            "srt_path": {
+              "const": "04_captions/captions-tr.srt"
+            },
+            "authority": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "label",
+                "audio_path",
+                "whisper_path",
+                "word_map_path",
+                "audio_sha256"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "native_narration",
+                    "picture_aligned_derivative"
+                  ]
+                },
+                "label": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "audio_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "whisper_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "word_map_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "audio_sha256": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  ]
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "native_narration"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "label": {
+                        "type": "null"
+                      },
+                      "audio_path": {
+                        "const": "02_audio/tr/narration-tr.wav"
+                      },
+                      "whisper_path": {
+                        "const": "02_audio/tr/whisper-tr.json"
+                      },
+                      "word_map_path": {
+                        "const": "02_audio/tr/word-map-tr.json"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "picture_aligned_derivative"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "ALIGNED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "authority": {
+                    "properties": {
+                      "audio_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "srt_path",
+            "authority"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PLANNED",
+                "ALIGNED"
+              ]
+            },
+            "srt_path": {
+              "const": "04_captions/captions-en.srt"
+            },
+            "authority": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "label",
+                "audio_path",
+                "whisper_path",
+                "word_map_path",
+                "audio_sha256"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "native_narration",
+                    "picture_aligned_derivative"
+                  ]
+                },
+                "label": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "audio_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "whisper_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "word_map_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "audio_sha256": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  ]
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "native_narration"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "label": {
+                        "type": "null"
+                      },
+                      "audio_path": {
+                        "const": "02_audio/en/narration-en.wav"
+                      },
+                      "whisper_path": {
+                        "const": "02_audio/en/whisper-en.json"
+                      },
+                      "word_map_path": {
+                        "const": "02_audio/en/word-map-en.json"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "picture_aligned_derivative"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "ALIGNED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "authority": {
+                    "properties": {
+                      "audio_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "es": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "srt_path",
+            "authority"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PLANNED",
+                "ALIGNED"
+              ]
+            },
+            "srt_path": {
+              "const": "04_captions/captions-es.srt"
+            },
+            "authority": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "kind",
+                "label",
+                "audio_path",
+                "whisper_path",
+                "word_map_path",
+                "audio_sha256"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "native_narration",
+                    "picture_aligned_derivative"
+                  ]
+                },
+                "label": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "audio_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "whisper_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "word_map_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+                },
+                "audio_sha256": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  ]
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "native_narration"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "label": {
+                        "type": "null"
+                      },
+                      "audio_path": {
+                        "const": "02_audio/es/narration-es.wav"
+                      },
+                      "whisper_path": {
+                        "const": "02_audio/es/whisper-es.json"
+                      },
+                      "word_map_path": {
+                        "const": "02_audio/es/word-map-es.json"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "picture_aligned_derivative"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "ALIGNED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "authority": {
+                    "properties": {
+                      "audio_sha256": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "kind",
+        "required",
+        "content_required",
+        "status",
+        "sha256",
+        "bytes",
+        "generated_at"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+        },
+        "kind": {
+          "enum": [
+            "text",
+            "json",
+            "audio",
+            "video",
+            "captions",
+            "image"
+          ]
+        },
+        "required": {
+          "const": true
+        },
+        "content_required": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "PLANNED",
+            "GENERATED"
+          ]
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          ]
+        },
+        "bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "generated_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "GENERATED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "generated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "content_required": {
+                      "const": true
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "PLANNED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sha256": {
+                "type": "null"
+              },
+              "bytes": {
+                "type": "null"
+              },
+              "generated_at": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "READY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "episode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "files": {
+            "properties": {
+              "topic": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "brief": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "episode_metadata": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "script_tr": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "script_en": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "script_es": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "claims_sources": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "audio_tr_wav": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "audio_tr_mp3": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "whisper_tr": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "word_map_tr": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "audio_en_wav": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "audio_en_mp3": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "whisper_en": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "word_map_en": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "audio_es_wav": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "audio_es_mp3": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "whisper_es": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "word_map_es": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "master_tr": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "captions_tr": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "captions_en": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "captions_es": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "cover_reels": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "cover_youtube": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "cover_title": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "cover_brief": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "instagram_caption": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "hashtags": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "youtube_title": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "youtube_description": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "youtube_tags": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "sources": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "credits": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "asset_manifest": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "delivery_summary": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "qa_summary": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              }
+            }
+          },
+          "voice": {
+            "properties": {
+              "status": {
+                "const": "GENERATED"
+              },
+              "voice_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "video": {
+            "properties": {
+              "duration_seconds": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          },
+          "branding": {
+            "properties": {
+              "watermark": {
+                "properties": {
+                  "status": {
+                    "const": "APPLIED"
+                  },
+                  "asset_path": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "signoff": {
+                "properties": {
+                  "status": {
+                    "const": "APPLIED"
+                  },
+                  "duration_seconds": {
+                    "type": "number",
+                    "minimum": 0.7,
+                    "maximum": 1
+                  }
+                }
+              }
+            }
+          },
+          "research": {
+            "properties": {
+              "status": {
+                "const": "PASS"
+              }
+            }
+          },
+          "qa": {
+            "properties": {
+              "status": {
+                "const": "PASS"
+              },
+              "checks": {
+                "properties": {
+                  "research": {
+                    "const": "PASS"
+                  },
+                  "voice": {
+                    "const": "PASS"
+                  },
+                  "timing": {
+                    "const": "PASS"
+                  },
+                  "captions": {
+                    "const": "PASS"
+                  },
+                  "motion": {
+                    "const": "PASS"
+                  },
+                  "sfx": {
+                    "const": "PASS"
+                  },
+                  "cover": {
+                    "const": "PASS"
+                  },
+                  "dub": {
+                    "const": "PASS"
+                  },
+                  "decode": {
+                    "const": "PASS"
+                  }
+                }
+              },
+              "evidence_paths": {
+                "minItems": 1
+              }
+            }
+          },
+          "audio_packages": {
+            "properties": {
+              "tr": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "en": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              },
+              "es": {
+                "properties": {
+                  "status": {
+                    "const": "GENERATED"
+                  }
+                }
+              }
+            }
+          },
+          "caption_timing": {
+            "properties": {
+              "tr": {
+                "properties": {
+                  "status": {
+                    "const": "ALIGNED"
+                  }
+                }
+              },
+              "en": {
+                "properties": {
+                  "status": {
+                    "const": "ALIGNED"
+                  }
+                }
+              },
+              "es": {
+                "properties": {
+                  "status": {
+                    "const": "ALIGNED"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
