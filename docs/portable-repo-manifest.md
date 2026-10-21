@@ -1,6 +1,6 @@
 # BAY REFEREE Portable Repository V1 — Manifest
 
-Proposed source worktree: **32.43 MiB / 256 files**. Git LFS: **not recommended, 0 bytes**. This is a candidate set; no files were staged, committed or pushed in the original repository.
+Proposed source worktree: **32.55 MiB / 267 files**. Git LFS: **not recommended, 0 bytes**. Source list refreshed for multilingual delivery on 21 October 2026; the original local-only inventory is unchanged.
 
 | Path / group | Classification | Size | Git | LFS | Second machine / rebuild |
 |---|---|---:|---|---|---|
@@ -9,11 +9,11 @@ Proposed source worktree: **32.43 MiB / 256 files**. Git LFS: **not recommended,
 | `.node-version` (1 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
 | `.npmrc` (1 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
 | `.python-version` (1 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
-| `README.md` (1 files) | REQUIRED_IN_GIT / source binaries | 0.01 MiB | yes | no | Restore Git, then setup |
-| `brand` (82 files) | REQUIRED_IN_GIT / source binaries | 21.70 MiB | yes | no | Restore Git, then setup |
+| `README.md` (1 files) | REQUIRED_IN_GIT / source binaries | 0.02 MiB | yes | no | Restore Git, then setup |
+| `brand` (90 files) | REQUIRED_IN_GIT / source binaries | 21.76 MiB | yes | no | Restore Git, then setup |
 | `config` (3 files) | REQUIRED_IN_GIT / source binaries | 0.04 MiB | yes | no | Restore Git, then setup |
-| `docs` (40 files) | REQUIRED_IN_GIT / source binaries | 2.45 MiB | yes | no | Restore Git, then setup |
-| `engine` (52 files) | REQUIRED_IN_GIT / source binaries | 0.31 MiB | yes | no | Restore Git, then setup |
+| `docs` (40 files) | REQUIRED_IN_GIT / source binaries | 2.46 MiB | yes | no | Restore Git, then setup |
+| `engine` (53 files) | REQUIRED_IN_GIT / source binaries | 0.33 MiB | yes | no | Restore Git, then setup |
 | `episodes` (19 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
 | `formats` (8 files) | REQUIRED_IN_GIT / source binaries | 0.74 MiB | yes | no | Restore Git, then setup |
 | `mascot` (1 files) | REQUIRED_IN_GIT / source binaries | 6.90 MiB | yes | no | Restore Git, then setup |
@@ -23,8 +23,8 @@ Proposed source worktree: **32.43 MiB / 256 files**. Git LFS: **not recommended,
 | `requirements-production.txt` (1 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
 | `requirements-whisper.txt` (1 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
 | `schemas` (5 files) | REQUIRED_IN_GIT / source binaries | 0.02 MiB | yes | no | Restore Git, then setup |
-| `scripts` (20 files) | REQUIRED_IN_GIT / source binaries | 0.08 MiB | yes | no | Restore Git, then setup |
-| `tests` (13 files) | REQUIRED_IN_GIT / source binaries | 0.08 MiB | yes | no | Restore Git, then setup |
+| `scripts` (21 files) | REQUIRED_IN_GIT / source binaries | 0.09 MiB | yes | no | Restore Git, then setup |
+| `tests` (14 files) | REQUIRED_IN_GIT / source binaries | 0.10 MiB | yes | no | Restore Git, then setup |
 | `voice` (2 files) | REQUIRED_IN_GIT / source binaries | 0.00 MiB | yes | no | Restore Git, then setup |
 
 Exact paths, reasons, sizes, classification, second-machine need and rebuild method are in [manifest.json](portable-repo-manifest.json). Exhaustive local machine entries are in `classification-index.jsonl` and are not Git candidates.

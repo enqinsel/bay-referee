@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "episode": null,
   "slug": "{{slug}}",
   "status": "SCAFFOLD",
@@ -237,26 +237,6 @@
       "bytes": null,
       "generated_at": null
     },
-    "cover_reels": {
-      "path": "05_cover/cover-reels-1080x1920.png",
-      "kind": "image",
-      "required": true,
-      "content_required": true,
-      "status": "PLANNED",
-      "sha256": null,
-      "bytes": null,
-      "generated_at": null
-    },
-    "cover_youtube": {
-      "path": "05_cover/cover-youtube-1280x720.png",
-      "kind": "image",
-      "required": true,
-      "content_required": true,
-      "status": "PLANNED",
-      "sha256": null,
-      "bytes": null,
-      "generated_at": null
-    },
     "cover_title": {
       "path": "05_cover/cover-title.txt",
       "kind": "text",
@@ -269,46 +249,6 @@
     },
     "cover_brief": {
       "path": "05_cover/cover-brief.md",
-      "kind": "text",
-      "required": true,
-      "content_required": true,
-      "status": "PLANNED",
-      "sha256": null,
-      "bytes": null,
-      "generated_at": null
-    },
-    "instagram_caption": {
-      "path": "06_social/instagram-caption.txt",
-      "kind": "text",
-      "required": true,
-      "content_required": true,
-      "status": "PLANNED",
-      "sha256": null,
-      "bytes": null,
-      "generated_at": null
-    },
-    "hashtags": {
-      "path": "06_social/hashtags.txt",
-      "kind": "text",
-      "required": true,
-      "content_required": true,
-      "status": "PLANNED",
-      "sha256": null,
-      "bytes": null,
-      "generated_at": null
-    },
-    "youtube_title": {
-      "path": "06_social/youtube-title.txt",
-      "kind": "text",
-      "required": true,
-      "content_required": true,
-      "status": "PLANNED",
-      "sha256": null,
-      "bytes": null,
-      "generated_at": null
-    },
-    "youtube_description": {
-      "path": "06_social/youtube-description.txt",
       "kind": "text",
       "required": true,
       "content_required": true,
@@ -376,6 +316,226 @@
       "sha256": null,
       "bytes": null,
       "generated_at": null
+    },
+    "youtube_dub_en_wav": {
+      "path": "02_audio/en/youtube-dub-en.wav",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "youtube_dub_en_mp3": {
+      "path": "02_audio/en/youtube-dub-en.mp3",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "alignment_en": {
+      "path": "02_audio/en/youtube-dub-alignment-en.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "aligned_word_map_en": {
+      "path": "02_audio/en/youtube-dub-word-map-en.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "youtube_dub_es_wav": {
+      "path": "02_audio/es/youtube-dub-es.wav",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "youtube_dub_es_mp3": {
+      "path": "02_audio/es/youtube-dub-es.mp3",
+      "kind": "audio",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "alignment_es": {
+      "path": "02_audio/es/youtube-dub-alignment-es.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "aligned_word_map_es": {
+      "path": "02_audio/es/youtube-dub-word-map-es.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_tr": {
+      "path": "05_cover/cover-tr-1080x1920.png",
+      "kind": "image",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "title_tr": {
+      "path": "06_social/title-tr.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "description_tr": {
+      "path": "06_social/description-tr.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "hashtags_tr": {
+      "path": "06_social/hashtags-tr.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_en": {
+      "path": "05_cover/cover-en-1080x1920.png",
+      "kind": "image",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "title_en": {
+      "path": "06_social/title-en.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "description_en": {
+      "path": "06_social/description-en.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "hashtags_en": {
+      "path": "06_social/hashtags-en.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "cover_es": {
+      "path": "05_cover/cover-es-1080x1920.png",
+      "kind": "image",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "title_es": {
+      "path": "06_social/title-es.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "description_es": {
+      "path": "06_social/description-es.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "hashtags_es": {
+      "path": "06_social/hashtags-es.txt",
+      "kind": "text",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "semantic_sync": {
+      "path": "08_delivery/semantic-sync.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
+    },
+    "qa_report": {
+      "path": "08_delivery/qa-report.json",
+      "kind": "json",
+      "required": true,
+      "content_required": true,
+      "status": "PLANNED",
+      "sha256": null,
+      "bytes": null,
+      "generated_at": null
     }
   },
   "voice": {
@@ -418,12 +578,19 @@
       "sfx": "NOT_RUN",
       "cover": "NOT_RUN",
       "dub": "NOT_RUN",
-      "decode": "NOT_RUN"
+      "decode": "NOT_RUN",
+      "DUB_DURATION_GATE": "NOT_RUN",
+      "TIMELINE_GATE": "NOT_RUN",
+      "AUDIO_POLICY_GATE": "NOT_RUN",
+      "SEMANTIC_GATE": "NOT_RUN",
+      "REQUIRED_FILES_GATE": "NOT_RUN",
+      "FILE_INTEGRITY_GATE": "NOT_RUN"
     },
     "evidence_paths": [],
     "known_limitations": [
       "Scaffold only; no content, media, timing or production QA has been generated."
-    ]
+    ],
+    "report_path": "08_delivery/qa-report.json"
   },
   "audio_packages": {
     "tr": {
@@ -433,16 +600,68 @@
       "mp3_path": "02_audio/tr/narration-tr.mp3"
     },
     "en": {
-      "kind": "narration_only",
+      "kind": "youtube_dub",
       "status": "PLANNED",
-      "wav_path": "02_audio/en/narration-en.wav",
-      "mp3_path": "02_audio/en/narration-en.mp3"
+      "wav_path": "02_audio/en/youtube-dub-en.wav",
+      "mp3_path": "02_audio/en/youtube-dub-en.mp3",
+      "native": {
+        "kind": "internal_native_narration",
+        "wav_path": "02_audio/en/narration-en.wav",
+        "mp3_path": "02_audio/en/narration-en.mp3",
+        "whisper_path": "02_audio/en/whisper-en.json",
+        "word_map_path": "02_audio/en/word-map-en.json"
+      },
+      "duration_seconds": {
+        "wav": null,
+        "mp3": null
+      },
+      "timeline": {
+        "start_seconds": 0,
+        "duration_tolerance_seconds": 0.05,
+        "full_master_including_closure": true,
+        "padding_seconds": null,
+        "auto_trimmed": false,
+        "time_stretched": false,
+        "alignment_path": "02_audio/en/youtube-dub-alignment-en.json"
+      },
+      "qa": {
+        "DUB_DURATION_GATE": "NOT_RUN",
+        "TIMELINE_GATE": "NOT_RUN",
+        "AUDIO_POLICY_GATE": "NOT_RUN",
+        "SEMANTIC_GATE": "NOT_RUN"
+      }
     },
     "es": {
-      "kind": "narration_only",
+      "kind": "youtube_dub",
       "status": "PLANNED",
-      "wav_path": "02_audio/es/narration-es.wav",
-      "mp3_path": "02_audio/es/narration-es.mp3"
+      "wav_path": "02_audio/es/youtube-dub-es.wav",
+      "mp3_path": "02_audio/es/youtube-dub-es.mp3",
+      "native": {
+        "kind": "internal_native_narration",
+        "wav_path": "02_audio/es/narration-es.wav",
+        "mp3_path": "02_audio/es/narration-es.mp3",
+        "whisper_path": "02_audio/es/whisper-es.json",
+        "word_map_path": "02_audio/es/word-map-es.json"
+      },
+      "duration_seconds": {
+        "wav": null,
+        "mp3": null
+      },
+      "timeline": {
+        "start_seconds": 0,
+        "duration_tolerance_seconds": 0.05,
+        "full_master_including_closure": true,
+        "padding_seconds": null,
+        "auto_trimmed": false,
+        "time_stretched": false,
+        "alignment_path": "02_audio/es/youtube-dub-alignment-es.json"
+      },
+      "qa": {
+        "DUB_DURATION_GATE": "NOT_RUN",
+        "TIMELINE_GATE": "NOT_RUN",
+        "AUDIO_POLICY_GATE": "NOT_RUN",
+        "SEMANTIC_GATE": "NOT_RUN"
+      }
     }
   },
   "caption_timing": {
@@ -462,24 +681,26 @@
       "status": "PLANNED",
       "srt_path": "04_captions/captions-en.srt",
       "authority": {
-        "kind": "native_narration",
-        "label": null,
-        "audio_path": "02_audio/en/narration-en.wav",
-        "whisper_path": "02_audio/en/whisper-en.json",
-        "word_map_path": "02_audio/en/word-map-en.json",
-        "audio_sha256": null
+        "kind": "youtube_dub_aligned",
+        "audio_path": "02_audio/en/youtube-dub-en.wav",
+        "audio_sha256": null,
+        "word_map_path": "02_audio/en/youtube-dub-word-map-en.json",
+        "alignment_path": "02_audio/en/youtube-dub-alignment-en.json",
+        "native_whisper_path": "02_audio/en/whisper-en.json",
+        "native_word_map_path": "02_audio/en/word-map-en.json"
       }
     },
     "es": {
       "status": "PLANNED",
       "srt_path": "04_captions/captions-es.srt",
       "authority": {
-        "kind": "native_narration",
-        "label": null,
-        "audio_path": "02_audio/es/narration-es.wav",
-        "whisper_path": "02_audio/es/whisper-es.json",
-        "word_map_path": "02_audio/es/word-map-es.json",
-        "audio_sha256": null
+        "kind": "youtube_dub_aligned",
+        "audio_path": "02_audio/es/youtube-dub-es.wav",
+        "audio_sha256": null,
+        "word_map_path": "02_audio/es/youtube-dub-word-map-es.json",
+        "alignment_path": "02_audio/es/youtube-dub-alignment-es.json",
+        "native_whisper_path": "02_audio/es/whisper-es.json",
+        "native_word_map_path": "02_audio/es/word-map-es.json"
       }
     }
   }

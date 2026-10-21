@@ -1,5 +1,24 @@
 # Engine authorities and delivery QA
 
+## New-episode delivery checks
+
+For `videolar/<slug>/`, use the current [Production Mode contract](production-mode.md) and the episode's own approved voice, geometry and timing. Do not apply historical frame counts or archive paths to a new episode.
+
+Run `node scripts/bay-referee-delivery-qa.mjs <episode-path> --output` before delivery and retain `08_delivery/qa-report.json`. Without `--output`, the check is read-only and prints to stdout; with it, only a fresh fixed QA report is written, independently of any previous report. Neither mode generates, trims, stretches, mixes or renders media. **DUB_DURATION_GATE** requires ffprobe measurements of the final TR video and all four `02_audio/{en,es}/youtube-dub-{en,es}.wav/.mp3` outputs, with `abs(audio_duration - video_duration) <= 0.05` seconds for every file. Use the complete master duration including sign-off, not core or speech-only duration. Missing files/measurements and duration mismatches fail; a matching WAV does not excuse a mismatching MP3.
+
+Follow the [two-phase finalization order](production-mode.md): generate the report after finalizing its inputs; then register the report hash/bytes and justified QA/status in the manifest. A final run **without** `--output` validates a READY package's existing report status, manifest hash and current input hashes. If any hashed input changes, regenerate/re-register the report. The automated report does not grant human listening, artwork or editorial approval.
+
+Keep these checks distinct:
+
+- **Timing and meaning:** final dubs start on master t=0, keep required beginning/middle/end silence and cover the approved closure. Compare semantic start/end anchors, key visual events and cumulative drift; bind `08_delivery/semantic-sync.json` to the final audio hashes. Equal duration is necessary, not proof of synchronization or naturalness. No automatic silence trimming, speed adjustment or time-stretch.
+- **Caption authority:** TR SRT matches final master caption chunks. EN/ES SRTs follow their final `youtube-dub` audio, with final `youtube-dub-alignment-<lang>.json` and `youtube-dub-word-map-<lang>.json` references; natural takes and native Whisper maps stay separately preserved. Do not relabel source timing as final timing after moving speech.
+- **Audio and SFX:** audit each meaningful event to a real named verified asset or reasoned NONE. Check final encoded/decoded signal, clipping/headroom, speech balance, and exactly one approved three-whistle closure. Listen at normal playback level; an inaudible effect, zero-SFX output or technical signal PASS is not proof of tasteful audible sound. Preserve the Engin identity/settings and source hashes.
+- **Visuals and covers:** inspect actual captions/avatar/tactical collisions, complete decoded frame sequence and real 1× playback. Verify all three `cover-{tr,en,es}-1080x1920.png` files share the same art, avatar, objects, layout and colors; only translated text/typography changes. Check critical content inside centered 1080×1350, y=285..1635, and mobile readability for each language. PNG dimension validation is automated; same-art, safe-area content and readability require separate visual evidence.
+- **Social and provenance:** require each language's title/description/hashtags and one balanced multilingual YouTube tag list. Public descriptions are shared across platforms within each language and contain no source URL, source name or bibliography. Keep factual evidence in claims/sources and required attribution in compatible credits. Verify file/hash completeness against the current manifest schema. Automated URL/scaffold checks do not establish native phrasing, SEO quality, balanced languages or absence of source-name attribution in prose; inspect these separately.
+- **Status:** machine QA, editorial inspection and human approval are separate. Missing perception/listening or material semantic drift remains REVIEW_NEEDED; a passing DUB_DURATION_GATE cannot turn other checks into PASS. Report the unresolved evidence accurately.
+
+Skill-only maintenance validates the skill and contracts without generating media or mutating completed episodes. The remaining sections describe preserved historical implementation and its evidence.
+
 ## Completed branded reference
 
 Resolve the current project root as described in `SKILL.md`; these paths are root-relative. The table records a completed historical reference. Its episode media and fixed-topic helpers are optional local archive material, not required portable dependencies. A clean checkout uses `engine/bay-referee/production.mjs`, the production template and new `videolar/<slug>/` outputs; never import historical render helpers as a portable smoke test.
@@ -45,7 +64,7 @@ The encoded reference-core check is `scripts/bay-referee-caption-video-qa.py` an
 
 For a user-requested review of existing files, the historical review server binds only `127.0.0.1:8787`, serves named derivatives with video byte ranges and excludes raw identity photos, clone references and sound libraries. Do not restart it as part of skill maintenance. These scripts are not a parameterized topic-to-video engine.
 
-## Verification before delivery
+## Historical VAR/SAOT verification reference
 
 Apply relevant checks to the authorized deliverable. The fixed counts, masks, clocks and original-picture comparisons below describe the preserved VAR/SAOT brand pass; derive new episodes' geometry, membership and timing from their own approved inputs. Skill-only maintenance uses skill validation and preservation checks, not media regeneration.
 

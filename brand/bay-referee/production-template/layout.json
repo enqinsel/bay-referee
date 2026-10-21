@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "directories": [
     "00_brief",
     "01_script",
@@ -53,24 +53,44 @@
       "template": "files/05_cover/cover-title.txt"
     },
     {
-      "path": "06_social/hashtags.txt",
-      "template": "files/06_social/hashtags.txt"
+      "path": "06_social/description-en.txt",
+      "template": "files/06_social/description-en.txt"
     },
     {
-      "path": "06_social/instagram-caption.txt",
-      "template": "files/06_social/instagram-caption.txt"
+      "path": "06_social/description-es.txt",
+      "template": "files/06_social/description-es.txt"
     },
     {
-      "path": "06_social/youtube-description.txt",
-      "template": "files/06_social/youtube-description.txt"
+      "path": "06_social/description-tr.txt",
+      "template": "files/06_social/description-tr.txt"
+    },
+    {
+      "path": "06_social/hashtags-en.txt",
+      "template": "files/06_social/hashtags-en.txt"
+    },
+    {
+      "path": "06_social/hashtags-es.txt",
+      "template": "files/06_social/hashtags-es.txt"
+    },
+    {
+      "path": "06_social/hashtags-tr.txt",
+      "template": "files/06_social/hashtags-tr.txt"
+    },
+    {
+      "path": "06_social/title-en.txt",
+      "template": "files/06_social/title-en.txt"
+    },
+    {
+      "path": "06_social/title-es.txt",
+      "template": "files/06_social/title-es.txt"
+    },
+    {
+      "path": "06_social/title-tr.txt",
+      "template": "files/06_social/title-tr.txt"
     },
     {
       "path": "06_social/youtube-tags.txt",
       "template": "files/06_social/youtube-tags.txt"
-    },
-    {
-      "path": "06_social/youtube-title.txt",
-      "template": "files/06_social/youtube-title.txt"
     },
     {
       "path": "07_assets/asset-manifest.json",
@@ -95,6 +115,10 @@
     {
       "path": "08_delivery/qa-summary.txt",
       "template": "files/08_delivery/qa-summary.txt"
+    },
+    {
+      "path": "08_delivery/semantic-sync.json",
+      "template": "files/08_delivery/semantic-sync.json"
     }
   ]
 }

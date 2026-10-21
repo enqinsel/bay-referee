@@ -1,0 +1,348 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "master_sha256",
+    "languages"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "master_sha256": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      ]
+    },
+    "languages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "es"
+      ],
+      "properties": {
+        "en": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "wav_sha256",
+            "mp3_sha256",
+            "meaning_preserved",
+            "clause_order_preserved",
+            "cumulative_sync_reviewed",
+            "closure_covered",
+            "status",
+            "reviewed_by",
+            "reviewed_at"
+          ],
+          "properties": {
+            "wav_sha256": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              ]
+            },
+            "mp3_sha256": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              ]
+            },
+            "meaning_preserved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "clause_order_preserved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "cumulative_sync_reviewed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "closure_covered": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "FAIL"
+              ]
+            },
+            "reviewed_by": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "reviewed_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1,
+              "format": "date-time"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "PASS"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "wav_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "mp3_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "meaning_preserved": {
+                    "const": true
+                  },
+                  "clause_order_preserved": {
+                    "const": true
+                  },
+                  "cumulative_sync_reviewed": {
+                    "const": true
+                  },
+                  "closure_covered": {
+                    "const": true
+                  },
+                  "reviewed_by": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reviewed_at": {
+                    "type": "string",
+                    "minLength": 1,
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "es": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "wav_sha256",
+            "mp3_sha256",
+            "meaning_preserved",
+            "clause_order_preserved",
+            "cumulative_sync_reviewed",
+            "closure_covered",
+            "status",
+            "reviewed_by",
+            "reviewed_at"
+          ],
+          "properties": {
+            "wav_sha256": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              ]
+            },
+            "mp3_sha256": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              ]
+            },
+            "meaning_preserved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "clause_order_preserved": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "cumulative_sync_reviewed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "closure_covered": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "FAIL"
+              ]
+            },
+            "reviewed_by": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "reviewed_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1,
+              "format": "date-time"
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "PASS"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "wav_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "mp3_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "meaning_preserved": {
+                    "const": true
+                  },
+                  "clause_order_preserved": {
+                    "const": true
+                  },
+                  "cumulative_sync_reviewed": {
+                    "const": true
+                  },
+                  "closure_covered": {
+                    "const": true
+                  },
+                  "reviewed_by": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reviewed_at": {
+                    "type": "string",
+                    "minLength": 1,
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bay-referee:semantic-sync:1",
+  "description": "Human semantic and cumulative alignment review tied to exact master and final dub hashes. NOT_RUN values are not evidence.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "languages": {
+            "properties": {
+              "en": {
+                "properties": {
+                  "status": {
+                    "const": "PASS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "master_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "languages": {
+            "properties": {
+              "es": {
+                "properties": {
+                  "status": {
+                    "const": "PASS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "master_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    }
+  ]
+}

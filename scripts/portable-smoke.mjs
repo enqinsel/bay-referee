@@ -10,7 +10,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const checks=[];
 async function check(name,fn){try{checks.push({name,status:'PASS',detail:await fn()});}catch(error){checks.push({name,status:'FAIL',detail:error.message});}}
 await check('production_source_imports',async()=>{
-  const modules=['engine/bay-referee/production.mjs','engine/bay-referee/highlight-system.mjs','engine/captions/phrases.mjs','engine/motion/editorial-state.mjs','engine/motion/editorial-primitives.mjs','engine/audio/mix-sfx.mjs','engine/audio/preflight-mix.mjs','engine/qa/platform-exclusions.mjs','engine/qa/platform-safety.mjs','engine/assets/publication-gate.mjs','formats/football-comparison-v1/system/grammar.mjs','formats/football-comparison-v2/system/football-world.mjs'];
+  const modules=['engine/bay-referee/production.mjs','engine/bay-referee/delivery-qa.mjs','engine/bay-referee/highlight-system.mjs','engine/captions/phrases.mjs','engine/motion/editorial-state.mjs','engine/motion/editorial-primitives.mjs','engine/audio/mix-sfx.mjs','engine/audio/preflight-mix.mjs','engine/qa/platform-exclusions.mjs','engine/qa/platform-safety.mjs','engine/assets/publication-gate.mjs','formats/football-comparison-v1/system/grammar.mjs','formats/football-comparison-v2/system/football-world.mjs'];
   for(const module of modules)await import(new URL('../'+module,import.meta.url));
   return {modules,mediaCreated:false};
 });

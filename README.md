@@ -1,5 +1,7 @@
 # Video Engine v0.1
 
+Güncel çok dilli Production Mode: TR master ile aynı uzunlukta EN/ES YouTube dubları (en fazla ±50 ms), aynı tasarımlı TR/EN/ES kapaklar ve her dil için başlık, açıklama ve hashtag teslim edilir. Doğal narration kayıtları ayrı tutulur; ortak YouTube tags dosyası üç dili kapsar. [Teslim sözleşmesi ve QA](brand/bay-referee/channel-skill/bay-referee/references/production-mode.md) güncel otoritedir. `npm run qa:bay-referee -- videolar/<slug>` mevcut dosyaları denetler; `npm run test:portable` sözleşme ve süre kapısının regresyon testlerini çalıştırır.
+
 17 Ekim 2026 — **BAY REFEREE Portable Repository V1**: güncel production authority, [maintained kanal skill’i](brand/bay-referee/channel-skill/bay-referee/SKILL.md) ve [ikinci makine kurulum rehberidir](docs/SECOND-MACHINE-SETUP.md). Yeni bir Mac’te `node scripts/setup-bay-referee.mjs` ile başlayın; `npm run smoke:portable` kaynakları medya üretmeden doğrular. Yeni bölümler `videolar/<slug>/` altında oluşur; bu çıktı klasörü Git ile senkronlanmaz.
 
 [Portable repo inceleme paketi](docs/portable-repository-v1/final-report.md), [seçilmiş kaynak manifesti](docs/portable-repo-manifest.md) ve [çıktı aktarım politikası](docs/OUTPUT-SYNC-POLICY.md) kaynak, arşiv ve özel dosyaları ayırır. Aşağıdaki tarihli kayıtlar eski deneylerin değişmeden korunan geçmişidir; bu kayıtların bazı dosyaları yalnız ev bilgisayarındaki arşivde bulunur ve yeni portable kurulumun bağımlılığı değildir.

@@ -10,5 +10,28 @@ sfx: NOT_RUN
 cover: NOT_RUN
 dub: NOT_RUN
 decode: NOT_RUN
+DUB_DURATION_GATE: NOT_RUN
+TIMELINE_GATE: NOT_RUN
+AUDIO_POLICY_GATE: NOT_RUN
+SEMANTIC_GATE: NOT_RUN
+REQUIRED_FILES_GATE: NOT_RUN
+FILE_INTEGRITY_GATE: NOT_RUN
+
+Master ve dört final dublaj formatı gerçek dosyadan probe edilir; manifest süre
+iddiası ölçümün yerine geçmez. Süre toleransı ±0,05 s, başlangıç t=0, kapanış
+dahil tam master kapsamı. Sessizlik korunabilir/eklenebilir; otomatik kırpma, hız
+değiştirme veya time-stretch yasaktır. Anlam, cümle sırası, biriken senkron
+ve kapanış ayrıca incelenir; hash-bound kanıt semantic-sync.json içindedir.
+Final EN/ES SRT authority'si final youtube-dub WAV ve hizalanmış word-map'tir.
+
+cover: Üç dilde aynı görsel/yerleşim, yalnız metin değişikliği; her dilin
+1080×1920 ve merkez 1080×1350 (y=285–1635) crop incelemesi gerekir.
+social: Üç doğal title/description/hashtags paketi ve tek çok dilli tags;
+her dil için ortak public açıklamada kaynak adı/URL/bibliyografya bulunmaz.
+
+Runtime raporu: 08_delivery/qa-report.json. Henüz yoktur. Komut:
+node scripts/bay-referee-delivery-qa.mjs videolar/{{slug}} --output
+READY için bütün zorunlu dosyaların doğrulanması ve tüm kapıların PASS olması
+gerekir. Bu şablon veya yalnız doldurulmuş bir kontrol listesi PASS kanıtı değildir.
 
 Bilinen sınırlama: Konu, metin, medya ve zamanlama henüz yok.

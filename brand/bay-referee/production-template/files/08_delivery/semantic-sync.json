@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "master_sha256": null,
+  "languages": {
+    "en": {
+      "wav_sha256": null,
+      "mp3_sha256": null,
+      "meaning_preserved": null,
+      "clause_order_preserved": null,
+      "cumulative_sync_reviewed": null,
+      "closure_covered": null,
+      "status": "NOT_RUN",
+      "reviewed_by": null,
+      "reviewed_at": null
+    },
+    "es": {
+      "wav_sha256": null,
+      "mp3_sha256": null,
+      "meaning_preserved": null,
+      "clause_order_preserved": null,
+      "cumulative_sync_reviewed": null,
+      "closure_covered": null,
+      "status": "NOT_RUN",
+      "reviewed_by": null,
+      "reviewed_at": null
+    }
+  }
+}

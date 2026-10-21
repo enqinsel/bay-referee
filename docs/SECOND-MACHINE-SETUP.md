@@ -4,7 +4,7 @@ The portable checkout contains the production source, maintained skill, template
 
 ## Install
 
-1. Clone the approved **private** source repository, then open that checkout in Codex. This preparation phase does not create or push a remote repository.
+1. Clone the approved source repository, then open that checkout in Codex. This preparation phase does not create or push a remote repository.
 2. Install Node.js **22 or newer**, npm and **Python 3.12**. The Python lock is validated on **macOS Apple Silicon**; another operating system/architecture needs a separately verified lock. The working environment used to derive the scoped lock was Python 3.12.14 on macOS arm64.
 3. From the checkout root, run:
 
@@ -31,6 +31,10 @@ The portable checkout contains the production source, maintained skill, template
    ```
 
    The initializer writes empty/text/JSON scaffolding under `videolar/example-topic/`; it is not a video generator. It refuses an existing slug without modifying it. Provide a real topic and canonical Turkish script, or explicitly request research/script preparation within full Production Mode. Covers, social text and EN/ES packages follow the maintained skill’s delivery contract.
+
+New episodes use the multilingual delivery contract: TR master/narration; full-length `youtube-dub-en.wav/.mp3` and `youtube-dub-es.wav/.mp3`; TR/EN/ES SRT, covers, titles, descriptions and hashtags; multilingual YouTube tags; research/credits and QA. Each public description is shared across platforms in its language and excludes URLs, source names and bibliographies. All three covers share the same artwork and layout, with translated text inside the centered 1080×1350 safe area.
+
+Run `npm run qa:bay-referee -- videolar/<slug>` on an existing package. The `DUB_DURATION_GATE` probes the actual final media with ffprobe and requires each final dub to match the entire master, including its closure, within ±50 ms. Preserve leading, middle and trailing silence; do not trim the upload file to narration length or time-stretch speech to pass. Separate checks require semantic alignment and no cumulative drift. A duration PASS alone is not delivery approval; follow the [current Production Mode QA contract](../brand/bay-referee/channel-skill/bay-referee/references/production-mode.md).
 
 ## Safe reruns and isolated checks
 

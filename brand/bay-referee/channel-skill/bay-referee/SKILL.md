@@ -16,7 +16,8 @@ Resolve the project root from the current workspace or its parents: it must cont
 - Voice: **Engin custom voice → Higgsfield → ElevenLabs v4**, stability `0.50`, similarity boost `0.75`. Voice ID and current status: `voice/decision.json`. No automatic fallback to rejected MiniMax or Chatterbox takes.
 - Timing: **Whisper segment + word timestamps** from the exact final take. Turkish timing drives Turkish visuals; English and Spanish timings belong to their own dub packages.
 - Motion: **V1.1 visible choreography is the approved production reference**. Design motion in the storyboard from final voice and semantic beats. V1.2 contributes optional reusable physical principles, not its full choreography or fixed timing recipes; see [motion-grammar.md](references/motion-grammar.md). Motion Lab is closed; keep the VAR/SAOT master as a read-only reference.
-- Languages: Turkish master with **Turkish burned-in captions**; natural global English and broad/LatAm Spanish alternate narration. Do not redesign EN/ES videos or change the master captions by default.
+- Languages: Turkish master with **Turkish burned-in captions**; natural global English and broad/LatAm Spanish **final YouTube dubs spanning the full master, including closure**. Preserve natural-source narration separately. Final TR/EN/ES SRTs follow their declared final audio. Do not redesign EN/ES videos or change the master captions by default.
+- Multilingual delivery: three `1080×1920` covers with the same art/layout and translated text; TR/EN/ES titles, shared-platform descriptions and hashtags, plus one balanced multilingual YouTube tag list. Public descriptions contain no source URLs, source names or bibliography; research stays in the internal evidence package. Exact paths and gates: [production-mode.md](references/production-mode.md).
 - Identity: the approved user-based avatar in neutral referee clothing. No copied federation, league, club or sponsor marks. Mascot head is the brand icon; `BAY REFEREE` is the wordmark and persistent quiet watermark.
 - Hook starts immediately. No intro bumper. Payoff precedes a **0.7–1.0 second sign-off** with a restrained final whistle closure.
 - Cards, whistle and gestures carry meaning; they are not mandatory decoration. Keep stable poses when a new gesture adds no information.
@@ -29,7 +30,7 @@ Resolve the project root from the current workspace or its parents: it must cont
 - For visual, avatar, caption, highlight and sound decisions: [format-and-brand.md](references/format-and-brand.md).
 - For voice generation, translation, Whisper and dub delivery: [voice-and-dubbing.md](references/voice-and-dubbing.md).
 - For storyboard, visual planning, animation, rendering or visual revision: [motion-grammar.md](references/motion-grammar.md). Research/script-only tasks do not load the motion library unless motion research is requested.
-- Before rendering or delivering: [engine-and-qa.md](references/engine-and-qa.md), including the exact current test bed and commands.
+- Before rendering or delivering: [engine-and-qa.md](references/engine-and-qa.md), including new-episode delivery checks and separately labelled historical test-bed references.
 
 A request to review a script does not authorize full production. A skill invocation is not standing approval for paid jobs, external upload, publishing or messaging. Apply the user's current task and existing authorization; obtain any required approval at the actual action rather than adding blanket gates. Never claim estimated credits were actually billed. Stop retrying a failed paid job when the authorized scope or spend is exhausted; preserve the failure evidence and complete independent work.
 

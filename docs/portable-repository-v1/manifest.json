@@ -23,8 +23,8 @@
     "allocated_all_entry_bytes_sum": 15660253184,
     "allocated_unique_inode_bytes": 15650316288
   },
-  "source_worktree_bytes": 34002040,
-  "source_file_count": 256,
+  "source_worktree_bytes": 34131783,
+  "source_file_count": 267,
   "proposed_lfs_bytes": 0,
   "proposed_lfs_files": 0,
   "local_only_snapshot_bytes": 15388941987,
@@ -51,8 +51,8 @@
     },
     {
       "classification": "REQUIRED_IN_GIT",
-      "files": 214,
-      "bytes": 3458790
+      "files": 225,
+      "bytes": 3588533
     },
     {
       "classification": "SECRET_OR_PRIVATE",
@@ -13141,7 +13141,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 15687,
+      "estimated_bytes": 16277,
       "files": 1,
       "path": "README.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13163,7 +13163,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 5243,
+      "estimated_bytes": 5839,
       "files": 1,
       "path": "brand/bay-referee/channel-skill/bay-referee/SKILL.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13185,7 +13185,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 7475,
+      "estimated_bytes": 11721,
       "files": 1,
       "path": "brand/bay-referee/channel-skill/bay-referee/references/engine-and-qa.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13196,7 +13196,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 9091,
+      "estimated_bytes": 10425,
       "files": 1,
       "path": "brand/bay-referee/channel-skill/bay-referee/references/format-and-brand.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13240,7 +13240,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 14026,
+      "estimated_bytes": 20483,
       "files": 1,
       "path": "brand/bay-referee/channel-skill/bay-referee/references/production-mode.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13251,7 +13251,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 6411,
+      "estimated_bytes": 7285,
       "files": 1,
       "path": "brand/bay-referee/channel-skill/bay-referee/references/production-workflow.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13262,7 +13262,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 7262,
+      "estimated_bytes": 9936,
       "files": 1,
       "path": "brand/bay-referee/channel-skill/bay-referee/references/voice-and-dubbing.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13287,6 +13287,17 @@
       "estimated_bytes": 4853,
       "files": 1,
       "path": "brand/bay-referee/outro/pose-semantic-contract.json",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 4926,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/README.md",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -13328,7 +13339,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 626,
+      "estimated_bytes": 2375,
       "files": 1,
       "path": "brand/bay-referee/production-template/files/00_brief/brief.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13405,7 +13416,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 1001,
+      "estimated_bytes": 1663,
       "files": 1,
       "path": "brand/bay-referee/production-template/files/05_cover/cover-brief.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13429,7 +13440,7 @@
     {
       "estimated_bytes": 0,
       "files": 1,
-      "path": "brand/bay-referee/production-template/files/06_social/hashtags.txt",
+      "path": "brand/bay-referee/production-template/files/06_social/description-en.txt",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -13440,7 +13451,7 @@
     {
       "estimated_bytes": 0,
       "files": 1,
-      "path": "brand/bay-referee/production-template/files/06_social/instagram-caption.txt",
+      "path": "brand/bay-referee/production-template/files/06_social/description-es.txt",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -13451,7 +13462,73 @@
     {
       "estimated_bytes": 0,
       "files": 1,
-      "path": "brand/bay-referee/production-template/files/06_social/youtube-description.txt",
+      "path": "brand/bay-referee/production-template/files/06_social/description-tr.txt",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 0,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/06_social/hashtags-en.txt",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 0,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/06_social/hashtags-es.txt",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 0,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/06_social/hashtags-tr.txt",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 0,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/06_social/title-en.txt",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 0,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/06_social/title-es.txt",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 0,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/06_social/title-tr.txt",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -13463,17 +13540,6 @@
       "estimated_bytes": 0,
       "files": 1,
       "path": "brand/bay-referee/production-template/files/06_social/youtube-tags.txt",
-      "classification": "REQUIRED_IN_GIT",
-      "tracked_recommendation": true,
-      "lfs_recommendation": false,
-      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
-      "second_machine_need": true,
-      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
-    },
-    {
-      "estimated_bytes": 0,
-      "files": 1,
-      "path": "brand/bay-referee/production-template/files/06_social/youtube-title.txt",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -13515,7 +13581,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 451,
+      "estimated_bytes": 1724,
       "files": 1,
       "path": "brand/bay-referee/production-template/files/08_delivery/delivery-summary.txt",
       "classification": "REQUIRED_IN_GIT",
@@ -13526,7 +13592,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 12146,
+      "estimated_bytes": 18438,
       "files": 1,
       "path": "brand/bay-referee/production-template/files/08_delivery/manifest.json",
       "classification": "REQUIRED_IN_GIT",
@@ -13537,7 +13603,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 304,
+      "estimated_bytes": 1596,
       "files": 1,
       "path": "brand/bay-referee/production-template/files/08_delivery/qa-summary.txt",
       "classification": "REQUIRED_IN_GIT",
@@ -13548,7 +13614,18 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 2435,
+      "estimated_bytes": 658,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/files/08_delivery/semantic-sync.json",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 3067,
       "files": 1,
       "path": "brand/bay-referee/production-template/layout.json",
       "classification": "REQUIRED_IN_GIT",
@@ -13559,9 +13636,20 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 57562,
+      "estimated_bytes": 76444,
       "files": 1,
       "path": "brand/bay-referee/production-template/manifest.schema.json",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 8558,
+      "files": 1,
+      "path": "brand/bay-referee/production-template/semantic-sync.schema.json",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -13724,7 +13812,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 6517,
+      "estimated_bytes": 7598,
       "files": 1,
       "path": "docs/SECOND-MACHINE-SETUP.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13779,7 +13867,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 771593,
+      "estimated_bytes": 779619,
       "files": 1,
       "path": "docs/portable-repo-manifest.json",
       "classification": "REQUIRED_IN_GIT",
@@ -13790,7 +13878,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 3445,
+      "estimated_bytes": 3466,
       "files": 1,
       "path": "docs/portable-repo-manifest.md",
       "classification": "REQUIRED_IN_GIT",
@@ -13966,7 +14054,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 771593,
+      "estimated_bytes": 779619,
       "files": 1,
       "path": "docs/portable-repository-v1/manifest.json",
       "classification": "REQUIRED_IN_GIT",
@@ -13977,7 +14065,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 3431,
+      "estimated_bytes": 3452,
       "files": 1,
       "path": "docs/portable-repository-v1/manifest.md",
       "classification": "REQUIRED_IN_GIT",
@@ -14189,6 +14277,17 @@
       "estimated_bytes": 9298,
       "files": 1,
       "path": "engine/audio/preflight-mix.mjs",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 19545,
+      "files": 1,
+      "path": "engine/bay-referee/delivery-qa.mjs",
       "classification": "REQUIRED_IN_GIT",
       "tracked_recommendation": true,
       "lfs_recommendation": false,
@@ -14945,7 +15044,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 71565,
+      "estimated_bytes": 73409,
       "files": 1,
       "path": "package-lock.json",
       "classification": "REQUIRED_IN_GIT",
@@ -14956,7 +15055,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 1868,
+      "estimated_bytes": 1994,
       "files": 1,
       "path": "package.json",
       "classification": "REQUIRED_IN_GIT",
@@ -15066,7 +15165,18 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 9172,
+      "estimated_bytes": 2045,
+      "files": 1,
+      "path": "scripts/bay-referee-delivery-qa.mjs",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 11903,
       "files": 1,
       "path": "scripts/bay-referee-new-episode.mjs",
       "classification": "REQUIRED_IN_GIT",
@@ -15132,7 +15242,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 12961,
+      "estimated_bytes": 13026,
       "files": 1,
       "path": "scripts/portable-repo-manifest.py",
       "classification": "REQUIRED_IN_GIT",
@@ -15143,7 +15253,7 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 4005,
+      "estimated_bytes": 4042,
       "files": 1,
       "path": "scripts/portable-smoke.mjs",
       "classification": "REQUIRED_IN_GIT",
@@ -15275,7 +15385,18 @@
       "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
     },
     {
-      "estimated_bytes": 8748,
+      "estimated_bytes": 15102,
+      "files": 1,
+      "path": "tests/bay-referee-delivery-qa.test.mjs",
+      "classification": "REQUIRED_IN_GIT",
+      "tracked_recommendation": true,
+      "lfs_recommendation": false,
+      "reason": "Reusable runtime, locked authority, schema, template, test or reviewed setup documentation.",
+      "second_machine_need": true,
+      "bootstrap_or_rebuild": "Restore through Git; run setup for dependencies."
+    },
+    {
+      "estimated_bytes": 18126,
       "files": 1,
       "path": "tests/bay-referee-new-episode.test.mjs",
       "classification": "REQUIRED_IN_GIT",
@@ -15572,9 +15693,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 15687,
+      "bytes": 16277,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "d5d1994c61fda9d471fde1a015149acf1dece3660afbbc06986a3daef86e40d7"
+      "sha256": "2fa145b2928df20ae2f1238aa6e05491694b62364a62fd642c1cd7c474d24755"
     },
     {
       "path": "brand/bay-referee/avatar/master/referee-master.png",
@@ -15770,9 +15891,9 @@
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/SKILL.md",
-      "bytes": 5243,
+      "bytes": 5839,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "edd5036ec6ef894412dec38b8555c2091a6b7c296786143d7641c1760abda903"
+      "sha256": "27a1e91271d813f2de2610f2a39e31ea2306abceb8116df1b2f3aaa89db40851"
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/agents/openai.yaml",
@@ -15782,15 +15903,15 @@
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/references/engine-and-qa.md",
-      "bytes": 7475,
+      "bytes": 11721,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "97dd6beb949e9886407cd2bb63bd52b1d0225bff57d412fd64f6c1d1c9c158a6"
+      "sha256": "8e9fe277784a6f0f07391cf8625d6149889e2272deeb4826a20193602ccf4900"
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/references/format-and-brand.md",
-      "bytes": 9091,
+      "bytes": 10425,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "9d52b6d8ff12ded2b09a37635b15db9ff023d8c7819ad6a6721032871f59cf5e"
+      "sha256": "f56f6b1a401201e6f2c337c40fbd14c1357ecb769961f4b0f60a7c6e9f616a21"
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/references/motion-grammar.md",
@@ -15812,21 +15933,21 @@
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/references/production-mode.md",
-      "bytes": 14026,
+      "bytes": 20483,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "c1137aa286b1bc667cdde967bd3e62ae708777f80ebb87f42a2ba4d2084c75d6"
+      "sha256": "5a67c96d30d25c07ca896b2a0cbe031260fa0f5ca5427f35f2d1fe6afad9d7e6"
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/references/production-workflow.md",
-      "bytes": 6411,
+      "bytes": 7285,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "e7afeffc1f0156827adc1f55f902fdefa90e9b42b1c0d3e57c74764c9a5c5105"
+      "sha256": "e5bbc4083827817130abfa69d0db62a8bd92c11fd0c3a967f69c002f367694c1"
     },
     {
       "path": "brand/bay-referee/channel-skill/bay-referee/references/voice-and-dubbing.md",
-      "bytes": 7262,
+      "bytes": 9936,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "0d5c27819ce859a5b4f12bc253b9e9a108e28c2a959fa6ea3ea6c9500290cdce"
+      "sha256": "7111f992a3689d6ed16b4851958bcf2a92f0c9e2904e548f39cb9aef18ebd2d4"
     },
     {
       "path": "brand/bay-referee/motion-research/consolidation-decision.json",
@@ -15839,6 +15960,12 @@
       "bytes": 4853,
       "classification": "REQUIRED_IN_GIT",
       "sha256": "103cefdc55d3bc4d7b15cbc02d079d645400e84ad48715471ff10bedc14f1423"
+    },
+    {
+      "path": "brand/bay-referee/production-template/README.md",
+      "bytes": 4926,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "d7e89c341445581d5c8ce53d3908f75985bc50fae76b6d053f3d90f7c6204431"
     },
     {
       "path": "brand/bay-referee/production-template/asset-manifest.schema.json",
@@ -15860,9 +15987,9 @@
     },
     {
       "path": "brand/bay-referee/production-template/files/00_brief/brief.md",
-      "bytes": 626,
+      "bytes": 2375,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "648f6951db80427c836ebdf7d4c70d50b5b06bfebb2e111fec9fe94b4710f3d4"
+      "sha256": "1707796ff95d3997b2df8c4ec69781fb1599d812fb8b08182d69fb211514f553"
     },
     {
       "path": "brand/bay-referee/production-template/files/00_brief/episode.json",
@@ -15902,9 +16029,9 @@
     },
     {
       "path": "brand/bay-referee/production-template/files/05_cover/cover-brief.md",
-      "bytes": 1001,
+      "bytes": 1663,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "9bb288efcd4e1bd8d1854236189cd7be64077372aeb45045cb6d41abfc03d6c4"
+      "sha256": "00f3dc0a701516c6a092a75202eafb9ddc4e7d04412aae15f88e32a8da275d7b"
     },
     {
       "path": "brand/bay-referee/production-template/files/05_cover/cover-title.txt",
@@ -15913,31 +16040,61 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "brand/bay-referee/production-template/files/06_social/hashtags.txt",
+      "path": "brand/bay-referee/production-template/files/06_social/description-en.txt",
       "bytes": 0,
       "classification": "REQUIRED_IN_GIT",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "brand/bay-referee/production-template/files/06_social/instagram-caption.txt",
+      "path": "brand/bay-referee/production-template/files/06_social/description-es.txt",
       "bytes": 0,
       "classification": "REQUIRED_IN_GIT",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "brand/bay-referee/production-template/files/06_social/youtube-description.txt",
+      "path": "brand/bay-referee/production-template/files/06_social/description-tr.txt",
+      "bytes": 0,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/06_social/hashtags-en.txt",
+      "bytes": 0,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/06_social/hashtags-es.txt",
+      "bytes": 0,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/06_social/hashtags-tr.txt",
+      "bytes": 0,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/06_social/title-en.txt",
+      "bytes": 0,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/06_social/title-es.txt",
+      "bytes": 0,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/06_social/title-tr.txt",
       "bytes": 0,
       "classification": "REQUIRED_IN_GIT",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "brand/bay-referee/production-template/files/06_social/youtube-tags.txt",
-      "bytes": 0,
-      "classification": "REQUIRED_IN_GIT",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "brand/bay-referee/production-template/files/06_social/youtube-title.txt",
       "bytes": 0,
       "classification": "REQUIRED_IN_GIT",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -15962,33 +16119,45 @@
     },
     {
       "path": "brand/bay-referee/production-template/files/08_delivery/delivery-summary.txt",
-      "bytes": 451,
+      "bytes": 1724,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "a6db8849bbb84613aaf2cc80428a3c4bd9dec86c85042bc480b389b3c07f3eed"
+      "sha256": "691b8ac849b2b9cc7ec3f71c873f4a66867ee86107e6ef229d364c8ca5bd42de"
     },
     {
       "path": "brand/bay-referee/production-template/files/08_delivery/manifest.json",
-      "bytes": 12146,
+      "bytes": 18438,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "5cce08ee0ab1b074869ef8fede0fe38eed73688b4f2f8f30deeb73c2b831950e"
+      "sha256": "2701002c167c519b02fc694522702549ee714e5e851ba8a73ec5f0819036cc85"
     },
     {
       "path": "brand/bay-referee/production-template/files/08_delivery/qa-summary.txt",
-      "bytes": 304,
+      "bytes": 1596,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "cfabd024c234f47a805135ebd677fd97f29386fccd7d02ddec6d41fd7dd71345"
+      "sha256": "185e0fefec3bced68e13a7fb2c64e7b9d9a57a5b719c2d8466d133c406fb8b7f"
+    },
+    {
+      "path": "brand/bay-referee/production-template/files/08_delivery/semantic-sync.json",
+      "bytes": 658,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "f74c9da76328071f4d86cba593a171a95d7af50154da5b00acae8b31e662f593"
     },
     {
       "path": "brand/bay-referee/production-template/layout.json",
-      "bytes": 2435,
+      "bytes": 3067,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "154c488fcc6852b8cc9f412ddae06aded30dd6b1efc11d04f6d82dce7f390baf"
+      "sha256": "e708e02ee62d10c895459b4594c8b7e3405c3d426d576d22e5535fb325575611"
     },
     {
       "path": "brand/bay-referee/production-template/manifest.schema.json",
-      "bytes": 57562,
+      "bytes": 76444,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "d66d22dfbcb8fab4ab44e3299d73ea4ff6c25e11b20c429cbdedd3fc1d62daea"
+      "sha256": "fc2f1be5c2548589e68f78aac5747d05e748bbab6fdcc06a5b0222a49e2c46f1"
+    },
+    {
+      "path": "brand/bay-referee/production-template/semantic-sync.schema.json",
+      "bytes": 8558,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "29af14a8d88a0ebf5d5864ea754d17e32b7f22d98effd9f300860f62c74da6de"
     },
     {
       "path": "brand/bay-referee/profile/profile-square-128.png",
@@ -16124,9 +16293,9 @@
     },
     {
       "path": "docs/SECOND-MACHINE-SETUP.md",
-      "bytes": 6517,
+      "bytes": 7598,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "ab95889c8f25c953ff0f25c9ab59181e87974a39cefaa46ac464372b9249f4ce"
+      "sha256": "7d11659eb69cb337f560c695c555be806a4a15675813c12df6a22e7837eeac4e"
     },
     {
       "path": "docs/TRANSCRIPTION.md",
@@ -16154,13 +16323,13 @@
     },
     {
       "path": "docs/portable-repo-manifest.json",
-      "bytes": 771593,
+      "bytes": 779619,
       "classification": "REQUIRED_IN_GIT",
       "sha256": null
     },
     {
       "path": "docs/portable-repo-manifest.md",
-      "bytes": 3445,
+      "bytes": 3466,
       "classification": "REQUIRED_IN_GIT",
       "sha256": null
     },
@@ -16256,13 +16425,13 @@
     },
     {
       "path": "docs/portable-repository-v1/manifest.json",
-      "bytes": 771593,
+      "bytes": 779619,
       "classification": "REQUIRED_IN_GIT",
       "sha256": null
     },
     {
       "path": "docs/portable-repository-v1/manifest.md",
-      "bytes": 3431,
+      "bytes": 3452,
       "classification": "REQUIRED_IN_GIT",
       "sha256": null
     },
@@ -16379,6 +16548,12 @@
       "bytes": 9298,
       "classification": "REQUIRED_IN_GIT",
       "sha256": "045caa0f933a115ec8a112c9cadc70d4d56a0254a73af72e4fd1e9f5904194fa"
+    },
+    {
+      "path": "engine/bay-referee/delivery-qa.mjs",
+      "bytes": 19545,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "771075b03ea07561dfb82c94cf488afb629baf463ecda8b5c74a78e6e474b087"
     },
     {
       "path": "engine/bay-referee/highlight-system.mjs",
@@ -16808,15 +16983,15 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 71565,
+      "bytes": 73409,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "69f2521486163e38cdc4136173c90c8148be46fc65fae5ef955f35bd4351da87"
+      "sha256": "bc896a95c67094cd938362d63434235c795aa1321f9f89ce0bc83f1e203fc8a0"
     },
     {
       "path": "package.json",
-      "bytes": 1868,
+      "bytes": 1994,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "709e3edff4c92190e64cf241f38ba65f7750673d7f937357f7a40a014e7d171d"
+      "sha256": "b28fc4275aba178ebb4f7e7ddd472fe50b02c2df140ad28f9fa4f9b3652f5cfa"
     },
     {
       "path": "requirements-lock-macos-arm64.txt",
@@ -16873,10 +17048,16 @@
       "sha256": "cdb90be32b43abd8076bd0a444d1735335a7f44263da558548bd6b6c3eb94424"
     },
     {
-      "path": "scripts/bay-referee-new-episode.mjs",
-      "bytes": 9172,
+      "path": "scripts/bay-referee-delivery-qa.mjs",
+      "bytes": 2045,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "a6e90eb0c8a17c3602cad80b2203876bb9984a66839cf56797cb9d9a62b24fe3"
+      "sha256": "a2d2c703d22749e9cd51c9391cfe3ebead9dcb448d372df242d7bc209c8165aa"
+    },
+    {
+      "path": "scripts/bay-referee-new-episode.mjs",
+      "bytes": 11903,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "fd1ad02865780dfd73763d1cb3e1b49abfe151abf8e4ef65d4f83f36438d7e0b"
     },
     {
       "path": "scripts/doctor.mjs",
@@ -16910,15 +17091,15 @@
     },
     {
       "path": "scripts/portable-repo-manifest.py",
-      "bytes": 12961,
+      "bytes": 13026,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "88fb2676788c9732f61dbfe00a88bea1cf00cc8abeeaebb7f287c1b06f6413b1"
+      "sha256": "4feb4d34d5393b61ee21397f98916eeadcc7b158ca8bd9fb0eee5ff395c514b4"
     },
     {
       "path": "scripts/portable-smoke.mjs",
-      "bytes": 4005,
+      "bytes": 4042,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "5a03e1357b40a37717b7698acaf264b2ca926b855db8a004c03c21799a3c4341"
+      "sha256": "757476bcccbbeb8d2c5d17cb84c1d91bcccecfd6d5754b89d3319fed79664093"
     },
     {
       "path": "scripts/portable-source-audit.mjs",
@@ -16987,10 +17168,16 @@
       "sha256": "8aad5cfd4a879434b876a22141533b374dfe7b3dc28dc70307f2020489f42db7"
     },
     {
-      "path": "tests/bay-referee-new-episode.test.mjs",
-      "bytes": 8748,
+      "path": "tests/bay-referee-delivery-qa.test.mjs",
+      "bytes": 15102,
       "classification": "REQUIRED_IN_GIT",
-      "sha256": "39dc91d72a5d7a45fdc7ec7051efee97f8478041d5b01d7ce13a8156afd1abe9"
+      "sha256": "9886676f2848ee55b3f14a82eb97a31251836d981327d3268631f040e4c4e3d6"
+    },
+    {
+      "path": "tests/bay-referee-new-episode.test.mjs",
+      "bytes": 18126,
+      "classification": "REQUIRED_IN_GIT",
+      "sha256": "145d748b9d60c4cf6c1a2084653f600a495882ab4cee97772ba72ba32ee24376"
     },
     {
       "path": "tests/captions-v3.test.mjs",
@@ -17104,13 +17291,13 @@
     },
     {
       "path": "docs/portable-repo-manifest.json",
-      "bytes": 771593,
+      "bytes": 779619,
       "classification": "REQUIRED_IN_GIT",
       "sha256": null
     },
     {
       "path": "docs/portable-repository-v1/manifest.json",
-      "bytes": 771593,
+      "bytes": 779619,
       "classification": "REQUIRED_IN_GIT",
       "sha256": null
     },
@@ -17264,6 +17451,8 @@
     "Before-workspace totals are the immutable inventory snapshot; generated audit/clone files do not pretend to be original content.",
     "Source size is logical bytes, not Git pack or clone dependency size.",
     "Classification B records that binaries were evaluated for LFS; LFS recommendation is independently false.",
-    "File paths and hashes are evidence, not permission to publish."
-  ]
+    "File paths and hashes are evidence, not permission to publish.",
+    "The reusable source list was refreshed for multilingual delivery on 2026-10-21; the original local-only inventory snapshot is unchanged."
+  ],
+  "source_refresh_date": "2026-10-21"
 }

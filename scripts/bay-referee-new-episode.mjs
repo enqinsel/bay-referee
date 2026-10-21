@@ -4,6 +4,7 @@ import {constants} from 'node:fs';
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import Ajv2020 from 'ajv/dist/2020.js';
 
 const SCRIPT_PATH = fileURLToPath(import.meta.url);
 const PROJECT_ROOT = path.resolve(path.dirname(SCRIPT_PATH), '..');
@@ -83,8 +84,8 @@ async function loadPlan(projectRoot, tokens) {
     if (error instanceof SyntaxError) fail('INVALID_TEMPLATE', 'layout.json is not valid JSON.');
     throw error;
   }
-  if (layout.schema_version !== 1 || !Array.isArray(layout.directories) || !Array.isArray(layout.files)) {
-    fail('INVALID_TEMPLATE', 'layout.json must use schema_version 1 with directories and files arrays.');
+  if (layout.schema_version !== 2 || !Array.isArray(layout.directories) || !Array.isArray(layout.files)) {
+    fail('INVALID_TEMPLATE', 'layout.json must use schema_version 2 with directories and files arrays.');
   }
   const directories = layout.directories.map(value => relativePath(value, 'Output directory'));
   const directorySet = new Set(directories);
@@ -110,6 +111,41 @@ async function loadPlan(projectRoot, tokens) {
     }
     files.push({path: output, content});
     occupied.add(output);
+  }
+  const manifestFile = files.find(file => file.path === '08_delivery/manifest.json');
+  if (!manifestFile) fail('INVALID_TEMPLATE', 'The multilingual delivery manifest is required.');
+  const manifest = JSON.parse(manifestFile.content);
+  let valid;
+  try {
+    const schema = JSON.parse(await readSafeTemplate(templateRoot, 'manifest.schema.json'));
+    const validate = new Ajv2020({allErrors: true, strict: false, validateFormats: false}).compile(schema);
+    valid = validate(manifest);
+  } catch (error) {
+    fail('INVALID_TEMPLATE', `Manifest schema cannot be validated: ${error.message}`);
+  }
+  if (!valid) fail('INVALID_TEMPLATE', 'Delivery manifest does not satisfy the multilingual schema.');
+  for (const file of Object.values(manifest.files)) {
+    if (file.kind === 'text' && !occupied.has(file.path)) fail('INVALID_TEMPLATE', `Required text scaffold is missing: ${file.path}`);
+  }
+  const claimsCompletion = value => value && typeof value === 'object' && Object.entries(value).some(([key, item]) =>
+    (key === 'status' && ['PASS', 'READY', 'GENERATED', 'ALIGNED', 'APPLIED'].includes(item)) ||
+    (key.endsWith('_GATE') && item !== 'NOT_RUN') ||
+    (key === 'checks' && Object.values(item).some(check => check !== 'NOT_RUN')) ||
+    claimsCompletion(item));
+  if (manifest.schema_version !== 2 || manifest.status !== 'SCAFFOLD' || claimsCompletion(manifest) ||
+      manifest.generated_at !== null || manifest.video.duration_seconds !== null ||
+      ['en', 'es'].some(language => Object.values(manifest.audio_packages[language].duration_seconds).some(value => value !== null) || manifest.audio_packages[language].timeline.padding_seconds !== null) ||
+      Object.values(manifest.caption_timing).some(timing => timing.authority.audio_sha256 !== null) ||
+      Object.values(manifest.files).some(file => file.status !== 'PLANNED' || file.sha256 !== null || file.bytes !== null || file.generated_at !== null)) {
+    fail('INVALID_TEMPLATE', 'A new scaffold cannot claim generated media, timing, or completed QA.');
+  }
+  const semanticFile = files.find(file => file.path === '08_delivery/semantic-sync.json');
+  if (!semanticFile) fail('INVALID_TEMPLATE', 'The unanswered semantic review scaffold is required.');
+  const semantic = JSON.parse(semanticFile.content);
+  if (semantic.schema_version !== 1 || semantic.master_sha256 !== null ||
+      ['en', 'es'].some(language => semantic.languages?.[language]?.status !== 'NOT_RUN' ||
+        Object.entries(semantic.languages[language]).some(([key, value]) => value !== (key === 'status' ? 'NOT_RUN' : null)))) {
+    fail('INVALID_TEMPLATE', 'A new scaffold cannot contain semantic review claims or evidence hashes.');
   }
   return {directories: directories.sort((a, b) => a.split('/').length - b.split('/').length || a.localeCompare(b)), files};
 }
