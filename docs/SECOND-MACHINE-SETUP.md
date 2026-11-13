@@ -32,9 +32,30 @@ The portable checkout contains the production source, maintained skill, template
 
    The initializer writes empty/text/JSON scaffolding under `videolar/example-topic/`; it is not a video generator. It refuses an existing slug without modifying it. Provide a real topic and canonical Turkish script, or explicitly request research/script preparation within full Production Mode. Covers, social text and EN/ES packages follow the maintained skill’s delivery contract.
 
-New episodes use the multilingual delivery contract: TR master/narration; full-length `youtube-dub-en.wav/.mp3` and `youtube-dub-es.wav/.mp3`; TR/EN/ES SRT, covers, titles, descriptions and hashtags; multilingual YouTube tags; research/credits and QA. Each public description is shared across platforms in its language and excludes URLs, source names and bibliographies. All three covers share the same artwork and layout, with translated text inside the centered 1080×1350 safe area.
+New episodes use the multilingual delivery contract: TR master/narration; full-length `youtube-dub-en.wav/.mp3` and `youtube-dub-es.wav/.mp3`; TR/EN/ES SRT, covers, titles, descriptions and hashtags; multilingual YouTube tags; research/credits and QA. Each language uses one editorial description across platforms. Keep research citations internal and provide required public asset credits with the release in a placement permitted by the license. All three covers share the same artwork and layout, with translated text inside the centered 1080×1350 safe area.
 
 Run `npm run qa:bay-referee -- videolar/<slug>` on an existing package. The `DUB_DURATION_GATE` probes the actual final media with ffprobe and requires each final dub to match the entire master, including its closure, within ±50 ms. Preserve leading, middle and trailing silence; do not trim the upload file to narration length or time-stretch speech to pass. Separate checks require semantic alignment and no cumulative drift. A duration PASS alone is not delivery approval; follow the [current Production Mode QA contract](../brand/bay-referee/channel-skill/bay-referee/references/production-mode.md).
+
+## Local Rhubarb narrator
+
+Install the [Rhubarb Lip Sync 1.14.0 release](https://github.com/DanielSWolf/rhubarb-lip-sync/releases/tag/v1.14.0) outside the checkout. Keep its adjacent `res/` directory and make the executable available on `PATH`, or pass its path with `--rhubarb`. The macOS release is an Intel binary and requires Rosetta on Apple Silicon. Run `rhubarb --version` to check the installation.
+
+For a new episode, first establish the real picture coverage and publication rights described in [MEDIA-FIRST PRODUCTION](../brand/bay-referee/channel-skill/bay-referee/SKILL.md#media-first-production). For each authorized language take, supply clean speech aligned to the final edit from time zero, including any inserted pauses. Keep the SFX and whistle in the separate final mix. Example for a Turkish take in a 1935-frame edit:
+
+```sh
+.venv/bin/python scripts/bay-referee-mouth-cues.py --language tr \
+  --source path/to/aligned-tr.wav --total-frames 1935 --output path/to/mouth-tr.json
+```
+
+Use the actual episode frame count at 30 fps. Repeat serially with the aligned English and Spanish speech tracks and separate output paths. The helper takes the shared Mac heavy-job lock, converts to 48 kHz mono PCM16, runs the phonetic recognizer with one worker, records the input and analysis hashes, and holds the resting mouth for the remaining frames. It preserves existing cue files.
+
+For the raster host, install its two additional Python dependencies in the existing production environment:
+
+```sh
+.venv/bin/python -m pip install -c requirements-lock-macos-arm64.txt 'Pillow==11.3.0' 'scipy==1.18.1'
+```
+
+From the checkout root, the compositor can load `engine/bay-referee/rhubarb_host.py` via `importlib.import_module("engine.bay-referee.rhubarb_host")`. Construct `MouthTrack(record["mouthCues"])` from the selected language's JSON. Pass `track.at_frame(frame)` and the shot's `pose`, `width`, `x`, `y` to `draw_host(shot, speech)` to obtain the transparent host and its placement. The host holds its pose by default. Supply optional gesture controls at the storyboard's semantic moments. Run frame rendering through `scripts/heavy-job.py` as described in [resource safety](../brand/bay-referee/channel-skill/bay-referee/references/resource-safety.md).
 
 ## Safe reruns and isolated checks
 
@@ -57,7 +78,7 @@ node scripts/skill-bay-referee.mjs --source-only
 
 `--skill-dir` names the exact destination **skill folder**, not its parent. `--skip-install` still prepares local directories/tool links and synchronizes the selected skill target; it does not mean read-only. `--skip-smoke` is available for diagnostics and produces an explicitly incomplete verification status. Normal setup records `.cache/setup/bay-referee-setup.json`; check/dry-run modes report to stdout without writing that file.
 
-`requirements-production.txt` includes the existing `requirements-lock-macos-arm64.txt`: the 23-package Whisper/PyTorch/NumPy dependency closure. This is not a global Python package dump. Historical Pillow, scipy, soundfile, ONNX segmentation and rejected local voice experiments are outside the current portable runtime. Node dependencies are controlled by `package-lock.json`; do not copy `node_modules/`, `.venv/` or downloaded binaries from another machine.
+`requirements-production.txt` includes the existing `requirements-lock-macos-arm64.txt`: the 23-package Whisper/PyTorch/NumPy dependency closure. The local raster narrator uses the additional packages listed above. Historical soundfile, ONNX segmentation and local voice experiments remain outside this environment. Node dependencies are controlled by `package-lock.json`; do not copy `node_modules/`, `.venv/` or downloaded binaries from another machine.
 
 The reusable source inventory is `config/bay-referee-portable-assets.json`. Licensed local SFX may be absent from a source checkout and are reported separately. Do not commit isolated library sound files just to satisfy a smoke check. Follow the asset acquisition/provenance policy before an actual production that needs them; `NONE` remains a valid editorial SFX choice.
 

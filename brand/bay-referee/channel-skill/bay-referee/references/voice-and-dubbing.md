@@ -8,7 +8,15 @@ Use the Higgsfield connector, not undocumented endpoints or invented API credent
 
 For maintenance of the optional historical VAR/SAOT Turkish master only, reuse `voice/higgsfield/eleven-v4/var-saot/final/narration-final.wav`: SHA-256 `d5e169d294471fdd60389bce76a6a19529d14ad5021ae6aaed3ca7dff1c3fbed`, 48 kHz mono PCM24, 2,121,561 samples, 44.1991875 s. The Bay Referee TR copy is byte-identical. Do not regenerate or normalize an already approved take during branding work.
 
+## Local memory safety
+
+Follow [resource-safety.md](resource-safety.md): Whisper TR, EN and ES run one
+after another under the shared cross-session heavy-job lock. No concurrent
+FFmpeg, render or model job. Keep Whisper medium and all audio/timing standards.
+
 ## Translation and timing
+
+For the local talking host, run `scripts/bay-referee-mouth-cues.py` once per language on that language’s clean speech aligned to the final picture from time zero. Pass the full frame count, including closure. The helper acquires the shared heavy-job lock and writes the Rhubarb mouth cues alongside the source and analysis hashes. Use `engine/bay-referee/rhubarb_host.py` with the corresponding cues and the approved raster poses. The “Local Rhubarb narrator” section in `docs/SECOND-MACHINE-SETUP.md` covers installation and usage.
 
 English is global/neutral; Spanish is broad international/LatAm. Preserve the canonical Turkish claims, qualifications, conclusion and order while choosing natural spoken phrasing. This is meaning-preserving adaptation, not literal token replacement. Build the concept map from the current episode's canonical clauses and visual states; the historical VAR/SAOT example happened to have twelve paragraphs, not a universal count.
 

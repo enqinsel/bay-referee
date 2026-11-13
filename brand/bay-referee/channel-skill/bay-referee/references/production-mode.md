@@ -31,6 +31,20 @@ Portable setup: `node scripts/setup-bay-referee.mjs`; second-machine instruction
 
 Reusable runtime: `engine/bay-referee/production.mjs`. Reusable templates: `brand/bay-referee/production-template/`. The initializer is a packaging scaffold, not an automated topic-to-video renderer. Adapt reusable engine components to the new episode's states and paths; never run a fixed VAR/SAOT/backpass helper unchanged against its old output paths.
 
+## Mandatory Mac mini M4 / 16 GB resource gate
+
+Read [resource-safety.md](resource-safety.md) before any local heavy work. Run
+TR, EN and ES Whisper sequentially. Never overlap FFmpeg, video rendering,
+Whisper or another memory-intensive job, even from different Codex sessions.
+Use `python3 scripts/heavy-job.py --label <stage> -- <command> <args>` for each
+custom heavy stage; the stable shared `flock` is outside the checkout. If busy,
+do not start another heavy job, delete a live lock or interrupt its owner.
+The guarded command fails closed if process visibility is denied; use the
+same guarded command with the permitted execution scope instead of bypassing it.
+Keep Whisper **medium**, all three languages, **1080×1920 / 30 FPS**, approved
+audio and output settings, and every QA standard unchanged. Limit concurrency
+only. A single lease must not contain parallel heavy child stages.
+
 ## Standard package
 
 ```text
@@ -112,7 +126,7 @@ Use `_work/` for raw provider outputs, requests/job records, rejected takes, ali
 
 Use [production-workflow.md](production-workflow.md) for research, authority and delivery quality, with these daily-package stages:
 
-1. Define topic and viewer question.
+1. Define the topic and viewer question. Apply [MEDIA-FIRST PRODUCTION](../SKILL.md#media-first-production) to establish real visual coverage and publication suitability before committing to the production stages below.
 2. Research and fact-check the actual claims; record sources and applicable dates.
 3. Freeze the canonical Turkish script in `01_script/script-tr.txt`.
 4. Produce the Turkish Engin take through the locked Higgsfield / ElevenLabs v4 preset; preserve job/settings/source evidence.
@@ -120,7 +134,7 @@ Use [production-workflow.md](production-workflow.md) for research, authority and
 6. Identify semantic beats.
 7. Design inherited visual states.
 8. Write the motion plan before rendering: **SCRIPT → FINAL VOICE → WHISPER → SEMANTIC BEATS → VISUAL STATES → MOTION PLAN**.
-9. Build the Turkish master composition.
+9. Build the Turkish master composition around the real material selected for the critical moments.
 10. Integrate full-speech Turkish captions and restrained semantic editorial highlights.
 11. Complete **SFX AUDIT REQUIRED**: record every semantic/motion event's named SFX or reasoned NONE, then place meaningful effects at the actual event times.
 12. Apply BAY REFEREE host and quiet watermark/brand attribution.
@@ -162,7 +176,7 @@ The QA command without `--output` is a read-only stdout check; `--output` writes
 
 Every new full-production episode includes **three 1080×1920 covers**: `cover-tr-1080x1920.png`, `cover-en-1080x1920.png` and `cover-es-1080x1920.png`. They use exactly the same background/art, avatar, object positions, layout and colors. Localize only the text; adapt line breaks and typography within the shared text area for natural fit. Do not regenerate or recompose the art separately by language. This replaces the older two-aspect/platform-cover default for new episodes; preserve historical outputs.
 
-Use the approved BAY REFEREE palette and type family, one strong focal idea/object and the existing avatar when helpful. Write an accurate, curiosity-building short title in natural TR/EN/ES, typically 2–6 words; record all three versions in `cover-title.txt`. Do not place a paragraph or fabricated football event on the image. Keep high contrast, clean mobile hierarchy and few purposeful assets. No generic AI poster, tiny explanatory text, unnecessary glow, five competing objects or emoji clutter.
+Follow the deep football-green stadium and real-photography cover direction in [format-and-brand.md](format-and-brand.md). Use the approved type family and keep one clear visual focus. Write an accurate, curiosity-building short title in natural TR/EN/ES, typically 2–6 words; record all three versions in `cover-title.txt`. Do not place a paragraph or fabricated football event on the image. Keep high contrast, clean mobile hierarchy and few purposeful assets. No generic AI poster, tiny explanatory text, unnecessary glow, five competing objects or emoji clutter.
 
 Record localized title text, shared focal object/assets, typography/palette and crop intent in `cover-brief.md`. Critical title, face and focal objects must fit the **centered 1080×1350 region at y=285..1635** within each 1080×1920 image. This is the required safety check, not a promise about every platform's crop. Inspect all three at mobile size and verify the shared-art layout and central crop before delivery. Compose with approved local assets or an authorized image tool when useful; any new common artwork is created once and reused across languages.
 
@@ -171,7 +185,7 @@ Record localized title text, shared focal object/assets, typography/palette and 
 | File under `06_social/` | Content |
 |---|---|
 | `title-tr.txt`, `title-en.txt`, `title-es.txt` | Accurate, curiosity-building title in each language's natural search phrasing, preferably around 60 characters or fewer. No misleading clickbait. |
-| `description-tr.txt`, `description-en.txt`, `description-es.txt` | One short description per language, shared across platforms. Make the first 1–2 sentences strong, natural and topic-specific; use relevant keywords in normal prose. No source URLs, source names or bibliography. |
+| `description-tr.txt`, `description-en.txt`, `description-es.txt` | One short description per language, shared across platforms. Make the first 1–2 sentences strong, natural and topic-specific; use relevant keywords in normal prose. Keep research citations internal. Include any required public asset credit as a separate closing paragraph when the description is its placement. |
 | `hashtags-tr.txt`, `hashtags-en.txt`, `hashtags-es.txt` | Usually 5–10 relevant topic/football/rule/history/tactic hashtags suited to that language. No spam list. |
 | `youtube-tags.txt` | One comma-separated, balanced TR + EN + ES list of relevant terms. Use natural language-specific search variants; no stuffing or misleading unrelated terms. |
 
@@ -179,7 +193,7 @@ Titles and descriptions should earn curiosity without promising an unsupported e
 
 ## Sources, manifest and delivery
 
-`07_assets/sources.md` records internal factual sources, real media/historical evidence and generated asset classes. `credits.txt` contains only genuinely required attribution (or a clear statement that none is required); honor license-required placement through a compatible credit surface without turning public descriptions into source lists. Select compatible assets if their required credit terms conflict with the user's description rule; never silently omit a required credit. `asset-manifest.json` records role, source, rights, SHA-256 and resolvable local path. Do not invent permission or source URLs.
+`07_assets/sources.md` records internal factual sources, real media/historical evidence and generated asset classes. Record the rights basis, creator, source and license in the manifest and required wording in `07_assets/credits.txt`. For a verified asset requiring public attribution, record the exact public credit (or permitted linked credit page) in its `rights.attribution`. Deliver it in the accompanying description or prepare it for the permitted credit surface with explicit placement instructions. For translated cover credits in a description, use a final paragraph headed “Kapak fotoğrafları”, “Cover photography” or “Fotografías de portada”, with the source and license links documented in the verified asset attributions. A private credits file alone cannot fulfill public attribution. Check the actual placement before releasing an asset, or replace it if the display requirements cannot be met. `asset-manifest.json` records role, source, rights, SHA-256 and resolvable local path. Do not invent permission or source URLs.
 
 Use the reusable `manifest.schema.json` in the production template. `08_delivery/manifest.json` records episode, slug, status, generated_at; actual master/audio/SRT/cover/social file records; voice provider/engine/identity; video resolution/fps/measured duration; watermark/sign-off; claim/source counts; QA status and limitations. Planned records retain null hashes and are not evidence of generated media. Before READY, verify files exist, nonempty final text contains no scaffolding, hashes match, and required media passes its actual checks. Schema validation alone does not establish delivery completeness or media quality.
 
@@ -196,7 +210,7 @@ Keep `delivery-summary.txt` readable in about ten seconds: episode, TR master/na
 
 **Normal successful daily production creates no review website and opens no review server.** Do not create a dashboard merely to demonstrate that QA occurred. Still inspect research, final voice/timing, motion plan and real 1× playback, actual caption/host geometry, SFX event audit and audible final mix, complete decode, DUB_DURATION_GATE plus semantic/cumulative EN/ES alignment, and all three covers' shared artwork/dimensions/mobile readability/crop. Use internal frame sequences, scripts, direct media playback and concise evidence records. Do not weaken quality checks because the delivery is concise, and do not claim listening if audio was not auditioned.
 
-The CLI can check actual PNG dimensions, required files/hashes, audio timeline/duration, final caption-audio authority and source-URL/scaffold errors. It does not establish that all three covers use identical art, that their critical content fits the central crop, that descriptions contain no source-name attribution in ordinary prose, or that localized SEO copy is natural. Inspect those separately and retain evidence; automated PASS cannot stand in for them.
+The CLI can check actual PNG dimensions, required files/hashes, audio timeline/duration, final caption-audio authority and source-URL/scaffold errors. It does not establish that all three covers use identical art, that their critical content fits the central crop, that required credits are correctly placed at publication, or that localized SEO copy is natural. Inspect those separately and retain evidence; automated PASS cannot stand in for them.
 
 Create only a minimal review artifact when a meaningful human decision, new-system test, serious visual ambiguity or timing/dub problem needs it, or the user explicitly requests review. Explain the unresolved point and show the relevant evidence. A routine recoverable failure does not require a public site; keep actionable diagnostics in `_work/`. Any review is local by default. External publishing is a separate authorized action.
 

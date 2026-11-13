@@ -44,6 +44,12 @@ function readlinkSyncSafe(path) {
   }
 }
 
+export function runHeavy(label, command, args, options = {}) {
+  // One OS-wide lease shared with Python, custom renderers and direct FFmpeg.
+  // Do not parallelize heavyweight child stages inside this lease.
+  return run('python3', [join(root, 'scripts', 'heavy-job.py'), '--label', label, '--', command, ...args], options);
+}
+
 export function run(command, args, options = {}) {
   const result = spawnSync(command, args, { cwd: root, env: prepare(), stdio: 'inherit', ...options });
   if (result.error) throw result.error;

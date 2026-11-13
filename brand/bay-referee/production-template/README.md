@@ -5,6 +5,24 @@ the v2 manifest before the first write and refuses existing episode paths.
 Every artifact remains `PLANNED`; durations, hashes and review identities stay
 unknown. The semantic review scaffold is an unanswered checklist, not evidence.
 
+Begin each new episode with [MEDIA-FIRST PRODUCTION](../channel-skill/bay-referee/SKILL.md#media-first-production). The brief and existing source record hold the critical shots, usage rights and intended publication decision.
+
+## Mandatory Mac mini M4 / 16 GB safety
+
+One heavy local job at a time, shared across all Codex sessions/checkouts on
+this OS account. Run Whisper TR, EN and ES sequentially; never overlap them
+with FFmpeg, rendering or another memory-intensive job. Before a custom heavy
+stage use `python3 scripts/heavy-job.py --label <stage> -- <command> <args>`.
+The OS-wide `/private/tmp/bay-referee-heavy-<uid>.lock` is a persistent flock
+inode, never a disposable stale-PID file. A busy lock blocks a new job;
+never remove a running process's lock or stop its owner. Do not parallelize
+heavy children inside one lease. If process-table access is denied, rerun the
+same guarded command with the permitted execution scope; never bypass it.
+
+Keep Whisper **medium**, all three languages, **1080×1920 30 FPS**, approved
+audio quality, output settings and every QA gate. Only concurrency changes.
+Full behavior: maintained skill `references/resource-safety.md`.
+
 ## Final upload files
 
 | Output | Required files |
@@ -34,16 +52,14 @@ continue to follow the final native Turkish narration.
 
 ## Covers and public text
 
-All three covers use the same artwork and layout; only the localized title
+Use the deep football-green stadium palette and integrate actual player photography with matched light and natural edges. All three covers use the same artwork and layout; only the localized title
 changes. Keep the title, face and focal object completely inside the central
 1080×1350 area at y=285–1635. Inspect this crop for every language. Record the
 three approved native titles in `05_cover/cover-title.txt` using TR/EN/ES labels.
 
 Each language has one public description shared by Instagram and YouTube.
 Use a strong opening, natural topic keywords and fluent native phrasing. Avoid
-keyword stuffing, misleading promises, source names, URLs and bibliographies.
-Keep research and attribution in the internal claims/sources/credits files.
-Public descriptions are not substitutes for internal research records.
+keyword stuffing and misleading promises. Store research and rights evidence in the internal claims, sources and credits files. Keep credits and production metadata off the artwork. Supply required public attribution with the post in a placement allowed by the license.
 
 ## Evidence and READY
 

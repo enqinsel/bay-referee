@@ -6,6 +6,14 @@ Durum: SCAFFOLD — konu veya içerik üretilmedi.
 
 ## İzleyicinin sorusu
 
+## Kritik gerçek görüntüler
+
+Her kritik an için kurgulanabilir çekimi ve kaynağını `07_assets/sources.md`
+içinde kaydet. Kullanım izninin dayanağını ve hedef platformlardaki yayın
+uygunluğunu ayrı değerlendir. Kritik görüntü eksikse bölümün durumunu
+`REVIEW_NEEDED`, nedenini `MEDIA_BLOCKED` olarak kaydet. Ücretli anlatım,
+üç dil dublaj ve tam render için bu görüntülerin hazır olması gerekir.
+
 ## Hook
 
 ## Kanonik Türkçe metin authority’si
@@ -38,13 +46,28 @@ ve `hashtags-{tr,en,es}.txt`; ayrıca tek çok dilli `youtube-tags.txt`.
 Her dilin tek açıklaması Instagram ve YouTube'da ortak kullanılır. Güçlü
 bir açılış, doğal anahtar kelimeler ve ana dilde akıcı anlatım gerekir;
 anahtar kelime yığma veya yanıltıcı vaat kullanılmaz. Public açıklamaya
-kaynak adı, URL veya bibliyografya konmaz. Araştırma kaynakları iç dosyalarda
-korunur.
+araştırma kaynakçası eklenmez. Lisansın gerektirdiği atıf, izin verilen açıklamada veya gönderiye bağlı kamusal kredi sayfasında verilir. Hak kaydı iç dosyalarda saklanır.
 
 Teslim ancak bütün zorunlu dosyalar üretildikten ve `08_delivery/qa-report.json`
 gerçek dosyalardan PASS verdikten sonra READY olabilir. Özellikle
 `DUB_DURATION_GATE`, zaman çizgisi, ses politikası, semantik senkron ve dosya
 bütünlüğü kapıları PASS olmalıdır; boş şablon başarı kanıtı sayılmaz.
+
+## Mac mini M4 / 16 GB — zorunlu işlem güvenliği
+
+Whisper TR → EN → ES sırayla çalışır. FFmpeg, video render, Whisper ve diğer
+bellek yoğun işler aynı Mac'teki farklı Codex oturumlarında da paralel
+başlatılmaz. Her ağır komutu proje kökünden ortak kilitle başlat:
+`python3 scripts/heavy-job.py --label <aşama> -- <komut> <argümanlar>`.
+Kilit `/private/tmp/bay-referee-heavy-<uid>.lock` üzerindeki POSIX flock'tur;
+oturum veya checkout klasörüne özel değildir. Başka iş varsa yeni ağır işi
+başlatma. Çalışan işin kilidini silme, kilidi aşmak için yol değiştirme veya
+başka oturumun sürecini durdurma. Tek kilit altında da ağır alt işleri paralel
+çalıştırma. Süreç tablosu erişimi engelliyse aynı korumalı komutu yetkili
+çalıştırma kapsamıyla kullan; denetimi devre dışı bırakma.
+
+Whisper **medium**, üç dil, **1080×1920 30 FPS**, ses kalitesi, çıktı ayarları
+ve bütün QA standartları korunur. Yalnız eşzamanlı işlem sayısı sınırlandırılır.
 
 ## Zamanlama ve motion
 

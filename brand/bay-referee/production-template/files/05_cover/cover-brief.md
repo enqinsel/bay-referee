@@ -24,7 +24,7 @@ görsel kompozisyon üretmez. Tek cover tasarımı üç dilde teslim edilir.
 
 ## Marka ve yerleşim
 
-Onaylı BAY REFEREE palette ve typography family kullanılır. Az sayıda güçlü asset,
+Koyu futbol yeşili stadyum derinliği ve doğal ışık kullanılır. Döneme yakın gerçek oyuncu fotoğraflarında saç ve forma kenarları, ten rengi, ışık yönü ve kontrast aynı sahneye uyarlanır. Dekoratif çizgi, diyagonal şerit ve parıltı kullanılmaz. Fotoğraf kredisi, kaynak bağlantısı ve teknik notlar görsel dışında tutulur. Gerekli kamusal atfın yayın yüzeyi kaydedilir. Onaylı BAY REFEREE yazı ailesi kullanılır. Az sayıda güçlü asset,
 yüksek kontrast, mobilde okunur başlık ve tek net odak. Dikey kapağın başlığı,
 yüzü ve ana nesnesi merkezdeki tam 1080×1350 güvenli alanın, y=285–1635
 sınırlarının içinde kalır; merkezden 4:5 kırpıldığında eksiksiz görünür.

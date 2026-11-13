@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 os.environ["PATH"] = str(ROOT / ".tools" / "bin") + os.pathsep + os.environ.get("PATH", "")
 
+from engine.runtime.heavy_job import HeavyJobBusy
+
 from engine.transcription import (  # noqa: E402
     TranscriptionError,
     transcribe_episode,
@@ -39,7 +41,7 @@ def main(argv: list[str] | None = None) -> int:
             result = validate_installation(args.config, args.profile)
         else:
             result = transcribe_episode(args.episode, args.config, args.profile)
-    except (TranscriptionError, OSError, ValueError) as exc:
+    except (TranscriptionError, HeavyJobBusy, OSError, ValueError) as exc:
         print(f"Transcription error: {exc}", file=sys.stderr)
         return 1
     print(json.dumps(result, indent=2, ensure_ascii=False))

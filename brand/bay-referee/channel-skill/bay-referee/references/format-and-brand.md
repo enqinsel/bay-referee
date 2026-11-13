@@ -4,15 +4,25 @@
 
 The approved system is the Football Comparison format refined through V2.1 and Production Kit V1.1. Preserve its green field, meaningful pitch lines/zones, role markers, passes, ball position and controlled tactile depth. Aim for a clean but populated football explanation studio. No corporate slides, unrelated icons, wall-to-wall documentary cards or cinema without information. RAT10N is a motion-production reference, not permission to copy its palette, type or layout.
 
-When a real named player, club, competition, stadium or historical document is visually relevant, prefer a verified asset depicting that actual entity over a generic or AI-invented stand-in. Check source, identity, date/context and usage rights; use it only when it helps explain the claim. This does not require decorative photos when the approved field/diagram already explains the topic. Preserve named-entity accuracy without redesigning the channel or treating a generated image as documentary evidence.
+Use the real football footage and photographs selected in [MEDIA-FIRST PRODUCTION](../SKILL.md#media-first-production) as the main picture. Verify the identity, date and context of named players, clubs, venues and historical documents. Use field diagrams for the movement or relationship the host is explaining. Keep the match action, host and captions readable together.
 
 Brand exports and palette: `brand/bay-referee/tokens/brand.json`. Wordmark is Archivo 820 / width axis 93, uppercase, outlined SVG/PNG; face variants are derived from the same master bust. The grayscale fallback is not a new silhouette. Default small bug is 72 px, minimum recommended 64 px, with 96 px preferred when mobile space permits.
 
 Portable runtime entrypoint: `engine/bay-referee/production.mjs`; portable source asset inventory: `config/bay-referee-portable-assets.json`. Derive every new episode clock from its own final voice. Historical `scripts/eleven-v4-voice-common.mjs` and `scripts/production-kit-v11-performance.mjs` are locked VAR/SAOT implementations and may be absent from a clean checkout. Do not import them for a new episode or copy their fixed timeline.
 
+## Covers and visible text
+
+Use a deep football-green stadium environment with depth from the stands, pitch and natural light. For stories about named players, choose genuine photographs in the relevant kit, as close to the event date as rights and availability allow. Record the actual fixture and date of archive photographs. Match exposure, shadow direction, grain, scale and edge softness across portraits. Keep skin and kit colors recognizable. Use the face and a short, well-sized headline as the hierarchy, with balanced negative space in the full vertical frame and center crop. Omit decorative lines, accent bars, diagonal ornaments, glow and unrelated geometry.
+
+On covers and video, limit added text to the story, captions and BAY REFEREE branding. Keep photographer and archive names, source URLs, license codes, production metadata, “İzleme Taslağı” and “Yayın İçin Onaylanmamıştır” out of the picture. Record sources and usage terms internally. For a required public credit, supply the credit with the release in the description or on a suitable publicly accessible credit page linked from the post, as the license permits. If the intended placement cannot meet the terms, use another asset. See [production-mode.md](production-mode.md).
+
 ## Host
 
 Identity authority: approved `mascot/engin-avatar-v1/master/master-identity.png`, its accepted photo-derived facial characteristics and the Bay Referee generation/provenance record. Preserve wavy dark hair, full beard/moustache, gray aviator-style glasses, face proportions and warm skin. Do not serve the raw identity photo in review pages. Referee clothing is dark charcoal/black with restrained lime accents; whistle/pocket/card detail may support the role. No real crests or sponsors.
+
+The narrator stays present for spoken narration, normally about 25–40% of the frame width. Use the larger, forward-facing bust for direct address. During goals or interviews, yield room to the ball, faces and captions. Compose against the actual shot at mobile size. When another person speaks, hold a listening expression and rest the mouth.
+
+Drive the local 2D mouth shapes from the exact Turkish voice. Coordinate a few phrase accents with head turns or nods, blinks and changes of expression, backed by restrained shoulder and arm movement. Allow rest between accents. Keep eyelids behind the glasses, preserve the beard and lip contours, and anchor the neck, collar and hands through gesture changes. Choose motion that reads at normal speed. The Turkish performance carries the shared EN/ES visual master.
 
 Pose selection is semantic: comparison → compare-both; explanation → explain-forward; review → VAR rectangle/thinking; decision → point-to-decision; warning → yellow card; a clearly wrong/forbidden distinction → stop or red card. A factually neutral contrast does not require a red card. Whistle belongs to a meaningful officiating action or the final brand closure, not every transition. This VAR/SAOT narrative does not need yellow/red cards merely to demonstrate the pack.
 

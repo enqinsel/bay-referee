@@ -12,7 +12,7 @@ Final EN/ES SRT: 04_captions/captions-en.srt / captions-es.srt; authority ilgili
 Planlanan kapaklar: 05_cover/cover-tr-1080x1920.png / cover-en-1080x1920.png / cover-es-1080x1920.png
 Kapaklar aynı görsel ve yerleşim; yalnız metin dili değişir. Güvenli crop: 1080×1350, y=285–1635.
 Planlanan sosyal metinler: 06_social/title-{tr,en,es}.txt, description-{tr,en,es}.txt, hashtags-{tr,en,es}.txt, youtube-tags.txt
-Her dil için tek ortak public açıklama; doğal SEO ve güçlü açılış, kaynak adı/URL/bibliyografya içermez.
+Her dil için ortak açıklama hazırlanır. Araştırma kaynakları iç dosyalarda kalır. Zorunlu kamusal atıflar gönderiye eşlik eder.
 İç araştırma ve atıf: 01_script/claims-sources.json, 07_assets/sources.md, 07_assets/credits.txt, 07_assets/asset-manifest.json.
 Semantik inceleme kanıtı: 08_delivery/semantic-sync.json — NOT_RUN
 Gerçek dosya QA çıktısı: 08_delivery/qa-report.json — henüz üretilmedi

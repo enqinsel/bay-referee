@@ -187,6 +187,25 @@ test('cover dimensions, nonfinal text, public source headings/URLs and stale cap
   assert.equal(report.manual_reviews.full_audio_audition, 'UNVERIFIED');
 });
 
+test('a verified photo credit can accompany a description while unrelated URLs still fail', async t => {
+  const f = await fixture(t);
+  const credit = 'Photo by P. Silva. CC BY 4.0 https://creativecommons.org/licenses/by/4.0/';
+  await f.put('asset_manifest', {assets: [{rights: {status: 'VERIFIED', attribution_required: true, attribution: credit}}]});
+  await f.put('description_en', 'How did Belgium approach the free kick?\n\nCover photography\nPhoto by P. Silva. Cropped. https://creativecommons.org/licenses/by/4.0/');
+  await f.put('description_es', 'Más en https://example.com/reportaje\n\n' + credit);
+  await f.put('description_tr', credit);
+  await f.save();
+  const report = await evaluateDelivery(f.root, {probe: () => measured(58)});
+  const errors = report.checks.REQUIRED_FILES_GATE.errors;
+  assert(!errors.some(error => error.startsWith('description_en:')));
+  assert(errors.some(error => error.startsWith('description_es:')));
+  assert(errors.some(error => error.startsWith('description_tr:')));
+  await f.put('description_en', 'How did Belgium approach the free kick?\n\nCover photography\nPhoto by P. Silva. https://unrelated.example.com/');
+  await f.save();
+  const other = await evaluateDelivery(f.root, {probe: () => measured(58)});
+  assert(other.checks.REQUIRED_FILES_GATE.errors.some(error => error.startsWith('description_en:')));
+});
+
 test('READY read-only run requires a current stored PASS report; explicit regeneration has no circular dependency', async t => {
   const f = await fixture(t);
   const base = await evaluateDelivery(f.root, {probe: () => measured(58)});

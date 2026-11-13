@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+from contextlib import nullcontext
 import hashlib
 import json
 from pathlib import Path
@@ -171,6 +172,7 @@ class TranscriptionTests(unittest.TestCase):
             patch.object(Path, "is_file", return_value=True),
             patch.object(Path, "stat", return_value=SimpleNamespace(st_size=100)),
             patch.object(module, "load_settings", return_value=settings),
+            patch.object(module, "heavy_job", return_value=nullcontext()),
             patch.object(module, "_sha256", return_value="b" * 64),
             patch.object(module, "probe_audio", return_value={"durationSeconds": 3.25, "probe": {}}),
             patch.object(module, "_dependencies", return_value=(whisper, torch)),

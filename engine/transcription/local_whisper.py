@@ -24,6 +24,8 @@ import tempfile
 from typing import Any
 import warnings
 
+from engine.runtime.heavy_job import heavy_job
+
 
 class TranscriptionError(RuntimeError):
     """A recoverable configuration, dependency, audio, or output problem."""
@@ -349,6 +351,12 @@ def transcribe_episode(
     settings = load_settings(config_path, profile)
     source_hash = _sha256(audio)
     probe = probe_audio(audio)
+    with heavy_job(f"whisper-{settings['language']}-{settings['model']}"):
+        return _transcribe_locked(audio, raw_path, clean_path, settings, source_hash, probe)
+
+
+def _transcribe_locked(audio, raw_path, clean_path, settings, source_hash, probe):
+    """Caller holds the shared lease before importing/loading heavy dependencies."""
     whisper, torch = _dependencies()
     if settings["model"] not in whisper.available_models():
         raise TranscriptionError(f"Unknown configured Whisper model: {settings['model']}")

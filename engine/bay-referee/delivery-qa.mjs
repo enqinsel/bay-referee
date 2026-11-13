@@ -190,7 +190,6 @@ export async function evaluateDelivery(episodePath, {probe = probeMedia, now = (
       if (['text', 'captions'].includes(record?.kind)) {
         const text = file.content.toString('utf8');
         if (/\{\{[^}]+\}\}|\b(?:TBD|PLACEHOLDER|INSERT (?:TITLE|TEXT|DESCRIPTION) HERE)\b/i.test(text) || /^\s*TODO(?:\s*:|\s*$)/m.test(text)) errors('REQUIRED_FILES_GATE').push(`${key}: nonfinal placeholder text.`);
-        if (key.startsWith('description_') && (/(?:https?:\/\/|www\.)\S+|\b(?:[a-z0-9-]+\.)+(?:com|org|net|edu|gov|io|co|tv|be)(?:\b|\/)/i.test(text) || /^\s*(?:#{1,6}\s*)?(?:sources?|references?|kaynak(?:lar|ça)?|fuentes?|referencias?)\s*(?::|$)/im.test(text))) errors('REQUIRED_FILES_GATE').push(`${key}: public description contains a URL or source/reference heading.`);
       }
       if (['cover_tr', 'cover_en', 'cover_es'].includes(key)) {
         try {
@@ -200,6 +199,41 @@ export async function evaluateDelivery(episodePath, {probe = probeMedia, now = (
       }
       if (record?.status !== 'GENERATED' || !SHA.test(record?.sha256 ?? '') || record.sha256 !== file.sha256 || record.bytes !== file.bytes) errors('FILE_INTEGRITY_GATE').push(`${key}: generated status, byte count or SHA-256 is missing/stale.`);
     } catch (error) { errors('REQUIRED_FILES_GATE').push(`${key}: ${error.message}`); }
+  }
+  // A documented public credit can accompany the post as its own paragraph.
+  // Research citations in the editorial copy still belong in the internal evidence.
+  const publicCredits = new Set();
+  const creditLinks = new Set();
+  const urls = text => text.match(/https?:\/\/[^\s<>]+/gi) ?? [];
+  if (loaded.asset_manifest) {
+    let assets;
+    try { assets = JSON.parse(loaded.asset_manifest.content.toString('utf8')).assets; } catch { /* No documented credit exception. */ }
+    for (const asset of Array.isArray(assets) ? assets : []) {
+      const rights = asset?.rights;
+      if (rights?.status === 'VERIFIED' && rights.attribution_required === true && typeof rights.attribution === 'string' && rights.attribution.trim()) {
+        publicCredits.add(rights.attribution.trim());
+        for (const url of urls(rights.attribution)) creditLinks.add(url);
+      }
+    }
+  }
+  for (const lang of ['tr', ...LANGUAGES]) {
+    const key = `description_${lang}`;
+    if (!loaded[key]) continue;
+    const paragraphs = loaded[key].content.toString('utf8').trim().replace(/\r\n/g, '\n').split(/\n[ \t]*\n/);
+    const creditHeading = {tr: 'Kapak fotoğrafları', en: 'Cover photography', es: 'Fotografías de portada'}[lang];
+    const last = paragraphs.at(-1);
+    if (last.startsWith(creditHeading + '\n')) {
+      const links = urls(last);
+      if (publicCredits.size && links.length && links.every(url => creditLinks.has(url))) {
+        paragraphs.pop();
+      } else {
+        errors('REQUIRED_FILES_GATE').push(`${key}: credit block needs links documented in verified asset attributions.`);
+      }
+    }
+    const editorial = paragraphs.filter(p => !publicCredits.has(p.trim())).join('\n\n');
+    if (!editorial.trim() || /(?:https?:\/\/|www\.)\S+|\b(?:[a-z0-9-]+\.)+(?:com|org|net|edu|gov|io|co|tv|be)(?:\b|\/)/i.test(editorial) || /^\s*(?:#{1,6}\s*)?(?:sources?|references?|kaynak(?:lar|ça)?|fuentes?|referencias?)\s*(?::|$)/im.test(editorial)) {
+      errors('REQUIRED_FILES_GATE').push(`${key}: expected editorial copy without a research URL or source heading outside documented public credits.`);
+    }
   }
   const keys = ['master_tr', ...LANGUAGES.flatMap(lang => ['wav', 'mp3'].map(ext => `youtube_dub_${lang}_${ext}`))];
   for (const key of keys) {

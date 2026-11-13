@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { root, run } from './runtime.mjs';
+import { root, run, runHeavy } from './runtime.mjs';
 const args = process.argv.slice(2);
 // Local-only wrapper: publishing, cloud rendering, auth, TTS and built-in
 // transcription are deliberately outside the v0.1 engine interface.
@@ -24,5 +24,7 @@ if (!allowed.has(args[0])) {
   console.error('Unsupported engine command. Use a local validation/preview/render command.');
   process.exitCode = 2;
 } else {
-  run(join(root, 'node_modules', '.bin', 'hyperframes'), args);
+  const heavy = new Set(['render', 'snapshot', 'check', 'preview']);
+  if (heavy.has(args[0])) runHeavy(`hyperframes-${args[0]}`, join(root, 'node_modules', '.bin', 'hyperframes'), args);
+  else run(join(root, 'node_modules', '.bin', 'hyperframes'), args);
 }
