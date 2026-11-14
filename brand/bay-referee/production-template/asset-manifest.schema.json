@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:bay-referee:asset-manifest:1",
   "title": "BAY REFEREE episode asset provenance",
+  "description": "Per-version provenance. Record separate uses when conditions differ, for example an excerpt and a cover.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -29,9 +30,7 @@
           "id",
           "role",
           "source",
-          "rights",
-          "sha256",
-          "local_path"
+          "rights"
         ],
         "properties": {
           "id": {
@@ -78,13 +77,27 @@
             "properties": {
               "status": {
                 "enum": [
+                  "APPROVED",
+                  "REVIEW",
+                  "RESTRICTED",
                   "VERIFIED",
                   "REVIEW_NEEDED"
-                ]
+                ],
+                "description": "APPROVED (legacy VERIFIED) covers the documented public use. REVIEW (legacy REVIEW_NEEDED) is private only. RESTRICTED is excluded from all cuts."
               },
               "basis": {
                 "type": "string",
                 "minLength": 1
+              },
+              "public_credit": {
+                "description": "A separate, discoverable public credit placement. verified means the stated credit and licence requirements have been checked for the intended release. Omit or leave unverified for private work.",
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["url", "verified"],
+                "properties": {
+                  "url": {"type": "string", "pattern": "^https?://[^\\s/]+(?:[/?#][^\\s]*)?$"},
+                  "verified": {"type": "boolean"}
+                }
               },
               "attribution_required": {
                 "type": "boolean"
@@ -124,38 +137,64 @@
             "type": "string",
             "minLength": 1,
             "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+          },
+          "used_in": {
+            "description": "Where this version actually uses the asset. [] is an excluded candidate and may lack a local file. If omitted, treat the asset as used for backwards compatibility. internal_review identifies the private edit; public_release identifies material selected for public distribution.",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "internal_review",
+                "public_release"
+              ]
+            }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {"not": {"$ref": "#/$defs/excluded"}},
+            "then": {"required": ["sha256", "local_path"]}
+          },
+          {
+            "if": {"properties": {"rights": {"properties": {"status": {"const": "RESTRICTED"}}}}},
+            "then": {"$ref": "#/$defs/excluded"}
+          },
+          {
+            "if": {
+              "required": ["used_in"],
+              "properties": {"used_in": {"contains": {"const": "public_release"}}}
+            },
+            "then": {"$ref": "#/$defs/approved"}
+          }
+        ]
       }
     }
   },
   "allOf": [
     {
-      "if": {
-        "properties": {
-          "status": {
-            "const": "COMPLETE"
-          }
-        }
-      },
+      "if": {"properties": {"status": {"const": "COMPLETE"}}},
       "then": {
         "properties": {
           "assets": {
-            "minItems": 1,
+            "contains": {"not": {"$ref": "#/$defs/excluded"}},
             "items": {
-              "properties": {
-                "rights": {
-                  "properties": {
-                    "status": {
-                      "const": "VERIFIED"
-                    }
-                  }
-                }
-              }
+              "if": {"not": {"required": ["used_in"]}},
+              "then": {"$ref": "#/$defs/approved"}
             }
           }
         }
       }
     }
-  ]
+  ],
+  "$defs": {
+    "excluded": {
+      "required": ["used_in"],
+      "properties": {"used_in": {"maxItems": 0}}
+    },
+    "approved": {
+      "properties": {
+        "rights": {"properties": {"status": {"enum": ["APPROVED", "VERIFIED"]}}}
+      }
+    }
+  }
 }

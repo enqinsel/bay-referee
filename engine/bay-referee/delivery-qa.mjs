@@ -117,7 +117,7 @@ export function probeMedia(filename, {ffprobePath, run = spawnSync} = {}) {
 }
 
 export function minimumFiles(slug) {
-  const files = {master_tr: `03_video/${slug}-bay-referee-tr.mp4`, youtube_tags: '06_social/youtube-tags.txt', semantic_sync: '08_delivery/semantic-sync.json'};
+  const files = {asset_manifest: '07_assets/asset-manifest.json', master_tr: `03_video/${slug}-bay-referee-tr.mp4`, youtube_tags: '06_social/youtube-tags.txt', semantic_sync: '08_delivery/semantic-sync.json'};
   for (const lang of ['tr', ...LANGUAGES]) {
     files[`script_${lang}`] = `01_script/script-${lang}.txt`;
     files[`captions_${lang}`] = `04_captions/captions-${lang}.srt`;
@@ -130,6 +130,30 @@ export function minimumFiles(slug) {
     files[`aligned_word_map_${lang}`] = `02_audio/${lang}/youtube-dub-word-map-${lang}.json`;
   }
   return files;
+}
+
+// Match source/credit typography. Club or competition names and quoted speakers
+// can be part of the story, so a bare organisation name is not a violation.
+function hasSourceLabel(value) {
+  const text = value.normalize('NFC').replaceAll('İ', 'i');
+  const sourceUrl = /(?:https?:\/\/|www\.)\S+|\b(?:[a-z0-9-]+\.)+(?:com|org|net|edu|gov|io|co|tv|be)(?:\b|\/)/i;
+  const creditHeading = /(?:^|[\n|•·])\s*(?:#{1,6}\s*)?(?:source[s]?|references?|kaynak(?:lar|ça)?|fuentes?|referencias?|credits?|créditos?|kapak fotoğrafları|cover photography|fotografías de portada|görsel kaynağı|görüntü(?:ler)?|fotoğrafçı|photographer|fotógraf[oa])\s*(?:[:|•·–—]|$)/imu;
+  const archiveStamp = /(?:^|[\n|•·])\s*[#\[]?(?:arşiv(?: görüntüsü| fotoğrafı)?|archive(?: footage| photo)?|archivo|imagen de archivo|imágenes de archivo)\s*(?:[\]:|•·–—-]|$)/imu;
+  const datedArchive = /(?:^|[\n|•·])\s*(?:\d{1,2}\s+)?(?:\p{L}+\s+)?(?:19|20)\d{2}\s+arşivi\s*(?:$|[|•·])/imu;
+  const attribution = /(?:\b(?:photo(?:graphy)?\s+(?:by|credit)|images? courtesy of|footage courtesy of|courtesy of|crédito(?:s)? de (?:foto|imagen)|foto(?:ğraf)?\s*:)|(?:^|\s)©\s*\S|\bCC[ -]BY(?:[ -]SA)?\s+\d)/iu;
+  const sourceTag = /(?:^|\s)#(?:gettyimages|wikimediacommons|fotocredito|photocredit|arsivgoruntusu|arşivgörüntüsü|archivefootage|imagendearchivo)(?=\s|$)/iu;
+  const sourceByline = /^\s*(?:Getty Images|Wikimedia Commons|WikiPortraits|AP Photo)\s*(?:$|[|•·/])/imu;
+  return datedArchive.test(text) || sourceTag.test(text) || sourceByline.test(text) || sourceUrl.test(text) || creditHeading.test(text) || archiveStamp.test(text) || attribution.test(text);
+}
+
+function hasPublicCreditPlacement(credit) {
+  if (credit?.verified !== true) return false;
+  if (!URL.canParse(credit.url)) return false;
+  const url = new URL(credit.url);
+  const host = url.hostname.toLowerCase();
+  return ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password
+    && host.includes('.') && !host.endsWith('.local') && !host.endsWith('.localhost')
+    && !/^(?:127\.|10\.|169\.254\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.)/.test(host);
 }
 
 async function safeFile(root, relative) {
@@ -160,7 +184,7 @@ export async function evaluateDelivery(episodePath, {probe = probeMedia, now = (
   const checks = Object.fromEntries(['DUB_DURATION_GATE', 'TIMELINE_GATE', 'AUDIO_POLICY_GATE', 'SEMANTIC_GATE', 'REQUIRED_FILES_GATE', 'FILE_INTEGRITY_GATE'].map(name => [name, gate()]));
   const report = {schema_version: 1, scope: 'automated_delivery_gates_only', status: 'FAIL', checked_at: now(), episode_path: path.resolve(episodePath), checks, media: {}, limitations: ['Automated PASS is not a human audition, artwork approval or publication readiness decision.', 'Semantic meaning, cumulative visual sync, closure content and silence/speed policy require separate hash-bound review evidence; duration equality does not establish them.']};
   const errors = name => checks[name].errors;
-  let root, manifest;
+  let root, manifest, validateAssets;
   try {
     const stat = await fs.lstat(report.episode_path);
     demand(stat.isDirectory() && !stat.isSymbolicLink(), 'Episode path must be a real directory.');
@@ -169,6 +193,8 @@ export async function evaluateDelivery(episodePath, {probe = probeMedia, now = (
     const schema = JSON.parse(await fs.readFile(path.join(ROOT, 'brand/bay-referee/production-template/manifest.schema.json'), 'utf8'));
     const ajv = new Ajv2020({allErrors: true, strict: false});
     ajv.addFormat('date-time', dateTime);
+    const assetSchema = JSON.parse(await fs.readFile(path.join(ROOT, 'brand/bay-referee/production-template/asset-manifest.schema.json'), 'utf8'));
+    validateAssets = ajv.compile(assetSchema);
     const validate = ajv.compile(schema);
     if (!validate(manifest)) errors('REQUIRED_FILES_GATE').push(...validate.errors.map(error => `Manifest schema ${error.instancePath}: ${error.message}`));
     demand(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(manifest.slug ?? ''), 'Missing/invalid manifest slug.');
@@ -200,40 +226,71 @@ export async function evaluateDelivery(episodePath, {probe = probeMedia, now = (
       if (record?.status !== 'GENERATED' || !SHA.test(record?.sha256 ?? '') || record.sha256 !== file.sha256 || record.bytes !== file.bytes) errors('FILE_INTEGRITY_GATE').push(`${key}: generated status, byte count or SHA-256 is missing/stale.`);
     } catch (error) { errors('REQUIRED_FILES_GATE').push(`${key}: ${error.message}`); }
   }
-  // A documented public credit can accompany the post as its own paragraph.
-  // Research citations in the editorial copy still belong in the internal evidence.
-  const publicCredits = new Set();
-  const creditLinks = new Set();
-  const urls = text => text.match(/https?:\/\/[^\s<>]+/gi) ?? [];
+  const assetCredits = new Set();
   if (loaded.asset_manifest) {
-    let assets;
-    try { assets = JSON.parse(loaded.asset_manifest.content.toString('utf8')).assets; } catch { /* No documented credit exception. */ }
-    for (const asset of Array.isArray(assets) ? assets : []) {
-      const rights = asset?.rights;
-      if (rights?.status === 'VERIFIED' && rights.attribution_required === true && typeof rights.attribution === 'string' && rights.attribution.trim()) {
-        publicCredits.add(rights.attribution.trim());
-        for (const url of urls(rights.attribution)) creditLinks.add(url);
+    try {
+      const provenance = JSON.parse(loaded.asset_manifest.content.toString('utf8'));
+      if (!validateAssets(provenance)) {
+        throw new Error(validateAssets.errors.map(error => `${error.instancePath} ${error.message}`).join(', '));
       }
+      const used = provenance.assets.filter(asset => asset.used_in?.length !== 0);
+      demand(used.length > 0, 'No used assets documented for the delivered cut.');
+      const reviewOnly = [];
+      const pendingCredit = [];
+      for (const asset of used) {
+        const {status, attribution_required, attribution, public_credit} = asset.rights;
+        if (attribution_required) {
+          assetCredits.add(attribution.trim().toLowerCase());
+          if (!hasPublicCreditPlacement(public_credit)) pendingCredit.push(asset.id);
+        }
+        if (status === 'REVIEW' || status === 'REVIEW_NEEDED') {
+          reviewOnly.push(asset.id);
+        }
+      }
+      report.asset_rights = {
+        used_assets: used.length, review_only: reviewOnly, pending_public_credit: pendingCredit,
+        release_basis: reviewOnly.length || pendingCredit.length ? 'REVIEW' : 'APPROVED',
+      };
+      if (manifest.status === 'READY' && pendingCredit.length) {
+        errors('REQUIRED_FILES_GATE').push(`READY requires a verified separate public credit placement for: ${pendingCredit.join(', ')}.`);
+      }
+      if (manifest.status === 'READY' && reviewOnly.length) {
+        errors('REQUIRED_FILES_GATE').push(`READY requires publication rights for assets present in this cut: ${reviewOnly.join(', ')}.`);
+      }
+    } catch (error) {
+      errors('REQUIRED_FILES_GATE').push(`asset_manifest: ${error.message}`);
     }
   }
+  const includesCredit = copy => [...assetCredits].some(credit =>
+    copy.split(/\r?\n/).some(line => line.trim().toLowerCase() === credit)
+  );
+  const viewerCopy = ['cover_title', 'youtube_tags'];
   for (const lang of ['tr', ...LANGUAGES]) {
-    const key = `description_${lang}`;
+    for (const kind of ['title', 'description', 'hashtags', 'captions']) viewerCopy.push(`${kind}_${lang}`);
+  }
+  for (const key of viewerCopy) {
     if (!loaded[key]) continue;
-    const paragraphs = loaded[key].content.toString('utf8').trim().replace(/\r\n/g, '\n').split(/\n[ \t]*\n/);
-    const creditHeading = {tr: 'Kapak fotoğrafları', en: 'Cover photography', es: 'Fotografías de portada'}[lang];
-    const last = paragraphs.at(-1);
-    if (last.startsWith(creditHeading + '\n')) {
-      const links = urls(last);
-      if (publicCredits.size && links.length && links.every(url => creditLinks.has(url))) {
-        paragraphs.pop();
-      } else {
-        errors('REQUIRED_FILES_GATE').push(`${key}: credit block needs links documented in verified asset attributions.`);
+    const copy = loaded[key].content.toString('utf8');
+    if (hasSourceLabel(copy) || includesCredit(copy)) {
+      errors('REQUIRED_FILES_GATE').push(`${key}: move added source labels, links or asset credits outside viewer copy.`);
+    }
+  }
+  // Daily picture builds keep their actual overlays here. Older episodes can
+  // use a different storyboard; their rendered picture still needs inspection.
+  try {
+    const file = await safeFile(root, '_work/picture/timeline.json');
+    hashes.picture_timeline = file.sha256;
+    const timeline = JSON.parse(file.content.toString('utf8'));
+    for (const [index, shot] of (timeline.shots ?? []).entries()) {
+      for (const key of ['title', 'caption']) {
+        const copy = shot[key];
+        if (typeof copy === 'string' && (hasSourceLabel(copy) || includesCredit(copy))) {
+          errors('REQUIRED_FILES_GATE').push(`picture_timeline: shot ${index + 1} ${key} includes an added source label.`);
+        }
       }
     }
-    const editorial = paragraphs.filter(p => !publicCredits.has(p.trim())).join('\n\n');
-    if (!editorial.trim() || /(?:https?:\/\/|www\.)\S+|\b(?:[a-z0-9-]+\.)+(?:com|org|net|edu|gov|io|co|tv|be)(?:\b|\/)/i.test(editorial) || /^\s*(?:#{1,6}\s*)?(?:sources?|references?|kaynak(?:lar|ça)?|fuentes?|referencias?)\s*(?::|$)/im.test(editorial)) {
-      errors('REQUIRED_FILES_GATE').push(`${key}: expected editorial copy without a research URL or source heading outside documented public credits.`);
-    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') errors('REQUIRED_FILES_GATE').push(`picture_timeline: ${error.message}`);
   }
   const keys = ['master_tr', ...LANGUAGES.flatMap(lang => ['wav', 'mp3'].map(ext => `youtube_dub_${lang}_${ext}`))];
   for (const key of keys) {

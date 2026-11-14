@@ -8,11 +8,13 @@ Durum: SCAFFOLD — konu veya içerik üretilmedi.
 
 ## Kritik gerçek görüntüler
 
-Her kritik an için kurgulanabilir çekimi ve kaynağını `07_assets/sources.md`
-içinde kaydet. Kullanım izninin dayanağını ve hedef platformlardaki yayın
-uygunluğunu ayrı değerlendir. Kritik görüntü eksikse bölümün durumunu
-`REVIEW_NEEDED`, nedenini `MEDIA_BLOCKED` olarak kaydet. Ücretli anlatım,
-üç dil dublaj ve tam render için bu görüntülerin hazır olması gerekir.
+Her kritik an için gerçek çekimi veya tarihli arşiv karesini önce araştır.
+Dosyayı, gösterdiği anı ve kullanım kararını bir kez `07_assets/sources.md`
+içinde kaydet. APPROVED materyali doğrulanan kapsamda, REVIEW materyalini
+yalnızca yerel izleme kurgusunda kullan. RESTRICTED materyali kurguya alma.
+Belirli bir çekim eksikse eldeki en iyi gerçek görsellerle özel kurguyu tamamla.
+Hiç kullanılabilir gerçek görsel yoksa `MEDIA_BLOCKED` nedenini kaydet.
+Yerel kurguda yayın hakkı belirsiz kalan kullanımları kısa teslim notuna yaz.
 
 ## Hook
 
@@ -46,7 +48,7 @@ ve `hashtags-{tr,en,es}.txt`; ayrıca tek çok dilli `youtube-tags.txt`.
 Her dilin tek açıklaması Instagram ve YouTube'da ortak kullanılır. Güçlü
 bir açılış, doğal anahtar kelimeler ve ana dilde akıcı anlatım gerekir;
 anahtar kelime yığma veya yanıltıcı vaat kullanılmaz. Public açıklamaya
-araştırma kaynakçası eklenmez. Lisansın gerektirdiği atıf, izin verilen açıklamada veya gönderiye bağlı kamusal kredi sayfasında verilir. Hak kaydı iç dosyalarda saklanır.
+kaynak, arşiv etiketi veya kredi eklenmez. Aynı kural başlık, hashtag, YouTube etiketleri, kapak ve videodaki ek yazılar için de geçerlidir. Zorunlu atıflar lisansın izin verdiği ayrı bir kamusal yerde doğrulanır. Uygun yer sağlanamıyorsa yayından önce materyal değiştirilir. Hak kaydı iç dosyalarda saklanır.
 
 Teslim ancak bütün zorunlu dosyalar üretildikten ve `08_delivery/qa-report.json`
 gerçek dosyalardan PASS verdikten sonra READY olabilir. Özellikle

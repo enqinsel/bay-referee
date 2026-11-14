@@ -27,7 +27,7 @@ Final EN/ES SRT authority'si final youtube-dub WAV ve hizalanmış word-map'tir.
 cover: Üç dilde aynı görsel/yerleşim, yalnız metin değişikliği; her dilin
 1080×1920 ve merkez 1080×1350 (y=285–1635) crop incelemesi gerekir.
 social: Üç doğal title/description/hashtags paketi ve tek çok dilli tags;
-araştırma kaynakları içeride saklanır. Zorunlu kamusal atıflar için görsel dışındaki yayın yüzeyi doğrulanır.
+araştırma kaynakları içeride saklanır. Zorunlu kamusal atıflar için video, kapak ve sosyal metinlerden ayrı yayın yüzeyi doğrulanır. Eklenen yazılarda kaynak veya arşiv damgası aranır.
 
 Runtime raporu: 08_delivery/qa-report.json. Henüz yoktur. Komut:
 node scripts/bay-referee-delivery-qa.mjs videolar/{{slug}} --output

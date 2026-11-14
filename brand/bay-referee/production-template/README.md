@@ -5,7 +5,7 @@ the v2 manifest before the first write and refuses existing episode paths.
 Every artifact remains `PLANNED`; durations, hashes and review identities stay
 unknown. The semantic review scaffold is an unanswered checklist, not evidence.
 
-Begin each new episode with [MEDIA-FIRST PRODUCTION](../channel-skill/bay-referee/SKILL.md#media-first-production). The brief and existing source record hold the critical shots, usage rights and intended publication decision.
+Begin each new episode with [MEDIA-FIRST PRODUCTION](../channel-skill/bay-referee/SKILL.md#media-first-production). Select real footage and photographs first. The source record tracks APPROVED, REVIEW and RESTRICTED per use. A cut containing REVIEW material stays local with REVIEW_NEEDED in delivery. Exclude RESTRICTED material. Public release needs APPROVED uses and the channel’s publication authorization.
 
 ## Mandatory Mac mini M4 / 16 GB safety
 
@@ -59,7 +59,7 @@ three approved native titles in `05_cover/cover-title.txt` using TR/EN/ES labels
 
 Each language has one public description shared by Instagram and YouTube.
 Use a strong opening, natural topic keywords and fluent native phrasing. Avoid
-keyword stuffing and misleading promises. Store research and rights evidence in the internal claims, sources and credits files. Keep credits and production metadata off the artwork. Supply required public attribution with the post in a placement allowed by the license.
+keyword stuffing and misleading promises. Store research and rights evidence in the internal claims, sources and credits files. Keep added source labels, archive stamps, photographer/provider credits and production metadata off the video, covers and all public social copy. Preserve embedded identifiers and meaningful story dates and quotations. For required credits, verify a separate suitable public placement permitted by the licence, or replace the material before release.
 
 ## Evidence and READY
 

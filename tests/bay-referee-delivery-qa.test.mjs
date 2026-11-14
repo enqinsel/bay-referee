@@ -13,6 +13,15 @@ const project = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const cli = path.join(project, 'scripts/bay-referee-delivery-qa.mjs');
 const date = '2026-10-21T12:00:00.000Z';
 const hash = content => createHash('sha256').update(content).digest('hex');
+function mediaAsset(status, usedIn) {
+  return {
+    id: 'image', role: 'archive', source: {kind: 'other', reference: 'retained source record'},
+    rights: {status, basis: 'fixture assessment', attribution_required: false, attribution: null},
+    ...(usedIn === undefined ? {} : {used_in: usedIn}),
+    local_path: 'assets/image.jpg', sha256: hash('fixture'),
+  };
+}
+const provenance = (...assets) => ({schema_version: 1, status: 'IN_PROGRESS', assets});
 const measured = duration => ({duration_seconds: duration, start_seconds: 0, zero_start_tolerance_seconds: 0.000001, duration_basis: 'test_probe'});
 
 test('DUB_DURATION_GATE includes both exact 50 ms boundaries but rejects larger differences', () => {
@@ -100,6 +109,7 @@ async function fixture(t) {
     Object.assign(record, {status: 'GENERATED', sha256: hash(data), bytes: Buffer.byteLength(data), generated_at: date});
   }
   for (const key of Object.keys(manifest.files)) if (key !== 'qa_report') await put(key, `inert test fixture ${key}`);
+  await put('asset_manifest', provenance(mediaAsset('VERIFIED')));
   const png = await sharp({create: {width: 1080, height: 1920, channels: 3, background: 'white'}}).png().toBuffer();
   for (const lang of ['tr', 'en', 'es']) await put(`cover_${lang}`, png);
   const semantic = {schema_version: 1, master_sha256: manifest.files.master_tr.sha256, languages: {}};
@@ -113,6 +123,37 @@ async function fixture(t) {
   const save = () => fs.writeFile(path.join(root, '08_delivery/manifest.json'), JSON.stringify(manifest));
   await save();
   return {root, manifest, put, save, semantic};
+}
+
+async function finishPackage(f) {
+  const {manifest} = f;
+  manifest.episode = 'QA fixture';
+  manifest.generated_at = date;
+  manifest.voice.status = 'GENERATED';
+  manifest.voice.voice_id = 'fixture';
+  manifest.video.duration_seconds = 58;
+  manifest.branding.watermark = {status: 'APPLIED', asset_path: 'assets/wordmark.png'};
+  manifest.branding.signoff = {status: 'APPLIED', duration_seconds: 0.9};
+  manifest.research = {status: 'PASS', claims_count: 1, source_count: 1};
+  manifest.qa.status = 'PASS';
+  manifest.qa.evidence_paths = ['08_delivery/qa-report.json'];
+  for (const name of Object.keys(manifest.qa.checks)) manifest.qa.checks[name] = 'PASS';
+  for (const [language, audio] of Object.entries(manifest.audio_packages)) {
+    audio.status = 'GENERATED';
+    if (language !== 'tr') {
+      audio.duration_seconds = {wav: 58, mp3: 58};
+      audio.timeline.padding_seconds = 2;
+      for (const name of Object.keys(audio.qa)) audio.qa[name] = 'PASS';
+    }
+    manifest.caption_timing[language].status = 'ALIGNED';
+  }
+  manifest.caption_timing.tr.authority.audio_sha256 = manifest.files.audio_tr_wav.sha256;
+  await f.save();
+  const report = await evaluateDelivery(f.root, {probe: () => measured(58)});
+  assert.equal(report.status, 'PASS', JSON.stringify(report.checks));
+  await f.put('qa_report', report);
+  manifest.status = 'READY';
+  await f.save();
 }
 
 test('independent complete evidence passes; QA output is not a circular input prerequisite', async t => {
@@ -187,23 +228,136 @@ test('cover dimensions, nonfinal text, public source headings/URLs and stale cap
   assert.equal(report.manual_reviews.full_audio_audition, 'UNVERIFIED');
 });
 
-test('a verified photo credit can accompany a description while unrelated URLs still fail', async t => {
+test('viewer copy excludes source labels in all languages, including a verified mandatory credit', async t => {
   const f = await fixture(t);
   const credit = 'Photo by P. Silva. CC BY 4.0 https://creativecommons.org/licenses/by/4.0/';
-  await f.put('asset_manifest', {assets: [{rights: {status: 'VERIFIED', attribution_required: true, attribution: credit}}]});
-  await f.put('description_en', 'How did Belgium approach the free kick?\n\nCover photography\nPhoto by P. Silva. Cropped. https://creativecommons.org/licenses/by/4.0/');
-  await f.put('description_es', 'Más en https://example.com/reportaje\n\n' + credit);
-  await f.put('description_tr', credit);
+  const asset = mediaAsset('APPROVED', ['public_release']);
+  Object.assign(asset.rights, {attribution_required: true, attribution: credit});
+  await f.put('asset_manifest', provenance(asset));
+  const labels = {
+    description_en: 'Who scored?\n\nCover photography\n' + credit,
+    description_tr: 'Maçın hikâyesi.\nKaynak: Anadolu Ajansı',
+    description_es: 'La historia.\nCréditos: agencia.',
+    title_en: 'The Match | Archive footage: 2019',
+    title_tr: 'Old Trafford • 2013 arşivi',
+    hashtags_es: '#fútbol #GettyImages',
+    captions_en: 'ABD–Avustralya • 19 Haziran 2026 arşivi',
+    captions_es: 'Görüntü: Mayıs 2024',
+    youtube_tags: 'football, see https://example.org/report',
+    cover_title: '[TR]\nARŞİV • 2019\n[EN]\nTHE FINAL',
+    captions_tr: '1\n00:00:00,000 --> 00:00:02,000\nFotoğraf: Foto Muhabiri',
+  };
+  for (const [key, value] of Object.entries(labels)) await f.put(key, value);
   await f.save();
   const report = await evaluateDelivery(f.root, {probe: () => measured(58)});
-  const errors = report.checks.REQUIRED_FILES_GATE.errors;
-  assert(!errors.some(error => error.startsWith('description_en:')));
-  assert(errors.some(error => error.startsWith('description_es:')));
-  assert(errors.some(error => error.startsWith('description_tr:')));
-  await f.put('description_en', 'How did Belgium approach the free kick?\n\nCover photography\nPhoto by P. Silva. https://unrelated.example.com/');
+  for (const key of Object.keys(labels)) {
+    assert(report.checks.REQUIRED_FILES_GATE.errors.some(error => error.startsWith(key + ':')), key);
+  }
+});
+
+test('checks visible picture overlays while ignoring internal source metadata and embedded identifiers', async t => {
+  const f = await fixture(t);
+  const bank = path.join(f.root, '_work/picture');
+  const timeline = path.join(bank, 'timeline.json');
+  await fs.mkdir(bank, {recursive: true});
+  const run = () => evaluateDelivery(f.root, {probe: () => measured(58)});
+  const bad = ['Old Trafford • 2013 arşivi', 'ABD–Avustralya • 19 Haziran 2026 arşivi', 'Görüntü: Mayıs 2024'];
+  await fs.writeFile(timeline, JSON.stringify({shots: bad.map(caption => ({title: 'United', caption}))}));
+  const failed = await run();
+  assert.equal(failed.checks.REQUIRED_FILES_GATE.errors.filter(e => e.startsWith('picture_timeline:')).length, 3);
+  await fs.writeFile(timeline, JSON.stringify({shots: [
+    {title: 'Tottenham • 2019', caption: '22 Kasım • Anfield', source: 'Source: Getty Images'},
+    {title: '«Fue una decisión difícil»', caption: 'El archivo del club conserva la entrevista.', original_mark: '© broadcaster'},
+  ]}));
+  const clean = await run();
+  assert.equal(clean.status, 'PASS', JSON.stringify(clean.checks));
+  assert.equal(clean.file_hashes.picture_timeline, hash(await fs.readFile(timeline)));
+});
+
+test('clean copy accepts story dates and quotations; READY requires a separate verified credit placement', async t => {
+  const f = await fixture(t);
+  const asset = mediaAsset('APPROVED', ['public_release']);
+  Object.assign(asset.rights, {attribution_required: true, attribution: 'Image by P. Silva'});
+  await f.put('asset_manifest', provenance(asset));
+  await f.put('description_tr', '13 Kasım’da United açıkladı. Pochettino “Zor bir karardı” dedi.');
+  await f.put('description_en', 'On 13 November Manchester United confirmed his appointment.');
+  await f.put('description_es', 'El 13 de noviembre, el entrenador habló en Atlanta. El archivo del club conserva su primera entrevista.');
+  await f.put('captions_tr', 'Tottenham • 2019\n22 Kasım • Anfield\nKulübün arşivi eski maçlara ışık tutuyor.');
+  await f.put('title_es', 'Un archivo para recordar la final');
+  await f.put('cover_title', '[TR]\n2030’A İMZA\n[EN]\nSIGNED UNTIL 2030\n[ES]\nFIRMÓ HASTA 2030');
+  await f.put('credits', 'P. Silva — retained internal credit.');
+  await finishPackage(f);
+  const run = () => evaluateDelivery(f.root, {probe: () => measured(58), regenerateReport: true});
+  const missing = await run();
+  assert.deepEqual(missing.asset_rights.pending_public_credit, ['image']);
+  assert(missing.checks.REQUIRED_FILES_GATE.errors.some(error => error.includes('separate public credit')));
+  for (const public_credit of [
+    {verified: false, url: 'https://publisher.example/credits'},
+    {verified: true, url: 'http://127.0.0.1/credits'},
+    {verified: true, url: 'http://localhost/credits'},
+  ]) {
+    asset.rights.public_credit = public_credit;
+    await f.put('asset_manifest', provenance(asset));
+    await f.save();
+    assert.deepEqual((await run()).asset_rights.pending_public_credit, ['image']);
+  }
+  asset.rights.public_credit = {verified: true, url: 'https://publisher.example/credits/qa-fixture'};
+  await f.put('asset_manifest', provenance(asset));
   await f.save();
-  const other = await evaluateDelivery(f.root, {probe: () => measured(58)});
-  assert(other.checks.REQUIRED_FILES_GATE.errors.some(error => error.startsWith('description_en:')));
+  const cleared = await run();
+  assert.equal(cleared.status, 'PASS', JSON.stringify(cleared.checks));
+  assert.deepEqual(cleared.asset_rights.pending_public_credit, []);
+});
+
+test('private review passes technical QA and prevents READY for the same cut', async t => {
+  const f = await fixture(t);
+  const review = mediaAsset('REVIEW', ['internal_review']);
+  const approved = {...mediaAsset('VERIFIED'), id: 'approved'};
+  await f.put('asset_manifest', provenance(approved, review));
+  f.manifest.status = 'REVIEW_NEEDED';
+  await f.save();
+  const run = () => evaluateDelivery(f.root, {probe: () => measured(58)});
+  const local = await run();
+  assert.equal(local.status, 'PASS', JSON.stringify(local.checks));
+  assert.deepEqual(local.asset_rights.review_only, [review.id]);
+  assert.equal(local.asset_rights.release_basis, 'REVIEW');
+  await finishPackage(f);
+  const release = await run();
+  assert.equal(release.checks.REQUIRED_FILES_GATE.errors.length, 1, JSON.stringify(release.checks));
+  assert(release.checks.REQUIRED_FILES_GATE.errors[0].includes('READY requires publication rights'));
+
+  for (const [status, scope] of [['REVIEW', ['public_release']], ['RESTRICTED', ['internal_review']], ['SOME_UNKNOWN_STATE', undefined]]) {
+    await f.put('asset_manifest', provenance(approved, mediaAsset(status, scope)));
+    await f.save();
+    const invalid = await run();
+    assert(invalid.checks.REQUIRED_FILES_GATE.errors.some(e => e.startsWith('asset_manifest:')), `${status} ${scope}`);
+  }
+  await f.put('asset_manifest', provenance(mediaAsset('REVIEW_NEEDED')));
+  await f.save();
+  assert((await run()).checks.REQUIRED_FILES_GATE.errors.some(e => e.includes('READY requires publication rights')));
+});
+
+test('unused rights candidates do not block a clean edition or supply public credits', async t => {
+  const f = await fixture(t);
+  const excluded = mediaAsset('RESTRICTED', []);
+  delete excluded.local_path;
+  delete excluded.sha256;
+  const unusedCredit = 'Unused photographer https://example.org/unused';
+  const unused = {...mediaAsset('APPROVED', []), id: 'unused'};
+  unused.rights.attribution_required = true;
+  unused.rights.attribution = unusedCredit;
+  const approved = {...mediaAsset('APPROVED', ['internal_review', 'public_release']), id: 'used'};
+  await f.put('asset_manifest', {...provenance(excluded, unused, approved), status: 'COMPLETE'});
+  await f.save();
+  const run = () => evaluateDelivery(f.root, {probe: () => measured(58)});
+  const report = await run();
+  assert.equal(report.status, 'PASS', JSON.stringify(report.checks));
+  assert.deepEqual(report.asset_rights, {used_assets: 1, review_only: [], pending_public_credit: [], release_basis: 'APPROVED'});
+  await finishPackage(f);
+  assert.equal((await run()).status, 'PASS');
+  await f.put('description_en', 'Match preview.\n\n' + unusedCredit);
+  await f.save();
+  assert((await run()).checks.REQUIRED_FILES_GATE.errors.some(e => e.startsWith('description_en:')));
 });
 
 test('READY read-only run requires a current stored PASS report; explicit regeneration has no circular dependency', async t => {
