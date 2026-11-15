@@ -1,6 +1,6 @@
 interface:
   display_name: "BAY REFEREE"
-  short_description: "Football shorts, branded master and EN/ES dubs"
-  default_prompt: "Use $bay-referee to produce the next football explainer from my topic using the approved channel system."
+  short_description: "Football explainers and archive-led documentaries"
+  default_prompt: "Use $bay-referee to produce the next football short from my brief using the approved channel system."
 policy:
   allow_implicit_invocation: true

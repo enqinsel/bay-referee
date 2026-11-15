@@ -1,6 +1,6 @@
 ---
 name: bay-referee
-description: Produce or revise BAY REFEREE football explanation shorts using the approved Football Comparison format, Engin voice, referee avatar, Turkish master captions, and English/Spanish dub packages. Use for this channel's production and system maintenance, not unrelated video work.
+description: Produce or revise BAY REFEREE football explainers and archive-led short documentaries using the channel’s approved visual system, Engin voice, referee avatar, Turkish captions and English/Spanish dubs. Use for this channel’s production and system maintenance.
 ---
 
 # BAY REFEREE
@@ -10,6 +10,8 @@ Use the existing channel system. Do not redesign it merely because a new topic a
 Resolve the project root from the current workspace or its parents: it must contain `package.json`, `brand/bay-referee/channel-skill/bay-referee/` and `brand/bay-referee/production-template/`. All project paths below are relative to that root unless marked otherwise. Do not assume a particular home directory or clone location. If no matching checkout is open, locate the user’s checkout before working. The maintained source of this skill is `brand/bay-referee/channel-skill/bay-referee/`; the discoverable installation is a copy. Update the maintained source first, then synchronize the installation. If the project moved, locate the same authority files before acting; do not create an empty replacement engine.
 
 ## MEDIA-FIRST PRODUCTION
+
+When an episode or a passage tells its story through a real event, gesture, interview or reaction, use the [archive editing method](references/format-and-brand.md#editing-with-archive-footage). For a rule, comparison or tactical relationship, use the Football Comparison graphics where they make the relationship visible. A single episode may use both approaches.
 
 Research real match footage, interviews, press conferences and dated archive photographs first. Match each source to the moment it shows. Verify the action or words in the editable file before cutting a specific incident. For context, use a dated photograph or related genuine footage and identify its actual event. A viewing link helps locate footage; it does not establish file access or permission to edit.
 

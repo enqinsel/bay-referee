@@ -135,7 +135,7 @@ Use [production-workflow.md](production-workflow.md) for research, authority and
 7. Design inherited visual states.
 8. Write the motion plan before rendering: **SCRIPT → FINAL VOICE → WHISPER → SEMANTIC BEATS → VISUAL STATES → MOTION PLAN**.
 9. Build the Turkish master composition around the real material selected for the critical moments.
-10. Integrate full-speech Turkish captions and restrained semantic editorial highlights.
+10. Integrate the full spoken Turkish captions. Add editorial emphasis only when the picture and transcript leave an important relationship unclear.
 11. Complete **SFX AUDIT REQUIRED**: record every semantic/motion event's named SFX or reasoned NONE, then place meaningful effects at the actual event times.
 12. Apply BAY REFEREE host and quiet watermark/brand attribution.
 13. Add the approved short sign-off after the payoff; no intro bumper.

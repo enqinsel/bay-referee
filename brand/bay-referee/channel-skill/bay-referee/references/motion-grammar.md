@@ -71,7 +71,7 @@ Record the following before rendering:
 | text event | CAPTION / EDITORIAL TEXT / LABEL, authoritative wording, entrance/hold/exit |
 | avatar | target, existing pose, cause for switch; a still hold is valid |
 | sound | approved SFX candidate and visible contact; or intentional silence |
-| hold | reading, inference or consequence; explain narration-active holds above roughly 2–3s |
+| hold | reading, inference or consequence. For static graphics held during speech beyond roughly 2–3s, identify what the viewer is reading or inferring. For live action, mark when the visible outcome is clear. |
 | exit | source object → next role/target; separately timed outgoing and incoming elements |
 
 Never add motion just because a field looks empty. Default concurrent budget: **1 principal semantic action + 0–1 support action + optional editorial text**. All must serve the same focal event. An avatar gesture, bright area, moving player and strong text highlight cannot compete equally. A group movement is one event only when the objects participate in the same readable cause; renaming four independent events as one does not satisfy the budget.
@@ -129,4 +129,4 @@ Same absolute timestamp + same inputs = same composition, regardless of render o
 
 Before a full render: generate state strip, short consecutive frame sequences at critical transitions, and full 1080×1920 representatives. Inspect actual sequences as well as stills. Test repeated timestamps in shuffled order; verify object anchors, captions, avatar alpha, text authority, single focus and audio events. Record selected versus visibly executed patterns. For a motion revision, the review surface includes a transition loop or 6–12 timestamped side-by-side sequence frames for each test, in addition to 1× playback; a poster alone cannot demonstrate choreography. Visual inspection cannot prove speech/SFX quality if sound was not auditioned.
 
-Run [motion-review-checklist.md](motion-review-checklist.md). Explain every hold above 2–3 seconds during narration. Review with decorative effects removed: if the relationship vanishes, repair the idea. Render only the current brief's authorized scope and stop at its requested review status; a laboratory test count is not a requirement for future episodes.
+Run [motion-review-checklist.md](motion-review-checklist.md). Review prolonged static graphic holds for reading or inference. Follow continuous recorded action through its meaningful outcome. Review with decorative effects removed: if the relationship vanishes, repair the idea. Render only the current brief's authorized scope and stop at its requested review status; a laboratory test count is not a requirement for future episodes.
